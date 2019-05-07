@@ -1,0 +1,13 @@
+===> Verifying dependencies...
+===> Compiling hello_world
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "hello_world.app"
+  application 'hello_world'
+    module 'hello_world'
+      hello_world_tests: 1_say_hi_test (module 'hello_world_tests')...ok
+      [done in 0.016 s]
+    [done in 0.016 s]
+  [done in 0.016 s]
+=======================================================
+  Test passed.
