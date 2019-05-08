@@ -1,0 +1,21 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling darts
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "darts.app"
+  application 'darts'
+    module 'darts'
+      module 'darts_tests'
+        darts_tests: 1_a_dart_lands_outside_the_target_test...ok
+        darts_tests: 2_a_dart_lands_just_in_the_border_of_the_target_test...ok
+        darts_tests: 3_a_dart_lands_in_the_middle_circle_test...ok
+        darts_tests: 4_a_dart_lands_right_in_the_border_between_outside_and_middle_circles_test...ok
+        darts_tests: 5_a_dart_lands_in_the_inner_circle_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
