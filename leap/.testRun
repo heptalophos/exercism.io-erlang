@@ -1,0 +1,45 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling leap
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "leap.app"
+  application 'leap'
+    module 'leap'
+      module 'leap_tests'
+        leap_tests: 1_year_not_divisible_by_4_common_year_test...ok
+        leap_tests: 2_year_divisible_by_4_not_divisible_by_100_leap_year_test...ok
+        leap_tests: 3_year_divisible_by_100_not_divisible_by_400_common_year_test...ok
+        leap_tests: 4_year_divisible_by_400_leap_year_test...ok
+        leap_tests: 5_year_divisible_by_200_not_divisible_by_400_common_year_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
+
+
+  
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling leap
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "leap.app"
+  application 'leap'
+    module 'leap'
+      module 'leap_tests'
+        leap_tests: 1_year_not_divisible_by_4_common_year_test...ok
+        leap_tests: 2_year_divisible_by_4_not_divisible_by_100_leap_year_test...ok
+        leap_tests: 3_year_divisible_by_100_not_divisible_by_400_common_year_test...ok
+        leap_tests: 4_year_divisible_by_400_leap_year_test...ok
+        leap_tests: 5_year_divisible_by_200_not_divisible_by_400_common_year_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
