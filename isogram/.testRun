@@ -1,0 +1,29 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling isogram
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "isogram.app"
+  application 'isogram'
+    module 'isogram'
+      module 'isogram_tests'
+        isogram_tests: 1_empty_string_test...ok
+        isogram_tests: 2_isogram_with_only_lower_case_characters_test...ok
+        isogram_tests: 3_word_with_one_duplicated_character_test...ok
+        isogram_tests: 4_word_with_one_duplicated_character_from_the_end_of_the_alphabet_test...ok
+        isogram_tests: 5_longest_reported_english_isogram_test...ok
+        isogram_tests: 6_word_with_duplicated_character_in_mixed_case_test...ok
+        isogram_tests: 7_word_with_duplicated_character_in_mixed_case_lowercase_first_test...ok
+        isogram_tests: 8_hypothetical_isogrammic_word_with_hyphen_test...ok
+        isogram_tests: 9_hypothetical_word_with_duplicated_character_following_hyphen_test...ok
+        isogram_tests: 10_isogram_with_duplicated_hyphen_test...ok
+        isogram_tests: 11_made_up_name_that_is_an_isogram_test...ok
+        isogram_tests: 12_duplicated_character_in_the_middle_test...ok
+        isogram_tests: 13_same_first_and_last_characters_test...ok
+        [done in 0.203 s]
+      [done in 0.203 s]
+    [done in 0.203 s]
+  [done in 0.203 s]
+=======================================================
+  All 13 tests passed.
