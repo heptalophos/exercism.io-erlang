@@ -53,8 +53,7 @@
 
 '5_strand_with_invalid_nucleotides_test'() ->
     Strand = "AGXXACT",
-    ?assertError(_,
-		 nucleotide_count:nucleotide_counts(Strand)),
+    ?assertError(_, nucleotide_count:nucleotide_counts(Strand)),
     ?assertError(_, nucleotide_count:count(Strand, "A")),
     ?assertError(_, nucleotide_count:count(Strand, "C")),
     ?assertError(_, nucleotide_count:count(Strand, "G")),
