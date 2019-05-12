@@ -1,0 +1,28 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling pangram
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "pangram.app"
+  application 'pangram'
+    module 'pangram'
+      module 'pangram_tests'
+        pangram_tests: 1_sentence_empty_test...ok
+        pangram_tests: 2_recognizes_a_perfect_lower_case_pangram_test...ok
+        pangram_tests: 3_pangram_with_only_lower_case_test...ok
+        pangram_tests: 4_missing_character_x_test...ok
+        pangram_tests: 5_another_missing_character_eg_h_test...ok
+        pangram_tests: 6_pangram_with_underscores_test...ok
+        pangram_tests: 7_pangram_with_numbers_test...ok
+        pangram_tests: 8_missing_letters_replaced_by_numbers_test...ok
+        pangram_tests: 9_pangram_with_mixed_case_and_punctuation_test...ok
+        pangram_tests: 10_upper_and_lower_case_versions_of_the_same_character_should_not_be_counted_separately_test...ok
+        [done in 0.156 s]
+      [done in 0.156 s]
+    [done in 0.156 s]
+  [done in 0.156 s]
+=======================================================
+  All 10 tests passed.
+
+
