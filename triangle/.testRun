@@ -58,3 +58,49 @@ file "triangle.app"
   [done in 0.204 s]
 =======================================================
   All 13 tests passed.
+
+
+===> Verifying dependencies...
+===> Fetching erl_exercism ({pkg,<<"erl_exercism">>,<<"0.1.2">>})
+===> Version cached at ~/.cache/rebar3/hex/hexpm/packages/erl_exercism-0.1.2.tar is up to date, reusing it
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Fetching parse_trans ({pkg,<<"parse_trans">>,<<"3.1.0">>})
+===> Version cached at ~/.cache/rebar3/hex/hexpm/packages/parse_trans-3.1.0.tar is up to date, reusing it
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling parse_trans
+_build/default/lib/parse_trans/src/parse_trans.erl:129: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:326: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:346: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:737: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:868: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+
+===> Compiling erl_exercism
+===> Compiling triangle
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "triangle.app"
+  application 'triangle'
+    module 'triangle'
+      module 'triangle_tests'
+        triangle_tests: 1_equilateral_true_if_all_sides_are_equal_test...ok
+        triangle_tests: 2_equilateral_all_zero_sides_are_illegal_so_the_triangle_is_not_equilateral_test...ok
+        triangle_tests: 3_equilateral_sides_may_be_floats_test...ok
+        triangle_tests: 4_isosceles_true_if_last_two_sides_are_equal_test...ok
+        triangle_tests: 5_isosceles_true_if_first_two_sides_are_equal_test...ok
+        triangle_tests: 6_isosceles_true_if_first_and_last_sides_are_equal_test...ok
+        triangle_tests: 7_isosceles_sides_that_violate_triangle_inequality_are_not_isosceles_even_if_two_are_equal_1_test...ok
+        triangle_tests: 8_isosceles_sides_that_violate_triangle_inequality_are_not_isosceles_even_if_two_are_equal_2_test...ok
+        triangle_tests: 9_isosceles_sides_that_violate_triangle_inequality_are_not_isosceles_even_if_two_are_equal_3_test...ok
+        triangle_tests: 10_isosceles_sides_may_be_floats_test...ok
+        triangle_tests: 11_scalene_true_if_no_sides_are_equal_test...ok
+        triangle_tests: 12_scalene_sides_that_violate_triangle_inequality_are_not_scalene_even_if_they_are_all_different_test...ok
+        triangle_tests: 13_scalene_sides_may_be_floats_test...ok
+        [done in 0.203 s]
+      [done in 0.203 s]
+    [done in 0.203 s]
+  [done in 0.203 s]
+=======================================================
+  All 13 tests passed.
+
