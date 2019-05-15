@@ -1,0 +1,54 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling queen_attack
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "queen_attack.app"
+  application 'queen_attack'
+    module 'queen_attack'
+      module 'queen_attack_tests'
+        queen_attack_tests: 1_can_not_attack_test...ok
+        queen_attack_tests: 2_can_attack_on_same_row_test...ok
+        queen_attack_tests: 3_can_attack_on_same_column_test...ok
+        queen_attack_tests: 4_can_attack_on_first_diagonal_test...ok
+        queen_attack_tests: 5_can_attack_on_second_diagonal_test...ok
+        queen_attack_tests: 6_can_attack_on_third_diagonal_test...ok
+        queen_attack_tests: 7_can_attack_on_fourth_diagonal_test...ok
+        queen_attack_tests: 8_queens_occupying_same_square_test...ok
+        queen_attack_tests: 9_one_queen_outside_chessboard_test...ok
+        [done in 0.141 s]
+      [done in 0.141 s]
+    [done in 0.157 s]
+  [done in 0.157 s]
+=======================================================
+  All 9 tests passed.
+
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling queen_attack
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "queen_attack.app"
+  application 'queen_attack'
+    module 'queen_attack'
+      module 'queen_attack_tests'
+        queen_attack_tests: 1_can_not_attack_test...ok
+        queen_attack_tests: 2_can_attack_on_same_row_test...ok
+        queen_attack_tests: 3_can_attack_on_same_column_test...ok
+        queen_attack_tests: 4_can_attack_on_first_diagonal_test...ok
+        queen_attack_tests: 5_can_attack_on_second_diagonal_test...ok
+        queen_attack_tests: 6_can_attack_on_third_diagonal_test...ok
+        queen_attack_tests: 7_can_attack_on_fourth_diagonal_test...ok
+        queen_attack_tests: 8_queens_occupying_same_square_test...ok
+        queen_attack_tests: 9_both_queens_outside_chessboard_test...ok
+        [done in 0.141 s]
+      [done in 0.141 s]
+    [done in 0.141 s]
+  [done in 0.141 s]
+=======================================================
+  All 9 tests passed.
+
+
