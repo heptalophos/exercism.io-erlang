@@ -29,23 +29,10 @@
 '7_can_attack_on_fourth_diagonal_test'() ->
     ?assert(queen_attack:can_attack({2, 2}, {5, 5})).
 
-% '1_can_not_attack_test'() ->
-%     ?assertNot(queen_attack:can_attack({4, 2}, {6, 6})).
+'8_queens_occupying_same_square_test'() -> 
+    ?assertMatch({error, invalid_position_same},
+		 queen_attack:can_attack({3, 3}, {3, 3})).
 
-% '2_can_attack_on_same_row_test'() ->
-%     ?assert(queen_attack:can_attack({4, 2}, {6, 2})).
-
-% '3_can_attack_on_same_column_test'() ->
-%     ?assert(queen_attack:can_attack({5, 4}, {5, 2})).
-
-% '4_can_attack_on_first_diagonal_test'() ->
-%     ?assert(queen_attack:can_attack({2, 2}, {4, 0})).
-
-% '5_can_attack_on_second_diagonal_test'() ->
-%     ?assert(queen_attack:can_attack({2, 2}, {1, 3})).
-
-% '6_can_attack_on_third_diagonal_test'() ->
-%     ?assert(queen_attack:can_attack({2, 2}, {1, 1})).
-
-% '7_can_attack_on_fourth_diagonal_test'() ->
-%     ?assert(queen_attack:can_attack({2, 2}, {5, 5})).
+'9_both_queens_outside_chessboard_test'() -> 
+    ?assertMatch({error, invalid_position_offboard},
+		 queen_attack:can_attack({9, 3}, {4, 8})).
