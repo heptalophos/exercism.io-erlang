@@ -1,0 +1,27 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling grains
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "grains.app"
+  application 'grains'
+    module 'grains'
+      module 'grains_tests'
+        grains_tests: 1_square_1_test...ok
+        grains_tests: 2_square_2_test...ok
+        grains_tests: 3_square_3_test...ok
+        grains_tests: 4_square_4_test...ok
+        grains_tests: 5_square_16_test...ok
+        grains_tests: 6_square_32_test...ok
+        grains_tests: 7_square_64_test...ok
+        grains_tests: 8_square_0_raises_an_exception_test...ok
+        grains_tests: 9_negative_square_raises_an_exception_test...ok
+        grains_tests: 10_square_greater_than_64_raises_an_exception_test...ok
+        grains_tests: 11_returns_the_total_number_of_grains_on_the_board_test...ok
+        [done in 0.172 s]
+      [done in 0.172 s]
+    [done in 0.172 s]
+  [done in 0.172 s]
+=======================================================
+  All 11 tests passed.
