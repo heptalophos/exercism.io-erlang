@@ -1,0 +1,21 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling accumulate
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "accumulate.app"
+  application 'accumulate'
+    module 'accumulate'
+      module 'accumulate_tests'
+        accumulate_tests: accumulate_empty_list_test...ok
+        accumulate_tests: accumulate_squares_test...ok
+        accumulate_tests: accumulate_upcases_test...ok
+        accumulate_tests: accumulate_reversed_strings_test...ok
+        accumulate_tests: accumulate_recursively_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
