@@ -13,5 +13,5 @@ accumulate(Fn, [H|T], Acc) -> accumulate(Fn, T, [Fn(H)|Acc]).
 reverse(Ls) -> reverse(Ls, []).
 
 -spec reverse(list(A), list(A)) -> list(A).
-reverse([], Ls) -> Ls;
+reverse([], Ls)    -> Ls;
 reverse([H|T], Ls) -> reverse(T, [H|Ls]).
