@@ -1,0 +1,22 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling collatz_conjecture
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "collatz_conjecture.app"
+  application 'collatz_conjecture'
+    module 'collatz_conjecture'
+      module 'collatz_conjecture_tests'
+        collatz_conjecture_tests: 1_zero_steps_for_one_test...ok
+        collatz_conjecture_tests: 2_divide_if_even_test...ok
+        collatz_conjecture_tests: 3_even_and_odd_steps_test...ok
+        collatz_conjecture_tests: 4_large_number_of_even_and_odd_steps_test...ok
+        collatz_conjecture_tests: 5_zero_is_an_error_test...ok
+        collatz_conjecture_tests: 6_negative_value_is_an_error_test...ok
+        [done in 0.140 s]
+      [done in 0.140 s]
+    [done in 0.140 s]
+  [done in 0.140 s]
+=======================================================
+  All 6 tests passed.
