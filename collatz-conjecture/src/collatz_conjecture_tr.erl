@@ -1,6 +1,6 @@
 -module(collatz_conjecture_tr).
 
-%% A tail-recursive implemetation
+%% A tail-recursive implementation
 -export([steps/1]).
 
 -spec steps(integer()) -> non_neg_integer() | {error, string()}.
