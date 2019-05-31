@@ -1,0 +1,28 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling anagram
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "anagram.app"
+  application 'anagram'
+    module 'anagram'
+      module 'anagram_tests'
+        anagram_tests: 1_no_matches_test...ok
+        anagram_tests: 2_detects_two_anagrams_test...ok
+        anagram_tests: 3_does_not_detect_anagram_subsets_test...ok
+        anagram_tests: 4_detects_anagram_test...ok
+        anagram_tests: 5_detects_three_anagrams_test...ok
+        anagram_tests: 6_does_not_detect_non_anagrams_with_identical_checksum_test...ok
+        anagram_tests: 7_detects_anagrams_case_insensitively_test...ok
+        anagram_tests: 8_detects_anagrams_using_case_insensitive_subject_test...ok
+        anagram_tests: 9_detects_anagrams_using_case_insensitive_possible_matches_test...ok
+        anagram_tests: 10_does_not_detect_a_anagram_if_the_original_word_is_repeated_test...ok
+        anagram_tests: 11_anagrams_must_use_all_letters_exactly_once_test...ok
+        anagram_tests: 12_words_are_not_anagrams_of_themselves_case_insensitive_test...ok
+        [done in 0.188 s]
+      [done in 0.188 s]
+    [done in 0.188 s]
+  [done in 0.188 s]
+=======================================================
+  All 12 tests passed.
