@@ -1,0 +1,41 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling bob
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "bob.app"
+  application 'bob'
+    module 'bob'
+      module 'bob_tests'
+        bob_tests: 1_stating_something_test...ok
+        bob_tests: 2_shouting_test...ok
+        bob_tests: 3_shouting_gibberish_test...ok
+        bob_tests: 4_asking_a_question_test...ok
+        bob_tests: 5_asking_a_numeric_question_test...ok
+        bob_tests: 6_asking_gibberish_test...ok
+        bob_tests: 7_talking_forcefully_test...ok
+        bob_tests: 8_using_acronyms_in_regular_speech_test...ok
+        bob_tests: 9_forceful_question_test...ok
+        bob_tests: 10_shouting_numbers_test...ok
+        bob_tests: 11_no_letters_test...ok
+        bob_tests: 12_question_with_no_letters_test...ok
+        bob_tests: 13_shouting_with_special_characters_test...ok
+        bob_tests: 14_shouting_with_no_exclamation_mark_test...ok
+        bob_tests: 15_statement_containing_question_mark_test...ok
+        bob_tests: 16_non_letters_with_question_test...ok
+        bob_tests: 17_prattling_on_test...ok
+        bob_tests: 18_silence_test...ok
+        bob_tests: 19_prolonged_silence_test...ok
+        bob_tests: 20_alternate_silence_test...ok
+        bob_tests: 21_multiple_line_question_test...ok
+        bob_tests: 22_starting_with_whitespace_test...ok
+        bob_tests: 23_ending_with_whitespace_test...ok
+        bob_tests: 24_other_whitespace_test...ok
+        bob_tests: 25_non_question_ending_with_whitespace_test...ok
+        [done in 0.391 s]
+      [done in 0.391 s]
+    [done in 0.391 s]
+  [done in 0.391 s]
+=======================================================
+  All 25 tests passed.
