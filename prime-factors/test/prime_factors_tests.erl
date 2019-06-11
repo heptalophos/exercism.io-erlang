@@ -37,3 +37,9 @@
 '7_factors_include_a_large_prime_test'() ->
     ?assertEqual(lists:sort([11, 9539, 894119]),
 		 lists:sort(prime_factors:factors(93819012551))).
+
+'8_factors_of_a_negative_number_throw_error_test'() ->
+    ?assertMatch({error, invalid_argument}, prime_factors:factors(-2)).
+
+'9_factors_of_zero_throw_error_test'() ->
+    ?assertMatch({error, invalid_argument}, prime_factors:factors(0)).
