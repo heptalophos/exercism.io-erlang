@@ -1,0 +1,25 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling prime_factors
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "prime_factors.app"
+  application 'prime_factors'
+    module 'prime_factors'
+      module 'prime_factors_tests'
+        prime_factors_tests: 1_no_factors_test...ok
+        prime_factors_tests: 2_prime_number_test...ok
+        prime_factors_tests: 3_square_of_a_prime_test...ok
+        prime_factors_tests: 4_cube_of_a_prime_test...ok
+        prime_factors_tests: 5_product_of_primes_and_non_primes_test...ok
+        prime_factors_tests: 6_product_of_primes_test...ok
+        prime_factors_tests: 7_factors_include_a_large_prime_test...[0.015 s] ok
+        prime_factors_tests: 8_factors_of_a_negative_number_throw_error_test...ok
+        prime_factors_tests: 9_factors_of_zero_throw_error_test...ok
+        [done in 0.156 s]
+      [done in 0.156 s]
+    [done in 0.156 s]
+  [done in 0.156 s]
+=======================================================
+  All 9 tests passed.
