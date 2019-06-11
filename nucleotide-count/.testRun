@@ -19,3 +19,75 @@ file "nucleotide_count.app"
   [done in 0.078 s]
 =======================================================
   All 5 tests passed.
+
+
+  
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling nucleotide_count
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "nucleotide_count.app"
+  application 'nucleotide_count'
+    module 'nucleotide_count'
+      module 'nucleotide_count_tests'
+        nucleotide_count_tests: 1_empty_strand_test...ok
+        nucleotide_count_tests: 2_can_count_one_nucleotide_in_single_character_input_test...ok
+        nucleotide_count_tests: 3_strand_with_repeated_nucleotide_test...ok
+        nucleotide_count_tests: 4_strand_with_multiple_nucleotides_test...ok
+        nucleotide_count_tests: 5_strand_with_invalid_nucleotides_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
+
+
+  
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling nucleotide_count
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "nucleotide_count.app"
+  application 'nucleotide_count'
+    module 'nucleotide_count'
+      module 'nucleotide_count_tests'
+        nucleotide_count_tests: 1_empty_strand_test...ok
+        nucleotide_count_tests: 2_can_count_one_nucleotide_in_single_character_input_test...ok
+        nucleotide_count_tests: 3_strand_with_repeated_nucleotide_test...ok
+        nucleotide_count_tests: 4_strand_with_multiple_nucleotides_test...ok
+        nucleotide_count_tests: 5_strand_with_invalid_nucleotides_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
+
+
+  
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling nucleotide_count
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "nucleotide_count.app"
+  application 'nucleotide_count'
+    module 'nucleotide_count'
+      module 'nucleotide_count_tests'
+        nucleotide_count_tests: 1_empty_strand_test...ok
+        nucleotide_count_tests: 2_can_count_one_nucleotide_in_single_character_input_test...ok
+        nucleotide_count_tests: 3_strand_with_repeated_nucleotide_test...ok
+        nucleotide_count_tests: 4_strand_with_multiple_nucleotides_test...ok
+        nucleotide_count_tests: 5_strand_with_invalid_nucleotides_test...ok
+        [done in 0.079 s]
+      [done in 0.079 s]
+    [done in 0.079 s]
+  [done in 0.079 s]
+=======================================================
+  All 5 tests passed.
