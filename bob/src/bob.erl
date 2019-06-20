@@ -5,12 +5,17 @@
 
 -spec response(string()) -> string().
 response(String) ->
-    case ({question(String), yell(String), silence(String)}) of
-        {true, true,    _}  -> "Calm down, I know what I'm doing!";
-        {true,    _,    _}  -> "Sure.";
-        {   _, true,    _}  -> "Whoa, chill out!";
-        {   _,    _, true}  -> "Fine. Be that way!";
-        {   _,    _,    _}  -> "Whatever."
+
+    Yell     = quasibool(yell(String)), 
+    Silence  = quasibool(silence(String)),
+    Question = quasibool(question(String)),
+
+    case ({Question, Yell, Silence}) of
+        {1, 1, 0} -> "Calm down, I know what I'm doing!";
+        {1, 0, 0} -> "Sure.";
+        {0, 1, 0} -> "Whoa, chill out!";
+        {0, 0, 1} -> "Fine. Be that way!";
+        {_, _, _} -> "Whatever."
     end.
 
 %% auxiliary fcns
@@ -25,3 +30,10 @@ silence(S) ->
 -spec yell(string()) -> boolean().
 yell(S) -> 
     string:to_upper(S) =:= S andalso S =/= string:casefold(S).
+
+-spec quasibool(boolean()) -> 1 | 0.
+quasibool(Premise) -> 
+    case Premise of
+        true  -> 1;
+        false -> 0
+    end.
