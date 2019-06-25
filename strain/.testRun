@@ -26,3 +26,33 @@ file "strain.app"
   [done in 0.188 s]
 =======================================================
   All 12 tests passed.
+
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling strain
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "strain.app"
+  application 'strain'
+    module 'strain'
+      module 'strain_tests'
+        strain_tests: empty_keep_test...ok
+        strain_tests: keep_everything_test...ok
+        strain_tests: keep_first_last_test...ok
+        strain_tests: keep_nothin_test...ok
+        strain_tests: keep_neither_first_nor_last_test...ok
+        strain_tests: keep_strings_test...ok
+        strain_tests: empty_discard_test...ok
+        strain_tests: discard_everything_test...ok
+        strain_tests: discard_first_and_last_test...ok
+        strain_tests: discard_nothing_test...ok
+        strain_tests: discard_neither_first_nor_last_test...ok
+        strain_tests: discard_strings_test...ok
+        [done in 0.188 s]
+      [done in 0.188 s]
+    [done in 0.188 s]
+  [done in 0.188 s]
+=======================================================
+  All 12 tests passed.

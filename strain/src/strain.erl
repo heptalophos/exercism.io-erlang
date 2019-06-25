@@ -8,5 +8,5 @@ keep(Fn, List) ->
 
 -spec discard(fun(), list()) -> list().
 discard(Fn, List) ->
-  lists:filter(fun(X) -> not Fn(X) end, List).
+  keep(fun(X) -> not Fn(X) end, List).
 
