@@ -1,0 +1,27 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling secret_handshake
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "secret_handshake.app"
+  application 'secret_handshake'
+    module 'secret_handshake'
+      module 'secret_handshake_tests'
+        secret_handshake_tests: 1_wink_for_1_test...ok
+        secret_handshake_tests: 2_double_blink_for_10_test...ok
+        secret_handshake_tests: 3_close_your_eyes_for_100_test...ok
+        secret_handshake_tests: 4_jump_for_1000_test...ok
+        secret_handshake_tests: 5_combine_two_actions_test...ok
+        secret_handshake_tests: 6_reverse_two_actions_test...ok
+        secret_handshake_tests: 7_reversing_one_action_gives_the_same_action_test...ok
+        secret_handshake_tests: 8_reversing_no_actions_still_gives_no_actions_test...ok
+        secret_handshake_tests: 9_all_possible_actions_test...ok
+        secret_handshake_tests: 10_reverse_all_possible_actions_test...ok
+        secret_handshake_tests: 11_do_nothing_for_zero_test...ok
+        [done in 0.172 s]
+      [done in 0.172 s]
+    [done in 0.172 s]
+  [done in 0.172 s]
+=======================================================
+  All 11 tests passed.
