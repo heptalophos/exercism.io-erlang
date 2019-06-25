@@ -4,9 +4,9 @@
 
 -spec keep(fun(), list()) -> list().
 keep(Fn, List) ->
-  lists:filter(fun(X) -> Fn(X) end, List).
+  [ X || X <- List, Fn(X) ].
 
 -spec discard(fun(), list()) -> list().
 discard(Fn, List) ->
-  keep(fun(X) -> not Fn(X) end, List).
+  [ X || X <- List, not Fn(X) ].
 
