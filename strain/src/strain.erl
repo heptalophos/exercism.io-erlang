@@ -2,11 +2,13 @@
 
 -export([keep/2, discard/2]).
 
--spec keep(fun(), list()) -> list().
+-type pred() :: fun((any()) -> boolean()).
+
+-spec keep(pred(), list()) -> list().
 keep(Fn, List) ->
   [ X || X <- List, Fn(X) ].
 
--spec discard(fun(), list()) -> list().
+-spec discard(pred(), list()) -> list().
 discard(Fn, List) ->
   [ X || X <- List, not Fn(X) ].
 
