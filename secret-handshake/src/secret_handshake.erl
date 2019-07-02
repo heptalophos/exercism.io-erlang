@@ -9,19 +9,19 @@ commands(Number) ->
         [ 
             case Number band 16#01 =/= 0 of 
                 true -> "wink";
-                _    -> nil 
+                _    ->  nil 
             end,
             case Number band 16#02 =/= 0 of 
                 true -> "double blink";    
-                _    -> nil 
+                _    ->  nil 
             end,
             case Number band 16#04 =/= 0 of 
                 true -> "close your eyes"; 
-                _    -> nil 
+                _    ->  nil 
             end,
             case Number band 16#08 =/= 0 of 
                 true -> "jump";
-                _    -> nil 
+                _    ->  nil 
             end 
         ]
     ),
