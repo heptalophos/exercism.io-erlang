@@ -43,3 +43,39 @@ in call from eunit_test:run_testfun/1 (eunit_test.erl, line 71)
 =======================================================
   Failed: 1.  Skipped: 0.  Passed: 15.
 ===> Error running tests
+
+
+
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling sum_of_multiples
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "sum_of_multiples.app"
+  application 'sum_of_multiples'
+    module 'sum_of_multiples'
+      module 'sum_of_multiples_tests'
+        sum_of_multiples_tests: 1_no_multiples_within_limit_test...ok
+        sum_of_multiples_tests: 2_one_factor_has_multiples_within_limit_test...ok
+        sum_of_multiples_tests: 3_more_than_one_multiple_within_limit_test...ok
+        sum_of_multiples_tests: 4_more_than_one_factor_with_multiples_within_limit_test...ok
+        sum_of_multiples_tests: 5_each_multiple_is_only_counted_once_test...ok
+        sum_of_multiples_tests: 6_a_much_larger_limit_test...ok
+        sum_of_multiples_tests: 7_three_factors_test...ok
+        sum_of_multiples_tests: 8_factors_not_relatively_prime_test...ok
+        sum_of_multiples_tests: 9_some_pairs_of_factors_relatively_prime_and_some_not_test...ok
+        sum_of_multiples_tests: 10_one_factor_is_a_multiple_of_another_test...ok
+        sum_of_multiples_tests: 11_much_larger_factors_test...ok
+        sum_of_multiples_tests: 12_all_numbers_are_multiples_of_1_test...ok
+        sum_of_multiples_tests: 13_no_factors_means_an_empty_sum_test...ok
+        sum_of_multiples_tests: 14_the_only_multiple_of_0_is_0_test...ok
+        sum_of_multiples_tests: 15_the_factor_0_does_not_affect_the_sum_of_multiples_of_other_factors_test...ok
+        sum_of_multiples_tests: 16_solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3_test...ok
+        [done in 0.250 s]
+      [done in 0.250 s]
+    [done in 0.250 s]
+  [done in 0.250 s]
+=======================================================
+  All 16 tests passed.
