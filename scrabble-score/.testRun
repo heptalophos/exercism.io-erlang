@@ -1,0 +1,27 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling scrabble_score
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "scrabble_score.app"
+  application 'scrabble_score'
+    module 'scrabble_score'
+      module 'scrabble_score_tests'
+        scrabble_score_tests: 1_lowercase_letter_test...ok
+        scrabble_score_tests: 2_uppercase_letter_test...ok
+        scrabble_score_tests: 3_valuable_letter_test...ok
+        scrabble_score_tests: 4_short_word_test...ok
+        scrabble_score_tests: 5_short_valuable_word_test...ok
+        scrabble_score_tests: 6_medium_word_test...ok
+        scrabble_score_tests: 7_medium_valuable_word_test...ok
+        scrabble_score_tests: 8_long_mixed_case_word_test...ok
+        scrabble_score_tests: 9_english_like_word_test...ok
+        scrabble_score_tests: 10_empty_input_test...ok
+        scrabble_score_tests: 11_entire_alphabet_available_test...ok
+        [done in 0.172 s]
+      [done in 0.172 s]
+    [done in 0.172 s]
+  [done in 0.172 s]
+=======================================================
+  All 11 tests passed.
