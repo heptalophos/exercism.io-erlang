@@ -1,0 +1,80 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling protein_translation
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "protein_translation.app"
+  application 'protein_translation'
+    module 'protein_translation'
+      module 'protein_translation_tests'
+        protein_translation_tests: 1_methionine_rna_sequence_test...ok
+        protein_translation_tests: 2_phenylalanine_rna_sequence_1_test...ok
+        protein_translation_tests: 3_phenylalanine_rna_sequence_2_test...ok
+        protein_translation_tests: 4_leucine_rna_sequence_1_test...ok
+        protein_translation_tests: 5_leucine_rna_sequence_2_test...ok
+        protein_translation_tests: 6_serine_rna_sequence_1_test...ok
+        protein_translation_tests: 7_serine_rna_sequence_2_test...ok
+        protein_translation_tests: 8_serine_rna_sequence_3_test...ok
+        protein_translation_tests: 9_serine_rna_sequence_4_test...ok
+        protein_translation_tests: 10_tyrosine_rna_sequence_1_test...ok
+        protein_translation_tests: 11_tyrosine_rna_sequence_2_test...ok
+        protein_translation_tests: 12_cysteine_rna_sequence_1_test...ok
+        protein_translation_tests: 13_cysteine_rna_sequence_2_test...ok
+        protein_translation_tests: 14_tryptophan_rna_sequence_test...ok
+        protein_translation_tests: 15_stop_codon_rna_sequence_1_test...ok
+        protein_translation_tests: 16_stop_codon_rna_sequence_2_test...ok
+        protein_translation_tests: 17_stop_codon_rna_sequence_3_test...ok
+        protein_translation_tests: 18_translate_rna_strand_into_correct_protein_list_test...ok
+        protein_translation_tests: 19_translation_stops_if_stop_codon_at_beginning_of_sequence_test...ok
+        protein_translation_tests: 20_translation_stops_if_stop_codon_at_end_of_two_codon_sequence_test...ok
+        protein_translation_tests: 21_translation_stops_if_stop_codon_at_end_of_three_codon_sequence_test...ok
+        protein_translation_tests: 22_translation_stops_if_stop_codon_in_middle_of_three_codon_sequence_test...ok
+        protein_translation_tests: 23_translation_stops_if_stop_codon_in_middle_of_six_codon_sequence_test...ok
+        [done in 0.359 s]
+      [done in 0.359 s]
+    [done in 0.359 s]
+  [done in 0.359 s]
+=======================================================
+  All 23 tests passed.
+
+  
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling protein_translation
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "protein_translation.app"
+  application 'protein_translation'
+    module 'protein_translation'
+      module 'protein_translation_tests'
+        protein_translation_tests: 1_methionine_rna_sequence_test...ok
+        protein_translation_tests: 2_phenylalanine_rna_sequence_1_test...ok
+        protein_translation_tests: 3_phenylalanine_rna_sequence_2_test...ok
+        protein_translation_tests: 4_leucine_rna_sequence_1_test...ok
+        protein_translation_tests: 5_leucine_rna_sequence_2_test...ok
+        protein_translation_tests: 6_serine_rna_sequence_1_test...ok
+        protein_translation_tests: 7_serine_rna_sequence_2_test...ok
+        protein_translation_tests: 8_serine_rna_sequence_3_test...ok
+        protein_translation_tests: 9_serine_rna_sequence_4_test...ok
+        protein_translation_tests: 10_tyrosine_rna_sequence_1_test...ok
+        protein_translation_tests: 11_tyrosine_rna_sequence_2_test...ok
+        protein_translation_tests: 12_cysteine_rna_sequence_1_test...ok
+        protein_translation_tests: 13_cysteine_rna_sequence_2_test...ok
+        protein_translation_tests: 14_tryptophan_rna_sequence_test...ok
+        protein_translation_tests: 15_stop_codon_rna_sequence_1_test...ok
+        protein_translation_tests: 16_stop_codon_rna_sequence_2_test...ok
+        protein_translation_tests: 17_stop_codon_rna_sequence_3_test...ok
+        protein_translation_tests: 18_translate_rna_strand_into_correct_protein_list_test...ok
+        protein_translation_tests: 19_translation_stops_if_stop_codon_at_beginning_of_sequence_test...ok
+        protein_translation_tests: 20_translation_stops_if_stop_codon_at_end_of_two_codon_sequence_test...ok
+        protein_translation_tests: 21_translation_stops_if_stop_codon_at_end_of_three_codon_sequence_test...ok
+        protein_translation_tests: 22_translation_stops_if_stop_codon_in_middle_of_three_codon_sequence_test...ok
+        protein_translation_tests: 23_translation_stops_if_stop_codon_in_middle_of_six_codon_sequence_test...ok
+        [done in 0.359 s]
+      [done in 0.359 s]
+    [done in 0.359 s]
+  [done in 0.359 s]
+=======================================================
+  All 23 tests passed.
