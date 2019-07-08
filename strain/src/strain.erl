@@ -10,5 +10,6 @@ keep(Fn, List) ->
 
 -spec discard(pred(), list()) -> list().
 discard(Fn, List) ->
-  [ X || X <- List, not Fn(X) ].
+  NotFn = fun(X) -> not Fn(X) end,
+  keep(NotFn, List).
 
