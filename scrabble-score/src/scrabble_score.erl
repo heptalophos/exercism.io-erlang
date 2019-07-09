@@ -19,7 +19,7 @@ score(Word) ->
 
 % auxiliary
 
--spec scores() -> {char(), non_neg_integer()}.
+-spec scores() -> [{char(), non_neg_integer()}].
 scores() ->
     Scores = #{"AEIOULNRST" => 1,
                "DG" => 2,
@@ -28,4 +28,7 @@ scores() ->
                [$K] => 5,
                "JX" => 8,
                "QZ" => 10 },
-    lists:flatten([[{X, Score} || X <- Letter] || {Letter, Score} <- maps:to_list(Scores)]).
+    lists:flatten([
+                    [{X, Score} || X <- Letter] ||
+                     {Letter, Score} <- maps:to_list(Scores)
+                  ]).
