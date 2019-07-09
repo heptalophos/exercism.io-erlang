@@ -3,28 +3,29 @@
 
 -export([score/1]).
 
-
 -spec score(string()) -> non_neg_integer().
-score(Word) -> 
-    lists:foldl(fun(X, Sum) -> 
-                    X + Sum end, 
-                    0,
-                    lists:map(fun letter_score/1, string:to_upper(Word))).
+score(Word) ->
+    lists:foldl(fun(Score, Total) -> Total + Score end, 
+                0,
+                lists:map(fun(L) -> 
+                                case lists:keyfind(L, 1, scores()) 
+                                of
+                                    {L, S} -> S;
+                                    false -> 0
+                                end
+                          end, 
+                          string:to_upper(Word))).
+
 
 % auxiliary
 
--spec letter_score(char) -> non_neg_integer().
-letter_score(L) ->
-    [{_, Score}] = maps:to_list(maps:filter(fun (Sc, _) -> 
-            lists:member(L, Sc) end, scores())),
-    Score.
-
--spec scores() -> {[char()], non_neg_integer()}.
+-spec scores() -> {char(), non_neg_integer()}.
 scores() ->
-    #{ [$A, $E, $I, $O, $U, $L, $N, $R, $S, $T] => 1,
-       [$D, $G] => 2,
-       [$B, $C, $M, $P] => 3,
-       [$F, $H, $V, $W, $Y] => 4,
-       [$K] => 5,
-       [$J, $X] => 8,
-       [$Q, $Z] => 10 }.
+    Scores = #{"AEIOULNRST" => 1,
+               "DG" => 2,
+               "BCMP" => 3,
+               "FHVWY" => 4,
+               [$K] => 5,
+               "JX" => 8,
+               "QZ" => 10 },
+    lists:flatten([[{X, Score} || X <- Letter] || {Letter, Score} <- maps:to_list(Scores)]).
