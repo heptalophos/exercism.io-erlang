@@ -17,3 +17,25 @@ file "two_fer.app"
   [done in 0.047 s]
 =======================================================
   All 3 tests passed.
+
+
+  
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling two_fer
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "two_fer.app"
+  application 'two_fer'
+    module 'two_fer'
+      module 'two_fer_tests'
+        two_fer_tests:32: 1_no_name_given_test_ (no name given)...ok
+        two_fer_tests:37: 2_a_name_given_test_ (a name given)...ok
+        two_fer_tests:42: 3_another_name_given_test_ (another name given)...ok
+        [done in 0.047 s]
+      [done in 0.047 s]
+    [done in 0.047 s]
+  [done in 0.047 s]
+=======================================================
+  All 3 tests passed.
