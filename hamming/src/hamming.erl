@@ -8,12 +8,6 @@ distance(Strand1, Strand2) ->
         true -> 
             {error, "left and right strands must be of equal length"};
         false ->
-            lists:foldl(fun({N1, N2}, Sum) -> 
-                            case (N1 =/= N2) of
-                                true  -> Sum + 1;
-                                false -> Sum
-                            end
-                        end, 
-                        0,
-                        lists:zip(Strand1, Strand2))
+            length([{N1, N2} || {N1, N2} <- lists:zip(Strand1, Strand2), 
+                                            N1 =/= N2])
     end.
