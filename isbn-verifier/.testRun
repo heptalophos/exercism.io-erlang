@@ -1,0 +1,33 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling isbn_verifier
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "isbn_verifier.app"
+  application 'isbn_verifier'
+    module 'isbn_verifier'
+      module 'isbn_verifier_tests'
+        isbn_verifier_tests: 1_valid_isbn_number_test...ok
+        isbn_verifier_tests: 2_invalid_isbn_check_digit_test...ok
+        isbn_verifier_tests: 3_valid_isbn_number_with_a_check_digit_of_10_test...ok
+        isbn_verifier_tests: 4_check_digit_is_a_character_other_than_x_test...ok
+        isbn_verifier_tests: 5_invalid_character_in_isbn_test...ok
+        isbn_verifier_tests: 6_x_is_only_valid_as_a_check_digit_test...ok
+        isbn_verifier_tests: 7_valid_isbn_without_separating_dashes_test...ok
+        isbn_verifier_tests: 8_isbn_without_separating_dashes_and_x_as_check_digit_test...ok
+        isbn_verifier_tests: 9_isbn_without_check_digit_and_dashes_test...ok
+        isbn_verifier_tests: 10_too_long_isbn_and_no_dashes_test...ok
+        isbn_verifier_tests: 11_too_short_isbn_test...ok
+        isbn_verifier_tests: 12_isbn_without_check_digit_test...ok
+        isbn_verifier_tests: 13_check_digit_of_x_should_not_be_used_for_0_test...ok
+        isbn_verifier_tests: 14_empty_isbn_test...ok
+        isbn_verifier_tests: 15_input_is_9_characters_test...ok
+        isbn_verifier_tests: 16_invalid_characters_are_not_ignored_test...ok
+        isbn_verifier_tests: 17_input_is_too_long_but_contains_a_valid_isbn_test...ok
+        [done in 0.265 s]
+      [done in 0.265 s]
+    [done in 0.265 s]
+  [done in 0.265 s]
+=======================================================
+  All 17 tests passed.
