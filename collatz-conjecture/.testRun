@@ -53,3 +53,36 @@ file "collatz_conjecture.app"
   [done in 0.266 s]
 =======================================================
   All 14 tests passed.
+
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling collatz_conjecture
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "collatz_conjecture.app"
+  application 'collatz_conjecture'
+    module 'collatz_conjecture'
+      module 'collatz_conjecture_tests'
+        collatz_conjecture_tests: 1_zero_steps_for_one_test...ok
+        collatz_conjecture_tests: 2_divide_if_even_test...ok
+        collatz_conjecture_tests: 3_even_and_odd_steps_test...ok
+        collatz_conjecture_tests: 4_large_number_of_even_and_odd_steps_test...ok
+        collatz_conjecture_tests: 5_zero_is_an_error_test...ok
+        collatz_conjecture_tests: 6_negative_value_is_an_error_test...ok
+        collatz_conjecture_tests: 7_non_integer_value_is_an_error_test...ok
+        collatz_conjecture_tests: 8_zero_steps_for_one_tail_recursive_version_test...ok
+        collatz_conjecture_tests: 9_divide_if_even_tail_recursive_version_test...ok
+        collatz_conjecture_tests: 10_even_and_odd_steps_tail_recursive_version_test...ok
+        collatz_conjecture_tests: 11_large_number_of_even_and_odd_steps_tail_recursive_version_test...ok
+        collatz_conjecture_tests: 12_zero_is_an_error_tail_recursive_version_test...ok
+        collatz_conjecture_tests: 13_negative_value_is_an_error_tail_recursive_version_test...ok
+        collatz_conjecture_tests: 14_non_integer_value_is_an_error_tail_recursive_version_test...ok
+        [done in 0.218 s]
+      [done in 0.218 s]
+    module 'collatz_conjecture_tr'
+    [done in 1.000 s]
+  [done in 1.110 s]
+=======================================================
+  All 14 tests passed.
