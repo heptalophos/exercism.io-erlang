@@ -37,21 +37,6 @@
             "Only positive numbers are allowed"}, 
         collatz_conjecture:steps(4.0)).
 
-<<<<<<< Updated upstream
-'8_zero_steps_for_one_test'() ->
-    ?assertMatch(0, collatz_conjecture_tr:steps(1)).
-
-'9_divide_if_even_test'() ->
-    ?assertMatch(4, collatz_conjecture_tr:steps(16)).
-
-'10_even_and_odd_steps_test'() ->
-    ?assertMatch(9, collatz_conjecture_tr:steps(12)).
-
-'11_large_number_of_even_and_odd_steps_test'() ->
-    ?assertMatch(152, collatz_conjecture_tr:steps(1000000)).
-
-'12_zero_is_an_error_test'() ->
-=======
 '8_zero_steps_for_one_tail_recursive_version_test'() ->
     ?assertMatch(0, collatz_conjecture_tr:steps(1)).
 
@@ -65,25 +50,16 @@
     ?assertMatch(152, collatz_conjecture_tr:steps(1000000)).
 
 '12_zero_is_an_error_tail_recursive_version_test'() ->
->>>>>>> Stashed changes
     ?assertMatch({error,
 		  "Only positive numbers are allowed"},
 		 collatz_conjecture_tr:steps(0)).
 
-<<<<<<< Updated upstream
-'13_negative_value_is_an_error_test'() ->
-=======
 '13_negative_value_is_an_error_tail_recursive_version_test'() ->
->>>>>>> Stashed changes
     ?assertMatch({error,
 		  "Only positive numbers are allowed"},
 		 collatz_conjecture_tr:steps(-15)).
 
-<<<<<<< Updated upstream
-'14_non_integer_value_is_an_error_test'() ->
-=======
 '14_non_integer_value_is_an_error_tail_recursive_version_test'() ->
->>>>>>> Stashed changes
     ?assertMatch({error, 
             "Only positive numbers are allowed"}, 
         collatz_conjecture_tr:steps(4.0)).
