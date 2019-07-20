@@ -37,29 +37,29 @@
             "Only positive numbers are allowed"}, 
         collatz_conjecture:steps(4.0)).
 
-'8_zero_steps_for_one_test'() ->
+'8_zero_steps_for_one_test_tail_recursive_version'() ->
     ?assertMatch(0, collatz_conjecture_tr:steps(1)).
 
-'9_divide_if_even_test'() ->
+'9_divide_if_even_test_tail_recursive_version'() ->
     ?assertMatch(4, collatz_conjecture_tr:steps(16)).
 
-'10_even_and_odd_steps_test'() ->
+'10_even_and_odd_steps_test_tail_recursive_version'() ->
     ?assertMatch(9, collatz_conjecture_tr:steps(12)).
 
-'11_large_number_of_even_and_odd_steps_test'() ->
+'11_large_number_of_even_and_odd_steps_test_tail_recursive_version'() ->
     ?assertMatch(152, collatz_conjecture_tr:steps(1000000)).
 
-'12_zero_is_an_error_test'() ->
+'12_zero_is_an_error_test_tail_recursive_version'() ->
     ?assertMatch({error,
 		  "Only positive numbers are allowed"},
 		 collatz_conjecture_tr:steps(0)).
 
-'13_negative_value_is_an_error_test'() ->
+'13_negative_value_is_an_error_test_tail_recursive_version'() ->
     ?assertMatch({error,
 		  "Only positive numbers are allowed"},
 		 collatz_conjecture_tr:steps(-15)).
 
-'14_non_integer_value_is_an_error_test'() ->
+'14_non_integer_value_is_an_error_test_tail_recursive_version'() ->
     ?assertMatch({error, 
             "Only positive numbers are allowed"}, 
         collatz_conjecture_tr:steps(4.0)).
