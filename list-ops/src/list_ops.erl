@@ -14,11 +14,13 @@
 
 -spec append(list(), list()) -> list().
 append([], List2) -> List2;
-append([Element | List1], List2) -> [Element | append(List1, List2)].
+append([Element | List1], List2) -> 
+	[Element | append(List1, List2)].
 
 -spec concat(list()) -> list().
 concat([]) -> [];
-concat([Element | List]) -> append(Element, concat(List)).
+concat([Element | List]) -> 
+	append(Element, concat(List)).
 
 -spec filter(pred(), list()) -> list().
 filter(_, []) -> [];
@@ -53,4 +55,5 @@ reverse(List) -> reverse(List, []).
 
 -spec reverse(list(), list()) -> list().
 reverse([], Acc) -> Acc;
-reverse([X | List], Acc) -> reverse(List, [X | Acc]).
+reverse([X | List], Acc) -> 
+	reverse(List, [X | Acc]).
