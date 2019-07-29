@@ -2,15 +2,15 @@
 -export([proteins/1, proteins/2]).
 
 
--type protein() :: methionine |
-                   phenylalanine |
-                   leucine |
-                   serine |
-                   tyrosine |
-                   cysteine |
-                   tryptophan. 
+-type aminoacid() :: methionine |
+                     phenylalanine |
+                     leucine |
+                     serine |
+                     tyrosine |
+                     cysteine |
+                     tryptophan. 
 -type control_seq() :: stop.
--type polypeptide() :: [protein()].
+-type polypeptide() :: [aminoacid()].
 
 
 -spec proteins(string()) -> polypeptide().
@@ -22,26 +22,26 @@ proteins(Strand) -> lists:reverse(proteins(Strand, [])).
 -spec proteins([char()], [char()]) -> polypeptide().
 proteins([], Polypeptide) -> Polypeptide;
 proteins([X, Y, Z | Rest], Polypeptide) -> 
-    case codon([X, Y, Z]) of
+    case codon2amino([X, Y, Z]) of
         stop -> proteins([], Polypeptide);
         AA   -> proteins(Rest, [AA | Polypeptide])
     end.
 
--spec codon(string()) -> protein() | control_seq().
-codon("AUG") -> methionine;
-codon("UUU") -> phenylalanine;
-codon("UUC") -> phenylalanine;
-codon("UUA") -> leucine;
-codon("UUG") -> leucine;
-codon("UCU") -> serine;
-codon("UCC") -> serine;
-codon("UCA") -> serine;
-codon("UCG") -> serine;
-codon("UAU") -> tyrosine;
-codon("UAC") -> tyrosine;
-codon("UGU") -> cysteine;
-codon("UGC") -> cysteine;
-codon("UGG") -> tryptophan;
-codon("UAA") -> stop;
-codon("UAG") -> stop;
-codon("UGA") -> stop.
+-spec codon2amino(string()) -> aminoacid() | control_seq().
+codon2amino("AUG") -> methionine;
+codon2amino("UUU") -> phenylalanine;
+codon2amino("UUC") -> phenylalanine;
+codon2amino("UUA") -> leucine;
+codon2amino("UUG") -> leucine;
+codon2amino("UCU") -> serine;
+codon2amino("UCC") -> serine;
+codon2amino("UCA") -> serine;
+codon2amino("UCG") -> serine;
+codon2amino("UAU") -> tyrosine;
+codon2amino("UAC") -> tyrosine;
+codon2amino("UGU") -> cysteine;
+codon2amino("UGC") -> cysteine;
+codon2amino("UGG") -> tryptophan;
+codon2amino("UAA") -> stop;
+codon2amino("UAG") -> stop;
+codon2amino("UGA") -> stop.
