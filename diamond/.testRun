@@ -19,3 +19,27 @@ file "diamond.app"
   [done in 0.141 s]
 =======================================================
   All 5 tests passed.
+
+
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling diamond
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "diamond.app"
+  application 'diamond'
+    module 'diamond'
+      module 'diamond_tests'
+        diamond_tests: 1_degenerate_case_with_a_single_a_row_test...ok
+        diamond_tests: 2_degenerate_case_with_no_row_containing_3_distinct_groups_of_spaces_test...ok
+        diamond_tests: 3_smallest_non_degenerate_case_with_odd_diamond_side_length_test...ok
+        diamond_tests: 4_smallest_non_degenerate_case_with_even_diamond_side_length_test...ok
+        diamond_tests: 5_largest_possible_diamond_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
