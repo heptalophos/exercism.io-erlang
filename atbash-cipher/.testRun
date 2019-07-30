@@ -1,0 +1,30 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling atbash_cipher
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "atbash_cipher.app"
+  application 'atbash_cipher'
+    module 'atbash_cipher'
+      module 'atbash_cipher_tests'
+        atbash_cipher_tests: 1_encode_yes_test...[0.063 s] ok
+        atbash_cipher_tests: 2_encode_no_test...ok
+        atbash_cipher_tests: 3_encode_omg_test...ok
+        atbash_cipher_tests: 4_encode_spaces_test...ok
+        atbash_cipher_tests: 5_encode_mindblowingly_test...ok
+        atbash_cipher_tests: 6_encode_numbers_test...ok
+        atbash_cipher_tests: 7_encode_deep_thought_test...ok
+        atbash_cipher_tests: 8_encode_all_the_letters_test...ok
+        atbash_cipher_tests: 9_decode_exercism_test...ok
+        atbash_cipher_tests: 10_decode_a_sentence_test...ok
+        atbash_cipher_tests: 11_decode_numbers_test...ok
+        atbash_cipher_tests: 12_decode_all_the_letters_test...ok
+        atbash_cipher_tests: 13_decode_with_too_many_spaces_test...ok
+        atbash_cipher_tests: 14_decode_with_no_spaces_test...ok
+        [done in 0.282 s]
+      [done in 0.282 s]
+    [done in 0.282 s]
+  [done in 0.282 s]
+=======================================================
+  All 14 tests passed.
