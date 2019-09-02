@@ -39,6 +39,7 @@ to_string(Clock) ->
 -spec minutes(hour()) -> minute().
 minutes(Hour) -> Hour * 60.
 
+
 -spec split(integer()) -> [hour(), minute()].
 split(Minutes) -> 
     [Minutes div 60, Minutes rem 60].
