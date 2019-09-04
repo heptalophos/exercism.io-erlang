@@ -8,8 +8,6 @@
 -include_lib("eunit/include/eunit.hrl").
 
 
-
-
 '1_empty_string_test'() ->
     ?assertEqual([], run_length_encoding:encode([])).
 
