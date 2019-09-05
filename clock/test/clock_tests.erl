@@ -8,8 +8,6 @@
 -include_lib("eunit/include/eunit.hrl").
 
 
-
-
 '1_on_the_hour_test'() ->
     ?assertEqual("08:00",
 		 clock:to_string(clock:create(8, 0))).
