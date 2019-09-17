@@ -31,7 +31,7 @@ minutes_add(Clock, Minutes) ->
 -spec to_string(clock()) -> string(). 
 to_string(Clock) -> 
     #clock{ time = Minutes } = Clock,
-    io_lib:format("~2..0B:~2..0B", split(Minutes)).
+    lists:flatten(io_lib:format("~2..0B:~2..0B", split(Minutes))).
 
 
 % Auxiliary
