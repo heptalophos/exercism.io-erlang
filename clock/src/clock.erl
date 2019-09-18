@@ -2,7 +2,6 @@
 
 -author("heptalophos").
 
-
 -export([create/2, 
          is_equal/2, 
          minutes_add/2, 
@@ -17,7 +16,10 @@
 
 -spec create(hour(), minute()) -> clock().
 create(Hour, Minute) -> 
-    #clock{ time = normalize(minutes(Hour) + Minute)}.
+    Sum = minutes(Hour, Minute),
+    H = Sum div 60,
+    M = Sum rem 60,
+    {H, M}.
 
 -spec is_equal(clock(), clock()) -> boolean().
 is_equal(Clock1, Clock2) -> 
@@ -25,26 +27,21 @@ is_equal(Clock1, Clock2) ->
 
 -spec minutes_add(clock(), integer()) -> clock().
 minutes_add(Clock, Minutes) -> 
-    #clock{ time = Original } = Clock,
-    #clock{ time = normalize(Original + Minutes)}.
+    {H, M} = Clock,
+    create(H, M + Minutes).
 
 -spec to_string(clock()) -> string(). 
 to_string(Clock) -> 
-    #clock{ time = Minutes } = Clock,
-    io_lib:format("~2..0B:~2..0B", split(Minutes)).
+    {H, M} = Clock,
+    lists:flatten(io_lib:format("~2..0B:~2..0B", {H div 60, M rem 60})).
 
 
 % Auxiliary
 
--spec minutes(hour()) -> minute().
-minutes(Hour) -> Hour * 60.
-
-% -spec split(integer()) -> [hour(), minute()].
-split(Minutes) -> 
-    [Minutes div 60, Minutes rem 60].
-
--spec normalize(integer()) -> minute().
-normalize(Minutes) when Minutes < 0 ->
-    Minutes rem 1440 + 1440;
-normalize(Minutes) -> 
-    Minutes rem 1440.
+-spec minutes(hour(), minute()) -> minute().
+minutes(Hour, Minute) -> 
+    Sum = (Hour * 60 + Minute) rem 1440,
+    if 
+        Sum < 0 -> 1440 + Sum;
+        true    -> Sum
+    Sum.
