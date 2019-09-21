@@ -18,3 +18,5 @@ place(Robot, _Direction, _Position) -> undefined.
 position(_Robot) -> undefined.
 
 right(_Robot) -> undefined.
+
+% Auxiliary
