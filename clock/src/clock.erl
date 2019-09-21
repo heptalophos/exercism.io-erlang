@@ -38,6 +38,7 @@ to_string(Clock) ->
 
 % Auxiliary
 
+
 -spec minutes(hour(), minute()) -> minute().
 minutes(Hour, Minute) -> 
     Sum = (Hour * 60 + Minute) rem 1440,
