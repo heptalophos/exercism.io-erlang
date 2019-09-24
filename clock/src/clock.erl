@@ -9,10 +9,10 @@
 
 -type hour() :: 0..23.
 -type minute() :: 0..59.
--type time() :: 0..1339.
+% -type time() :: 0..1339.
 
--record(clock, {time = 0 :: time()}).
--type clock() :: #clock{}.
+% -record(clock, {time = 0 :: time()}).
+-type clock() :: {hour(), minute()}.
 
 -spec create(hour(), minute()) -> clock().
 create(Hour, Minute) -> 
@@ -44,4 +44,4 @@ minutes(Hour, Minute) ->
     if 
         Sum < 0 -> 1440 + Sum;
         true    -> Sum
-    Sum.
+    end.
