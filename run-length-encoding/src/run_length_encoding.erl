@@ -40,7 +40,7 @@ decode_group(L, N) ->
         true -> [L]
     end.
 
--spec decode_group(char(), non_neg_integer()) -> [char()].
+-spec encode_group(char(), non_neg_integer()) -> [char()].
 encode_group(L, N) -> 
     if 
         N =/= 1 -> integer_to_list(N) ++ [L];
