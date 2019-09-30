@@ -27,3 +27,42 @@ file "run_length_encoding.app"
   [done in 0.203 s]
 =======================================================
   All 13 tests passed.
+
+
+  
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling run_length_encoding
+===> Compiling src/run_length_encoding.erl failed
+src/run_length_encoding.erl:43: spec for decode_group/2 already defined
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling run_length_encoding
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "run_length_encoding.app"
+  application 'run_length_encoding'
+    module 'run_length_encoding'
+      module 'run_length_encoding_tests'
+        run_length_encoding_tests: 1_empty_string_test...ok
+        run_length_encoding_tests: 2_single_characters_only_are_encoded_without_count_test...ok
+        run_length_encoding_tests: 3_string_with_no_single_characters_test...ok
+        run_length_encoding_tests: 4_single_characters_mixed_with_repeated_characters_test...ok
+        run_length_encoding_tests: 5_multiple_whitespace_mixed_in_string_test...ok
+        run_length_encoding_tests: 6_lowercase_characters_test...ok
+        run_length_encoding_tests: 7_empty_string_test...ok
+        run_length_encoding_tests: 8_single_characters_only_test...ok
+        run_length_encoding_tests: 9_string_with_no_single_characters_test...ok
+        run_length_encoding_tests: 10_single_characters_with_repeated_characters_test...ok
+        run_length_encoding_tests: 11_multiple_whitespace_mixed_in_string_test...ok
+        run_length_encoding_tests: 12_lower_case_string_test...ok
+        run_length_encoding_tests: 13_encode_followed_by_decode_gives_original_string_test...ok
+        [done in 0.203 s]
+      [done in 0.203 s]
+    [done in 0.203 s]
+  [done in 0.203 s]
+=======================================================
+  All 13 tests passed.
