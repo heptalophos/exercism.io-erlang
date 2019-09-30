@@ -2,6 +2,10 @@
 
 -export([decode/1, encode/1]).
 
+-type plain() :: [$A..$Z | $a..$z ].
+-type encoded() :: [$A..$Z | $a..$z | $0..$9].
+
+-spec decode(encoded()) -> plain().
 decode(String) ->
     case String of
         [] -> "";
@@ -14,6 +18,7 @@ decode(String) ->
             Decoded ++ decode(R)
     end.
 
+-spec encode(plain()) -> encoded().
 encode(String) ->
     case String of
         [] -> "";
@@ -26,12 +31,16 @@ encode(String) ->
             Encoded ++ encode(lists:dropwhile(fun(C) -> C == L end, R))
     end.
 
+% Auxiliary
+
+-spec decode_group(char(), [char()]) -> [char()].
 decode_group(L, N) -> 
     if 
         N =/= [] -> lists:duplicate(list_to_integer(N), L);
         true -> [L]
     end.
 
+-spec decode_group(char(), non_neg_integer()) -> [char()].
 encode_group(L, N) -> 
     if 
         N =/= 1 -> integer_to_list(N) ++ [L];
