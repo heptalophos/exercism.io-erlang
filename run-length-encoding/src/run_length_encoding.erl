@@ -34,15 +34,15 @@ encode(String) ->
 % Auxiliary
 
 -spec decode_group(char(), [char()]) -> [char()].
-decode_group(L, N) -> 
+decode_group(L, Count) -> 
     if 
-        N =/= [] -> lists:duplicate(list_to_integer(N), L);
+        Count =/= [] -> lists:duplicate(list_to_integer(Count), L);
         true -> [L]
     end.
 
 -spec encode_group(char(), non_neg_integer()) -> [char()].
-encode_group(L, N) -> 
+encode_group(L, Count) -> 
     if 
-        N =/= 1 -> integer_to_list(N) ++ [L];
+        Count =/= 1 -> integer_to_list(Count) ++ [L];
         true -> [L]
     end.
