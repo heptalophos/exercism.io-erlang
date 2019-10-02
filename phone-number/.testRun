@@ -1,0 +1,23 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling phone_number
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "phone_number.app"
+  application 'phone_number'
+    module 'phone_number'
+      module 'phone_number_tests'
+        phone_number_tests: cleans_number_test...ok
+        phone_number_tests: cleans_number_with_dots_test...ok
+        phone_number_tests: valid_when_eleven_digits_test...ok
+        phone_number_tests: invalid_when_eleven_digits_test...ok
+        phone_number_tests: invalid_when_nine_digits_test...ok
+        phone_number_tests: area_code_test...ok
+        phone_number_tests: pretty_print_test...ok
+        [done in 0.109 s]
+      [done in 0.109 s]
+    [done in 0.109 s]
+  [done in 0.109 s]
+=======================================================
+  All 7 tests passed.
