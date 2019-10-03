@@ -25,6 +25,7 @@ pretty_print(String) ->
   {Area, XChange, Number} = {[A1, A2, A3], [X1, X2, X3], [N1, N2, N3, N4]},
   lists:flatten(io_lib:format("(~s) ~s-~s", [Area, XChange, Number])).
 
+
 % Auxiliary
 
 -spec is_digit(char()) -> boolean().
