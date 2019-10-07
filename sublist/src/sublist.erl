@@ -37,8 +37,11 @@ is_unequal(L1, L2) ->
         _ -> true
     end.
 
--spec relation(List1, List2) -> atom() when
-    List1 :: [T], List2 :: [T], T :: term().
+-spec relation(List1, List2) -> Relation when
+    List1 :: [T], 
+    List2 :: [T], 
+    T :: term(), 
+    Relation :: equal | sublist | superlist | unequal.
 relation(L1, L2) -> 
     case { infix(L1, L2), infix(L2, L1) } of
         {true, true}   -> equal;
@@ -51,8 +54,6 @@ relation(L1, L2) ->
 
 -spec infix(List1, List2) -> boolean() when
     List1 :: [T], List2 :: [T], T :: term().
-% infix(L1, L2) ->
-%     lists:all(fun(X) -> lists:member(X, L2) end, L1).
 infix(L1, L2) -> 
     case {L1, L2} of
         {L1, []} -> L1 == [];
