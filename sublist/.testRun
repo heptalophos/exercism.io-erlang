@@ -67,3 +67,38 @@ file "sublist.app"
   [done in 0.265 s]
 =======================================================
   All 17 tests passed.
+
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling sublist
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "sublist.app"
+  application 'sublist'
+    module 'sublist'
+      module 'sublist_tests'
+        sublist_tests: 1_empty_lists_test...ok
+        sublist_tests: 2_empty_list_within_non_empty_list_test...ok
+        sublist_tests: 3_non_empty_list_contains_empty_list_test...ok
+        sublist_tests: 4_list_equals_itself_test...ok
+        sublist_tests: 5_different_lists_test...ok
+        sublist_tests: 6_false_start_test...ok
+        sublist_tests: 7_consecutive_test...ok
+        sublist_tests: 8_sublist_at_start_test...ok
+        sublist_tests: 9_sublist_in_middle_test...ok
+        sublist_tests: 10_sublist_at_end_test...ok
+        sublist_tests: 11_at_start_of_superlist_test...ok
+        sublist_tests: 12_in_middle_of_superlist_test...ok
+        sublist_tests: 13_at_end_of_superlist_test...ok
+        sublist_tests: 14_first_list_missing_element_from_second_list_test...ok
+        sublist_tests: 15_second_list_missing_element_from_first_list_test...ok
+        sublist_tests: 16_order_matters_to_a_list_test...ok
+        sublist_tests: 17_same_digits_but_different_numbers_test...ok
+        [done in 0.265 s]
+      [done in 0.265 s]
+    [done in 0.265 s]
+  [done in 0.265 s]
+=======================================================
+  All 17 tests passed.
