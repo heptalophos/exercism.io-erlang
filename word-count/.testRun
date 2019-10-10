@@ -1,0 +1,27 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling word_count
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "word_count.app"
+  application 'word_count'
+    module 'word_count'
+      module 'word_count_tests'
+        word_count_tests: 1_count_one_word_test...ok
+        word_count_tests: 2_count_one_of_each_word_test...ok
+        word_count_tests: 3_multiple_occurrences_of_a_word_test...ok
+        word_count_tests: 4_handles_cramped_lists_test...ok
+        word_count_tests: 5_handles_expanded_lists_test...ok
+        word_count_tests: 6_ignore_punctuation_test...ok
+        word_count_tests: 7_include_numbers_test...ok
+        word_count_tests: 8_normalize_case_test...ok
+        word_count_tests: 9_with_apostrophes_test...ok
+        word_count_tests: 10_with_quotations_test...ok
+        word_count_tests: 11_multiple_spaces_not_detected_as_a_word_test...ok
+        [done in 0.171 s]
+      [done in 0.171 s]
+    [done in 0.171 s]
+  [done in 0.171 s]
+=======================================================
+  All 11 tests passed.
