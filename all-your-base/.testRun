@@ -1,0 +1,37 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling all_your_base
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "all_your_base.app"
+  application 'all_your_base'
+    module 'all_your_base'
+      module 'all_your_base_tests'
+        all_your_base_tests: 1_single_bit_one_to_decimal_test...ok
+        all_your_base_tests: 2_binary_to_single_decimal_test...ok
+        all_your_base_tests: 3_single_decimal_to_binary_test...ok
+        all_your_base_tests: 4_binary_to_multiple_decimal_test...ok
+        all_your_base_tests: 5_decimal_to_binary_test...ok
+        all_your_base_tests: 6_trinary_to_hexadecimal_test...ok
+        all_your_base_tests: 7_hexadecimal_to_trinary_test...ok
+        all_your_base_tests: 8_15_bit_integer_test...ok
+        all_your_base_tests: 9_empty_list_test...ok
+        all_your_base_tests: 10_single_zero_test...ok
+        all_your_base_tests: 11_multiple_zeros_test...ok
+        all_your_base_tests: 12_leading_zeros_test...ok
+        all_your_base_tests: 13_input_base_is_one_test...ok
+        all_your_base_tests: 14_input_base_is_zero_test...ok
+        all_your_base_tests: 15_input_base_is_negative_test...ok
+        all_your_base_tests: 16_negative_digit_test...ok
+        all_your_base_tests: 17_invalid_positive_digit_test...ok
+        all_your_base_tests: 18_output_base_is_one_test...ok
+        all_your_base_tests: 19_output_base_is_zero_test...ok
+        all_your_base_tests: 20_output_base_is_negative_test...ok
+        all_your_base_tests: 21_both_bases_are_negative_test...ok
+        [done in 0.328 s]
+      [done in 0.328 s]
+    [done in 0.328 s]
+  [done in 0.328 s]
+=======================================================
+  All 21 tests passed.
