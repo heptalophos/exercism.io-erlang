@@ -9,48 +9,36 @@
             OBase :: integer(), Val :: [non_neg_integer()].
 rebase(Digits, InputBase, OutputBase) -> 
     if 
-        InputBase < 2 -> {error, ""};
-        OutputBase < 2 -> {error, ""};
-        true -> case lists:all(fun(D) -> D >= 0 andalso 
-                                         D < InputBase 
+        InputBase < 2 -> {error, "input base must be >= 2"};
+        OutputBase < 2 -> {error, "output base must be >= 2"};
+        true -> case lists:any(fun(D) -> D < 0 orelse
+                                         D >= InputBase 
                                end, 
                                Digits) of
                     true -> 
-                        {ok, digits(value(Digits, InputBase), OutputBase)};
+                        {error, "all digits must satisfy 0 <= d < input base"};
                     _    -> 
-                        {error, "all digits must satisfy 0 <= d < input base"}
+                        {ok, digits(value(Digits, InputBase), OutputBase)}
                 end
     end. 
 
 % Auxiliary
+-spec value(Digits, Base) -> Representation when 
+                Base :: pos_integer(), Digits :: [0..9],
+                Representation :: integer().
+value(Digits, Base) ->
+    lists:foldl(fun(D, V) -> D + (V * Base) end,
+                0, Digits).
 
--spec value(Digits, Base) -> 
-            Num_in_base | {error, atom()} when 
-                Base :: pos_integer(),
-                Digits :: [0..9],
-                Num_in_base :: integer().
-value(Ds, Base) -> 
-    [D, T] = Ds,
-    if 
-        Ds =:= [] -> 0;
-        D >= Base -> {error, invalid_digit};
-        D <  0    -> {error, negative_digit};
-        true      -> R = value(T, Base),
-                     case R of
-                        {error, _} -> R;
-                        _ -> D + Base * R
-                     end
-    end. 
-     
+-spec digits(integer(), pos_integer()) -> [0..9]. 
+digits(N, B) -> digits(N, B, []).
 
--spec digits(Number, Base) -> 
-            Digits when
-                Number :: integer(), 
-                Base :: pos_integer(), 
-                Digits :: [0..9].
-digits(N, B) ->
+-spec digits(integer(), pos_integer(), [0..9]) -> [0..9].
+digits(N, B, Acc) ->     
     case N of
-        0 -> [];
-        _ -> [N rem B | digits(N div B, B)]
+        0 -> if Acc =:= [] -> [0];
+                true -> Acc
+             end;
+        _ -> digits(N div B, B, [N rem B | Acc])
     end.
 
