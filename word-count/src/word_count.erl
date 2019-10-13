@@ -1,7 +1,5 @@
 -module(word_count).
-
 -export([count_words/1]).
-
 
 -spec count_words(string()) -> #{string() => pos_integer()}.
 count_words(Sentence) -> 
@@ -13,7 +11,6 @@ count_words(Sentence) ->
                 end,
                 maps:new(),
                 words(Sentence)).
-
 
 % Auxiliary
 
