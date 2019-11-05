@@ -1,0 +1,35 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling roman_numerals
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "roman_numerals.app"
+  application 'roman_numerals'
+    module 'roman_numerals'
+      module 'roman_numerals_tests'
+        roman_numerals_tests: 1_convert_1_test...ok
+        roman_numerals_tests: 2_convert_2_test...ok
+        roman_numerals_tests: 3_convert_3_test...ok
+        roman_numerals_tests: 4_convert_4_test...ok
+        roman_numerals_tests: 5_convert_5_test...ok
+        roman_numerals_tests: 6_convert_6_test...ok
+        roman_numerals_tests: 7_convert_9_test...ok
+        roman_numerals_tests: 8_convert_27_test...ok
+        roman_numerals_tests: 9_convert_48_test...ok
+        roman_numerals_tests: 10_convert_49_test...ok
+        roman_numerals_tests: 11_convert_59_test...ok
+        roman_numerals_tests: 12_convert_93_test...ok
+        roman_numerals_tests: 13_convert_141_test...ok
+        roman_numerals_tests: 14_convert_163_test...ok
+        roman_numerals_tests: 15_convert_402_test...ok
+        roman_numerals_tests: 16_convert_575_test...ok
+        roman_numerals_tests: 17_convert_911_test...ok
+        roman_numerals_tests: 18_convert_1024_test...ok
+        roman_numerals_tests: 19_convert_3000_test...ok
+        [done in 0.297 s]
+      [done in 0.297 s]
+    [done in 0.297 s]
+  [done in 0.297 s]
+=======================================================
+  All 19 tests passed.
