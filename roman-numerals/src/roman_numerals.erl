@@ -2,7 +2,9 @@
 
 -export([roman/1]).
 
--spec roman(non_neg_integer()) -> string().
+-spec roman(Number) -> Roman_Numeral when
+            Number :: non_neg_integer(),
+            Roman_Numeral :: string().
 roman(Number) -> roman(Number, []).
 
 % Auxiliary
