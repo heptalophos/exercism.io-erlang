@@ -10,10 +10,15 @@ decode(String) ->
     case String of
         [] -> "";
         _  -> 
-            [L|R] = lists:dropwhile(fun(C) -> C >= $0 andalso C =< $9 end, String),
+            [L|R] = lists:dropwhile(fun(C) -> 
+                                        C >= $0 andalso 
+                                        C =< $9 end, 
+                                    String),
             Decoded = decode_group(L, 
                                    lists:takewhile(
-                                       fun(C) -> C >= $0 andalso C =< $9 end, 
+                                       fun(C) -> 
+                                            C >= $0 andalso 
+                                            C =< $9 end, 
                                        String)),
             Decoded ++ decode(R)
     end.
@@ -26,9 +31,14 @@ encode(String) ->
             [L | R] = String,
             Encoded = encode_group(L, 
                                    length([L | lists:takewhile(
-                                                    fun(C) -> C == L end, 
-                                                    R)])),
-            Encoded ++ encode(lists:dropwhile(fun(C) -> C == L end, R))
+                                                    fun(C) -> 
+                                                        C == L 
+                                                    end, 
+                                                    R)] )),
+            Encoded ++ encode(lists:dropwhile(fun(C) -> 
+                                                C == L 
+                                              end, 
+                                              R))
     end.
 
 % Auxiliary
