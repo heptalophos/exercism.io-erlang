@@ -1,9 +1,9 @@
 {
-    "track":"erlang",
-    "exercise":"collatz-conjecture",
-    "id":"f7626073f8c8472d9eb630a61f8c0faf",
-    "url":"https://exercism.io/tracks/erlang/exercises/collatz-conjecture/solutions/f7626073f8c8472d9eb630a61f8c0faf",
-    "handle":"heptalophos",
-    "is_requester":true,
-    "auto_approve":false
+  "track": "erlang",
+  "exercise": "collatz-conjecture",
+  "id": "f7626073f8c8472d9eb630a61f8c0faf",
+  "url": "https://exercism.io/tracks/erlang/exercises/collatz-conjecture/solutions/f7626073f8c8472d9eb630a61f8c0faf",
+  "handle": "heptalophos",
+  "is_requester": true,
+  "auto_approve": false
 }
