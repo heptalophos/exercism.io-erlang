@@ -86,3 +86,28 @@ file "collatz_conjecture.app"
   [done in 1.110 s]
 =======================================================
   All 14 tests passed.
+
+
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling collatz_conjecture
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "collatz_conjecture.app"
+  application 'collatz_conjecture'
+    module 'collatz_conjecture'
+      module 'collatz_conjecture_tests'
+        collatz_conjecture_tests:16: 1_zero_steps_for_one_test_ (zero steps for one)...ok
+        collatz_conjecture_tests:20: 2_divide_if_even_test_ (divide if even)...ok
+        collatz_conjecture_tests:24: 3_even_and_odd_steps_test_ (even and odd steps)...ok
+        collatz_conjecture_tests:28: 4_large_number_of_even_and_odd_steps_test_ (large number of even and odd steps)...ok
+        collatz_conjecture_tests:32: 5_zero_is_an_error_test_ (zero is an error)...ok
+        collatz_conjecture_tests:36: 6_negative_value_is_an_error_test_ (negative value is an error)...ok
+        [done in 0.093 s]
+      [done in 0.093 s]
+    [done in 0.093 s]
+  [done in 0.093 s]
+=======================================================
+  All 6 tests passed.

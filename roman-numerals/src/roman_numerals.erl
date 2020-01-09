@@ -2,37 +2,44 @@
 
 -export([roman/1]).
 
--spec roman(non_neg_integer()) -> string().
-roman(Number) -> roman(Number, "").
-
+-spec roman(Number) -> Roman_Numeral when
+            Number :: non_neg_integer(),
+            Roman_Numeral :: string().
+roman(Number) -> roman(Number, []).
 
 % Auxiliary
 
--spec roman(non_neg_integer(), string()) -> string().
-roman(Number, Acc) when Number >= 1000 -> 
-    roman(Number - 1000, Acc ++ "M");
-roman(Number, Acc) when Number >= 900 -> 
-    roman(Number - 900, Acc ++ "CM");
-roman(Number, Acc) when Number >= 500 -> 
-    roman(Number - 500, Acc ++ "D");
-roman(Number, Acc) when Number >= 400 -> 
-    roman(Number - 400, Acc ++ "CD");
-roman(Number, Acc) when Number >= 100 -> 
-    roman(Number - 100, Acc ++ "C");
-roman(Number, Acc) when Number >= 90 -> 
-    roman(Number - 90, Acc ++ "XC");
-roman(Number, Acc) when Number >= 50 -> 
-    roman(Number - 50, Acc ++ "L");
-roman(Number, Acc) when Number >= 40 -> 
-    roman(Number - 40, Acc ++ "XL");
-roman(Number, Acc) when Number >= 10 -> 
-    roman(Number - 10, Acc ++ "X");
-roman(Number, Acc) when Number >= 9 -> 
-    roman(Number - 9, Acc ++ "IX");
-roman(Number, Acc) when Number >= 5 -> 
-    roman(Number - 5, Acc ++ "V");
-roman(Number, Acc) when Number >= 4 -> 
-    roman(Number - 4, Acc ++ "IV");
-roman(Number, Acc) when Number >= 1 -> 
-    roman(Number - 1, Acc ++ "I");
-roman(0, Acc) -> Acc.
+-spec roman(Arabic, Latin_Acc) -> Roman_Numeral when
+            Arabic :: non_neg_integer(), 
+            Latin_Acc :: string(),
+            Roman_Numeral :: string().
+roman(Num, Acc) ->
+    if
+        Num >= 1000 -> 
+            roman(Num - 1000, Acc ++ "M");
+        Num >= 900 -> 
+            roman(Num - 900, Acc ++ "CM");
+        Num >= 500 -> 
+            roman(Num - 500, Acc ++ "D");
+        Num >= 400 -> 
+            roman(Num - 400, Acc ++ "CD");
+        Num >= 100 -> 
+            roman(Num - 100, Acc ++ "C");
+        Num >= 90 -> 
+            roman(Num - 90, Acc ++ "XC");
+        Num >= 50 -> 
+            roman(Num - 50, Acc ++ "L");
+        Num >= 40 -> 
+            roman(Num - 40, Acc ++ "XL");
+        Num >= 10 -> 
+            roman(Num - 10, Acc ++ "X");
+        Num >= 9 -> 
+            roman(Num - 9, Acc ++ "IX");
+        Num >= 5 -> 
+            roman(Num - 5, Acc ++ "V");
+        Num >= 4 -> 
+            roman(Num - 4, Acc ++ "IV");
+        Num >= 1 -> 
+            roman(Num - 1, Acc ++ "I");
+        true -> Acc
+    end.
