@@ -1,0 +1,21 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling sieve
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "sieve.app"
+  application 'sieve'
+    module 'sieve'
+      module 'sieve_tests'
+        sieve_tests: 1_no_primes_under_two_test...ok
+        sieve_tests: 2_find_first_prime_test...ok
+        sieve_tests: 3_find_primes_up_to_10_test...ok
+        sieve_tests: 4_limit_is_prime_test...ok
+        sieve_tests: 5_find_primes_up_to_1000_test...ok
+        [done in 0.078 s]
+      [done in 0.078 s]
+    [done in 0.078 s]
+  [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
