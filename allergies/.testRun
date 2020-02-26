@@ -1,0 +1,28 @@
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling allergies
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "allergies.app"
+  application 'allergies'
+    module 'allergies'
+      module 'allergies_tests'
+        allergies_tests: 1_no_allergies_means_not_allergic_test...ok
+        allergies_tests: 2_is_allergic_to_eggs_test...ok
+        allergies_tests: 3_allergic_to_eggs_in_addition_to_other_stuff_test...ok
+        allergies_tests: 4_no_allergies_at_all_test...ok
+        allergies_tests: 5_allergic_to_just_eggs_test...ok
+        allergies_tests: 6_allergic_to_just_peanuts_test...ok
+        allergies_tests: 7_allergic_to_just_strawberries_test...ok
+        allergies_tests: 8_allergic_to_eggs_and_peanuts_test...ok
+        allergies_tests: 9_allergic_to_more_than_eggs_but_not_peanuts_test...ok
+        allergies_tests: 10_allergic_to_lots_of_stuff_test...ok
+        allergies_tests: 11_allergic_to_everything_test...ok
+        allergies_tests: 12_ignore_non_allergen_score_parts_test...ok
+        [done in 0.188 s]
+      [done in 0.188 s]
+    [done in 0.188 s]
+  [done in 0.188 s]
+=======================================================
+  All 12 tests passed.
