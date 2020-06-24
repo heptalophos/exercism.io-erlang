@@ -12,22 +12,33 @@
 		 real/1, 
 		 sub/2]).
 
+-record(complex, )
+
 
 -spec abs(complex()) -> number().
-abs(_Z) -> undefined.
+abs(Z) -> 
+	{R, I} = Z,
+	trunc(math:sqrt(R * R + I * I)).
 
 
 -spec add(complex(), complex()) -> complex().
-add(_Z1, _Z2) -> undefined.
+add(Z1, Z2) -> 
+	{R1, I1} = Z1,
+	{R2, I2} = Z2,
+	Z = {R1 + R2, I1 + I2},
+	Z.
 
--spec congugate(complex()) -> complex().
-conjugate(_Z) -> undefined.
+-spec conjugate(complex()) -> complex().
+conjugate(Z) -> 
+	{R, I} = Z,
+	Conj = {R, -I},
+	Conj.
 
 -spec divide(complex(), complex()) -> complex().
-divide(_Z1, _Z2) -> undefined.
+divide(Z1, Z2) -> undefined.
 
 -spec equal(complex(), complex()) -> boolean().
-equal(_Z1, _Z2) -> undefined.
+equal(Z1, Z2) -> undefined.
 
 -spec complex() -> ().
 exp(_Z) -> undefined.
