@@ -12,7 +12,9 @@
 		 real/1, 
 		 sub/2]).
 
--record(complex, )
+-record(complex, {real = 0, imag = 0}).
+
+-export_type([complex/0]).
 
 
 -spec abs(complex()) -> number().
