@@ -11,17 +11,23 @@ response(String) ->
     Question = quasibool(question(String)),
 
     case ({Question, Yell, Silence}) of
-        {1, 1, 0} -> "Calm down, I know what I'm doing!";
-        {1, 0, 0} -> "Sure.";
-        {0, 1, 0} -> "Whoa, chill out!";
-        {0, 0, 1} -> "Fine. Be that way!";
-        {_, _, _} -> "Whatever."
+        {1, 1, 0} -> 
+            "Calm down, I know what I'm doing!";
+        {1, 0, 0} -> 
+            "Sure.";
+        {0, 1, 0} -> 
+            "Whoa, chill out!";
+        {0, 0, 1} -> 
+            "Fine. Be that way!";
+        {_, _, _} -> 
+            "Whatever."
     end.
 
 %% auxiliary fcns
 -spec question(string()) -> boolean().
 question(S) -> 
-    string:find(string:trim(S, trailing), "?") == "?".
+    string:find(string:trim(S, trailing), "?") 
+    == "?".
 
 -spec silence(string()) -> boolean().
 silence(S) -> 
@@ -29,7 +35,8 @@ silence(S) ->
 
 -spec yell(string()) -> boolean().
 yell(S) -> 
-    string:to_upper(S) =:= S andalso S =/= string:casefold(S).
+    string:to_upper(S) =:= S andalso 
+    S =/= string:casefold(S).
 
 -spec quasibool(boolean()) -> 1 | 0.
 quasibool(Premise) -> 
