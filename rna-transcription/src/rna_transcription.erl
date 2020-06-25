@@ -8,5 +8,9 @@
 -spec to_rna(dna()) -> rna().
 to_rna(Strand) -> 
     lists:map(fun(S) -> 
-        maps:get(S, #{ $G => $C, $C => $G, $T => $A, $A => $U }) end, 
+        maps:get(S, #{ $G => $C, 
+                       $C => $G, 
+                       $T => $A, 
+                       $A => $U }) 
+        end, 
     Strand).
