@@ -1,0 +1,49 @@
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling complex_numbers
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "complex_numbers.app"
+  application 'complex_numbers'
+    module 'complex_numbers'
+      module 'complex_numbers_tests'
+        complex_numbers_tests: 1_real_part_of_a_purely_real_number_test...ok
+        complex_numbers_tests: 2_real_part_of_a_purely_imaginary_number_test...ok
+        complex_numbers_tests: 3_real_part_of_a_number_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 4_imaginary_part_of_a_purely_real_number_test...ok
+        complex_numbers_tests: 5_imaginary_part_of_a_purely_imaginary_number_test...ok
+        complex_numbers_tests: 6_imaginary_part_of_a_number_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 7_imaginary_unit_test...ok
+        complex_numbers_tests: 8_add_purely_real_numbers_test...ok
+        complex_numbers_tests: 9_add_purely_imaginary_numbers_test...ok
+        complex_numbers_tests: 10_add_numbers_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 11_subtract_purely_real_numbers_test...ok
+        complex_numbers_tests: 12_subtract_purely_imaginary_numbers_test...ok
+        complex_numbers_tests: 13_subtract_numbers_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 14_multiply_purely_real_numbers_test...ok
+        complex_numbers_tests: 15_multiply_purely_imaginary_numbers_test...ok
+        complex_numbers_tests: 16_multiply_numbers_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 17_divide_purely_real_numbers_test...ok
+        complex_numbers_tests: 18_divide_purely_imaginary_numbers_test...ok
+        complex_numbers_tests: 19_divide_numbers_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 20_absolute_value_of_a_positive_purely_real_number_test...ok
+        complex_numbers_tests: 21_absolute_value_of_a_negative_purely_real_number_test...ok
+        complex_numbers_tests: 22_absolute_value_of_a_purely_imaginary_number_with_positive_imaginary_part_test...ok
+        complex_numbers_tests: 23_absolute_value_of_a_purely_imaginary_number_with_negative_imaginary_part_test...ok
+        complex_numbers_tests: 24_absolute_value_of_a_number_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 25_conjugate_a_purely_real_number_test...ok
+        complex_numbers_tests: 26_conjugate_a_purely_imaginary_number_test...ok
+        complex_numbers_tests: 27_conjugate_a_number_with_real_and_imaginary_part_test...ok
+        complex_numbers_tests: 28_eulers_identityformula_test...ok
+        complex_numbers_tests: 29_exponential_of_0_test...ok
+        complex_numbers_tests: 30_exponential_of_a_purely_real_number_test...ok
+        complex_numbers_tests: 31_exponential_of_a_number_with_real_and_imaginary_part_test...ok
+        [done in 0.515 s]
+      [done in 0.515 s]
+    [done in 0.515 s]
+  [done in 0.515 s]
+=======================================================
+  All 31 tests passed.
