@@ -10,16 +10,18 @@ decode(String) ->
     case String of
         [] -> "";
         _  -> 
-            [L|R] = lists:dropwhile(fun(C) -> 
+            [L|R] = 
+                lists:dropwhile(fun(C) -> 
+                                    C >= $0 andalso 
+                                    C =< $9 end, 
+                                String),
+            Decoded = 
+                decode_group(L, 
+                             lists:takewhile(
+                                     fun(C) -> 
                                         C >= $0 andalso 
                                         C =< $9 end, 
-                                    String),
-            Decoded = decode_group(L, 
-                                   lists:takewhile(
-                                       fun(C) -> 
-                                            C >= $0 andalso 
-                                            C =< $9 end, 
-                                       String)),
+                                     String)),
             Decoded ++ decode(R)
     end.
 
@@ -29,16 +31,17 @@ encode(String) ->
         [] -> "";
         _  ->
             [L | R] = String,
-            Encoded = encode_group(L, 
-                                   length([L | lists:takewhile(
-                                                    fun(C) -> 
-                                                        C == L 
-                                                    end, 
-                                                    R)] )),
-            Encoded ++ encode(lists:dropwhile(fun(C) -> 
-                                                C == L 
-                                              end, 
-                                              R))
+            Encoded = 
+                encode_group(L, 
+                             length([L | lists:takewhile(
+                                                fun(C) -> 
+                                                     C == L 
+                                                end, 
+                                                R)] )),
+                Encoded ++ encode(lists:dropwhile(fun(C) -> 
+                                                     C == L 
+                                                end, 
+                                                R))
     end.
 
 % Auxiliary
@@ -46,13 +49,17 @@ encode(String) ->
 -spec decode_group(char(), [char()]) -> [char()].
 decode_group(L, Count) -> 
     if 
-        Count =/= [] -> lists:duplicate(list_to_integer(Count), L);
-        true -> [L]
+        Count =/= [] -> 
+                lists:duplicate(list_to_integer(Count), L);
+        true -> 
+                [L]
     end.
 
 -spec encode_group(char(), non_neg_integer()) -> [char()].
 encode_group(L, Count) -> 
     if 
-        Count =/= 1 -> integer_to_list(Count) ++ [L];
-        true -> [L]
+        Count =/= 1 -> 
+                integer_to_list(Count) ++ [L];
+        true -> 
+                [L]
     end.
