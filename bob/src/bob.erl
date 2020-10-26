@@ -9,13 +9,23 @@ response(String) ->
     Yell     = quasibool(yell(String)), 
     Silence  = quasibool(silence(String)),
     Question = quasibool(question(String)),
+    Calm = 
+        "Calm down, I know what I'm doing!",
+    Sure = 
+        "Sure.",
+    Whoa = 
+        "Whoa, chill out!",
+    Fine = 
+        "Fine. Be that way!",
+    Whatever = 
+        "Whatever.",
 
     case ({Question, Yell, Silence}) of
-        {1, 1, 0} -> "Calm down, I know what I'm doing!";
-        {1, 0, 0} -> "Sure.";
-        {0, 1, 0} -> "Whoa, chill out!";
-        {0, 0, 1} -> "Fine. Be that way!";
-        {_, _, _} -> "Whatever."
+        {1, 1, 0} -> Calm;
+        {1, 0, 0} -> Sure;
+        {0, 1, 0} -> Whoa;
+        {0, 0, 1} -> Fine;
+        {_, _, _} -> Whatever
     end.
 
 %% auxiliary fcns
