@@ -71,3 +71,31 @@ file "hamming.app"
   [done in 0.109 s]
 =======================================================
   All 7 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling hamming
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "hamming.app"
+  application 'hamming'
+    module 'hamming'
+      module 'hamming_tests'
+        hamming_tests:16: 1_empty_strands_test_ (empty strands)...ok
+        hamming_tests:20: 2_single_letter_identical_strands_test_ (single letter identical strands)...ok
+        hamming_tests:24: 3_single_letter_different_strands_test_ (single letter different strands)...ok
+        hamming_tests:28: 4_long_identical_strands_test_ (long identical strands)...ok
+        hamming_tests:33: 5_long_different_strands_test_ (long different strands)...ok
+        hamming_tests:38: 6_disallow_first_strand_longer_test_ (disallow first strand longer)...ok
+        hamming_tests:45: 7_disallow_second_strand_longer_test_ (disallow second strand longer)...ok
+        [done in 0.125 s]
+      [done in 0.125 s]
+    [done in 0.125 s]
+  [done in 0.125 s]
+=======================================================
+  All 7 tests passed.
