@@ -25,3 +25,35 @@ file "grains.app"
   [done in 0.172 s]
 =======================================================
   All 11 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling grains
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "grains.app"
+  application 'grains'
+    module 'grains'
+      module 'grains_tests'
+        grains_tests:16: 1_square_grains_on_square_1_test_ (Square grains on square 1)...ok
+        grains_tests:20: 2_square_grains_on_square_2_test_ (Square grains on square 2)...ok
+        grains_tests:24: 3_square_grains_on_square_3_test_ (Square grains on square 3)...ok
+        grains_tests:28: 4_square_grains_on_square_4_test_ (Square grains on square 4)...ok
+        grains_tests:32: 5_square_grains_on_square_16_test_ (Square grains on square 16)...ok
+        grains_tests:36: 6_square_grains_on_square_32_test_ (Square grains on square 32)...ok
+        grains_tests:40: 7_square_grains_on_square_64_test_ (Square grains on square 64)...ok
+        grains_tests:44: 8_square_0_raises_an_exception_test_ (square 0 raises an exception)...ok
+        grains_tests:50: 9_negative_square_raises_an_exception_test_ (negative square raises an exception)...ok
+        grains_tests:56: 10_square_greater_than_64_raises_an_exception_test_ (square greater than 64 raises an exception)...ok
+        grains_tests:63: 11_returns_the_total_number_of_grains_on_the_board_test_ (returns the total number of grains on the board)...ok
+        [done in 0.172 s]
+      [done in 0.172 s]
+    [done in 0.172 s]
+  [done in 0.172 s]
+=======================================================
+  All 11 tests passed.
