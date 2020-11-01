@@ -1,9 +1,9 @@
 {
-    "track":"erlang",
-    "exercise":"leap",
-    "id":"a6bf05db65e04113a02c482131a86c08",
-    "url":"https://exercism.io/tracks/erlang/exercises/leap/solutions/a6bf05db65e04113a02c482131a86c08",
-    "handle":"heptalophos",
-    "is_requester":true,
-    "auto_approve":false
+    "track": "erlang",
+    "exercise": "leap",
+    "id": "a6bf05db65e04113a02c482131a86c08",
+    "url": "https://exercism.io/tracks/erlang/exercises/leap/solutions/a6bf05db65e04113a02c482131a86c08",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
 }
