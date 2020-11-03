@@ -32,3 +32,42 @@ file "raindrops.app"
   [done in 0.281 s]
 =======================================================
   All 18 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling raindrops
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "raindrops.app"
+  application 'raindrops'
+    module 'raindrops'
+      module 'raindrops_tests'
+        raindrops_tests:16: 1_the_sound_for_1_is_1_test_ (the sound for 1 is 1)...ok
+        raindrops_tests:20: 2_the_sound_for_3_is_pling_test_ (the sound for 3 is Pling)...ok
+        raindrops_tests:24: 3_the_sound_for_5_is_plang_test_ (the sound for 5 is Plang)...ok
+        raindrops_tests:28: 4_the_sound_for_7_is_plong_test_ (the sound for 7 is Plong)...ok
+        raindrops_tests:33: 5_the_sound_for_6_is_pling_as_it_has_a_factor_3_test_ (the sound for 6 is Pling as it has a factor 3)...ok
+        raindrops_tests:38: 6_2_to_the_power_3_does_not_make_a_raindrop_sound_as_3_is_the_exponent_not_the_base_test_ (2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base)...ok
+        raindrops_tests:43: 7_the_sound_for_9_is_pling_as_it_has_a_factor_3_test_ (the sound for 9 is Pling as it has a factor 3)...ok
+        raindrops_tests:48: 8_the_sound_for_10_is_plang_as_it_has_a_factor_5_test_ (the sound for 10 is Plang as it has a factor 5)...ok
+        raindrops_tests:53: 9_the_sound_for_14_is_plong_as_it_has_a_factor_of_7_test_ (the sound for 14 is Plong as it has a factor of 7)...ok
+        raindrops_tests:58: 10_the_sound_for_15_is_pling_plang_as_it_has_factors_3_and_5_test_ (the sound for 15 is PlingPlang as it has factors 3 and 5)...ok
+        raindrops_tests:63: 11_the_sound_for_21_is_pling_plong_as_it_has_factors_3_and_7_test_ (the sound for 21 is PlingPlong as it has factors 3 and 7)...ok
+        raindrops_tests:68: 12_the_sound_for_25_is_plang_as_it_has_a_factor_5_test_ (the sound for 25 is Plang as it has a factor 5)...ok
+        raindrops_tests:73: 13_the_sound_for_27_is_pling_as_it_has_a_factor_3_test_ (the sound for 27 is Pling as it has a factor 3)...ok
+        raindrops_tests:78: 14_the_sound_for_35_is_plang_plong_as_it_has_factors_5_and_7_test_ (the sound for 35 is PlangPlong as it has factors 5 and 7)...ok
+        raindrops_tests:83: 15_the_sound_for_49_is_plong_as_it_has_a_factor_7_test_ (the sound for 49 is Plong as it has a factor 7)...ok
+        raindrops_tests:87: 16_the_sound_for_52_is_52_test_ (the sound for 52 is 52)...ok
+        raindrops_tests:92: 17_the_sound_for_105_is_pling_plang_plong_as_it_has_factors_3_5_and_7_test_ (the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7)...ok
+        raindrops_tests:98: 18_the_sound_for_3125_is_plang_as_it_has_a_factor_5_test_ (the sound for 3125 is Plang as it has a factor 5)...ok
+        [done in 0.297 s]
+      [done in 0.297 s]
+    [done in 0.297 s]
+  [done in 0.297 s]
+=======================================================
+  All 18 tests passed.
