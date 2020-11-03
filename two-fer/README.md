@@ -26,7 +26,6 @@ Here are some examples:
 |Zaphod  | One for Zaphod, one for me.
 
 ## Running tests
-
 In order to run the tests, issue the following command from the exercise
 directory:
 
@@ -42,14 +41,12 @@ $ rebar3 eunit
 ```
 
 ## Questions?
-
 For detailed information about the Erlang track, please refer to the
 [help page](http://exercism.io/languages/erlang) on the Exercism site.
 This covers the basic information on setting up the development
 environment expected by the exercises.
 
 ## Source
-
 [https://github.com/exercism/problem-specifications/issues/757](https://github.com/exercism/problem-specifications/issues/757)
 
 ## Submitting Incomplete Solutions
