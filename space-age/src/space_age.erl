@@ -18,13 +18,13 @@ age(Planet, Seconds) ->
     %% Orbital Period (in Earth Years) 
     OrbitalPeriod = 
         case Planet of
-            mercury -> 0.2408467;
+            mercury -> 0.24084670;
             venus   -> 0.61519726;
-            earth   -> 1;
-            mars    -> 1.8808158;
-            jupiter -> 11.862615;
-            saturn  -> 29.447498;
-            uranus  -> 84.016846;
-            neptune -> 164.79132
+            earth   -> 1.00000000;
+            mars    -> 1.88081580;
+            jupiter -> 11.8626150;
+            saturn  -> 29.4474980;
+            uranus  -> 84.0168460;
+            neptune -> 164.791320
         end,
     Seconds / ?EARTH_YEAR / OrbitalPeriod.

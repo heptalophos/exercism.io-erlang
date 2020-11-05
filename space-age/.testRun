@@ -22,3 +22,46 @@ file "space_age.app"
   [done in 0.125 s]
 =======================================================
   All 8 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Fetching erl_exercism ({pkg,<<"erl_exercism">>,<<"0.1.2">>})
+===> Version cached at ~/.cache/rebar3/hex/hexpm/packages/erl_exercism-0.1.2.tar is up to date, reusing it
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Fetching parse_trans ({pkg,<<"parse_trans">>,<<"3.1.0">>})
+===> Version cached at ~/.cache/rebar3/hex/hexpm/packages/parse_trans-3.1.0.tar is up to date, reusing it
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling parse_trans
+_build/default/lib/parse_trans/src/parse_trans.erl:129: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:326: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:346: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:737: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:868: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+
+===> Compiling erl_exercism
+===> Compiling space_age
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "space_age.app"
+  application 'space_age'
+    module 'space_age'
+      module 'space_age_tests'
+        space_age_tests:20: 1_age_on_earth_test_ (age on Earth)...ok
+        space_age_tests:24: 2_age_on_mercury_test_ (age on Mercury)...ok
+        space_age_tests:29: 3_age_on_venus_test_ (age on Venus)...ok
+        space_age_tests:34: 4_age_on_mars_test_ (age on Mars)...ok
+        space_age_tests:38: 5_age_on_jupiter_test_ (age on Jupiter)...ok
+        space_age_tests:42: 6_age_on_saturn_test_ (age on Saturn)...ok
+        space_age_tests:47: 7_age_on_uranus_test_ (age on Uranus)...ok
+        space_age_tests:51: 8_age_on_neptune_test_ (age on Neptune)...ok
+        [done in 0.125 s]
+      [done in 0.125 s]
+    [done in 0.125 s]
+  [done in 0.125 s]
+=======================================================
+  All 8 tests passed.
