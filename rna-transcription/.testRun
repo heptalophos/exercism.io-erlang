@@ -20,3 +20,30 @@ file "rna_transcription.app"
   [done in 0.094 s]
 =======================================================
   All 6 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling rna_transcription
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "rna_transcription.app"
+  application 'rna_transcription'
+    module 'rna_transcription'
+      module 'rna_transcription_tests'
+        rna_transcription_tests:16: 1_empty_rna_sequence_test_ (Empty RNA sequence)...ok
+        rna_transcription_tests:20: 2_rna_complement_of_cytosine_is_guanine_test_ (RNA complement of cytosine is guanine)...ok
+        rna_transcription_tests:24: 3_rna_complement_of_guanine_is_cytosine_test_ (RNA complement of guanine is cytosine)...ok
+        rna_transcription_tests:28: 4_rna_complement_of_thymine_is_adenine_test_ (RNA complement of thymine is adenine)...ok
+        rna_transcription_tests:32: 5_rna_complement_of_adenine_is_uracil_test_ (RNA complement of adenine is uracil)...ok
+        rna_transcription_tests:36: 6_rna_complement_test_ (RNA complement)...ok
+        [done in 0.094 s]
+      [done in 0.094 s]
+    [done in 0.094 s]
+  [done in 0.094 s]
+=======================================================
+  All 6 tests passed.
