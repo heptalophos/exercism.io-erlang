@@ -12,5 +12,5 @@ to_rna(Strand) ->
                        $C => $G, 
                        $T => $A, 
                        $A => $U }) 
-        end, 
+    end, 
     Strand).
