@@ -1,9 +1,1 @@
-{
-    "track": "erlang",
-    "exercise": "nucleotide-count",
-    "id": "0438a3e9743a49cc87b7c259a251114f",
-    "url":"https://exercism.io/tracks/erlang/exercises/nucleotide-count/solutions/0438a3e9743a49cc87b7c259a251114f",
-    "handle": "heptalophos",
-    "is_requester": true,
-    "auto_approve": false
-}
+{"track":"erlang","exercise":"nucleotide-count","id":"0438a3e9743a49cc87b7c259a251114f","url":"https://exercism.io/my/solutions/0438a3e9743a49cc87b7c259a251114f","handle":"heptalophos","is_requester":true,"auto_approve":false}
