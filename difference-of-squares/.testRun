@@ -23,3 +23,33 @@ file "difference_of_squares.app"
   [done in 0.141 s]
 =======================================================
   All 9 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling difference_of_squares
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "difference_of_squares.app"
+  application 'difference_of_squares'
+    module 'difference_of_squares'
+      module 'difference_of_squares_tests'
+        difference_of_squares_tests:16: 1_square_of_sum_1_test_ (square of sum 1)...ok
+        difference_of_squares_tests:21: 2_square_of_sum_5_test_ (square of sum 5)...ok
+        difference_of_squares_tests:26: 3_square_of_sum_100_test_ (square of sum 100)...ok
+        difference_of_squares_tests:31: 4_sum_of_squares_1_test_ (sum of squares 1)...ok
+        difference_of_squares_tests:36: 5_sum_of_squares_5_test_ (sum of squares 5)...ok
+        difference_of_squares_tests:41: 6_sum_of_squares_100_test_ (sum of squares 100)...ok
+        difference_of_squares_tests:46: 7_difference_of_squares_1_test_ (difference of squares 1)...ok
+        difference_of_squares_tests:51: 8_difference_of_squares_5_test_ (difference of squares 5)...ok
+        difference_of_squares_tests:56: 9_difference_of_squares_100_test_ (difference of squares 100)...ok
+        [done in 0.141 s]
+      [done in 0.141 s]
+    [done in 0.141 s]
+  [done in 0.141 s]
+=======================================================
+  All 9 tests passed.

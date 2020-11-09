@@ -6,8 +6,12 @@
 -type strand() :: [nucleotide()].
 -type nuc_count() :: {nucleotide(), non_neg_integer()}.
 
--spec valid(nucleotide()) -> nucleotide() | {error, atom()}.
-valid(N) when N =:= "A"; N =:= "C"; N =:= "G"; N =:= "T" -> 
+-spec valid(nucleotide()) -> 
+        nucleotide() | {error, atom()}.
+valid(N) when N =:= "A"; 
+              N =:= "C"; 
+              N =:= "G"; 
+              N =:= "T"  -> 
     N;
 valid(_) -> 
     erlang:error(invalid_nucleotide).

@@ -115,3 +115,48 @@ file "nucleotide_count.app"
   [done in 0.078 s]
 =======================================================
   All 5 tests passed.
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling nucleotide_count
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "nucleotide_count.app"
+  application 'nucleotide_count'
+    module 'nucleotide_count'
+      module 'nucleotide_count_tests'
+        nucleotide_count_tests:17: 1_empty_strand_test_ (empty strand, all)...ok
+        nucleotide_count_tests:21: 1_empty_strand_test_ (empty strand, A)...ok
+        nucleotide_count_tests:23: 1_empty_strand_test_ (empty strand, C)...ok
+        nucleotide_count_tests:25: 1_empty_strand_test_ (empty strand, G)...ok
+        nucleotide_count_tests:27: 1_empty_strand_test_ (empty strand, T)...ok
+        nucleotide_count_tests:33: 2_can_count_one_nucleotide_in_single_character_input_test_ (can count one nucleotide in single-character input, all)...ok
+        nucleotide_count_tests:38: 2_can_count_one_nucleotide_in_single_character_input_test_ (can count one nucleotide in single-character input, A)...ok
+        nucleotide_count_tests:41: 2_can_count_one_nucleotide_in_single_character_input_test_ (can count one nucleotide in single-character input, C)...ok
+        nucleotide_count_tests:44: 2_can_count_one_nucleotide_in_single_character_input_test_ (can count one nucleotide in single-character input, G)...ok
+        nucleotide_count_tests:47: 2_can_count_one_nucleotide_in_single_character_input_test_ (can count one nucleotide in single-character input, T)...ok
+        nucleotide_count_tests:52: 3_strand_with_repeated_nucleotide_test_ (strand with repeated nucleotide, all)...ok
+        nucleotide_count_tests:56: 3_strand_with_repeated_nucleotide_test_ (strand with repeated nucleotide, A)...ok
+        nucleotide_count_tests:58: 3_strand_with_repeated_nucleotide_test_ (strand with repeated nucleotide, C)...ok
+        nucleotide_count_tests:60: 3_strand_with_repeated_nucleotide_test_ (strand with repeated nucleotide, G)...ok
+        nucleotide_count_tests:62: 3_strand_with_repeated_nucleotide_test_ (strand with repeated nucleotide, T)...ok
+        nucleotide_count_tests:68: 4_strand_with_multiple_nucleotides_test_ (strand with multiple nucleotides, all)...ok
+        nucleotide_count_tests:72: 4_strand_with_multiple_nucleotides_test_ (strand with multiple nucleotides, A)...ok
+        nucleotide_count_tests:74: 4_strand_with_multiple_nucleotides_test_ (strand with multiple nucleotides, C)...ok
+        nucleotide_count_tests:76: 4_strand_with_multiple_nucleotides_test_ (strand with multiple nucleotides, G)...ok
+        nucleotide_count_tests:78: 4_strand_with_multiple_nucleotides_test_ (strand with multiple nucleotides, T)...ok
+        nucleotide_count_tests:84: 5_strand_with_invalid_nucleotides_test_ (strand with invalid nucleotides, all)...ok
+        nucleotide_count_tests:87: 5_strand_with_invalid_nucleotides_test_ (strand with invalid nucleotides, A)...ok
+        nucleotide_count_tests:89: 5_strand_with_invalid_nucleotides_test_ (strand with invalid nucleotides, C)...ok
+        nucleotide_count_tests:91: 5_strand_with_invalid_nucleotides_test_ (strand with invalid nucleotides, G)...ok
+        nucleotide_count_tests:93: 5_strand_with_invalid_nucleotides_test_ (strand with invalid nucleotides, T)...ok
+        [done in 0.390 s]
+      [done in 0.390 s]
+    [done in 0.390 s]
+  [done in 0.390 s]
+=======================================================
+  All 25 tests passed.
