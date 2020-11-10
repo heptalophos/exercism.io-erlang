@@ -104,3 +104,37 @@ file "triangle.app"
 =======================================================
   All 13 tests passed.
 
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling triangle
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "triangle.app"
+  application 'triangle'
+    module 'triangle'
+      module 'triangle_tests'
+        triangle_tests:16: 1_equilateral_all_sides_are_equal_test_ (equilateral_all sides are equal)...ok
+        triangle_tests:21: 2_equilateral_all_zero_sides_is_not_a_triangle_test_ (equilateral_all zero sides is not a triangle)...ok
+        triangle_tests:27: 3_equilateral_sides_may_be_floats_test_ (equilateral_sides may be floats)...ok
+        triangle_tests:32: 4_isosceles_last_two_sides_are_equal_test_ (isosceles_last two sides are equal)...ok
+        triangle_tests:36: 5_isosceles_first_two_sides_are_equal_test_ (isosceles_first two sides are equal)...ok
+        triangle_tests:40: 6_isosceles_first_and_last_sides_are_equal_test_ (isosceles_first and last sides are equal)...ok
+        triangle_tests:45: 7_isosceles_first_triangle_inequality_violation_test_ (isosceles_first triangle inequality violation)...ok
+        triangle_tests:52: 8_isosceles_second_triangle_inequality_violation_test_ (isosceles_second triangle inequality violation)...ok
+        triangle_tests:59: 9_isosceles_third_triangle_inequality_violation_test_ (isosceles_third triangle inequality violation)...ok
+        triangle_tests:65: 10_isosceles_sides_may_be_floats_test_ (isosceles_sides may be floats)...ok
+        triangle_tests:70: 11_scalene_no_sides_are_equal_test_ (scalene_no sides are equal)...ok
+        triangle_tests:74: 12_scalene_may_not_violate_triangle_inequality_test_ (scalene_may not violate triangle inequality)...ok
+        triangle_tests:80: 13_scalene_sides_may_be_floats_test_ (scalene_sides may be floats)...ok
+        [done in 0.203 s]
+      [done in 0.203 s]
+    [done in 0.203 s]
+  [done in 0.203 s]
+=======================================================
+  All 13 tests passed.
