@@ -29,7 +29,6 @@ Notice that the addition of 16 (10000 in binary)
 has caused the array to be reversed.
 
 ## Running tests
-
 In order to run the tests, issue the following command from the exercise
 directory:
 
@@ -45,14 +44,12 @@ $ rebar3 eunit
 ```
 
 ## Questions?
-
 For detailed information about the Erlang track, please refer to the
 [help page](http://exercism.io/languages/erlang) on the Exercism site.
 This covers the basic information on setting up the development
 environment expected by the exercises.
 
 ## Source
-
 Bert, in Mary Poppins [http://www.imdb.com/title/tt0058331/quotes/qt0437047](http://www.imdb.com/title/tt0058331/quotes/qt0437047)
 
 ## Submitting Incomplete Solutions
