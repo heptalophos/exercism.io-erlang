@@ -25,3 +25,35 @@ file "secret_handshake.app"
   [done in 0.172 s]
 =======================================================
   All 11 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling secret_handshake
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "secret_handshake.app"
+  application 'secret_handshake'
+    module 'secret_handshake'
+      module 'secret_handshake_tests'
+        secret_handshake_tests:16: 1_wink_for_1_test_ (wink for 1)...ok
+        secret_handshake_tests:20: 2_double_blink_for_10_test_ (double blink for 10)...ok
+        secret_handshake_tests:25: 3_close_your_eyes_for_100_test_ (close your eyes for 100)...ok
+        secret_handshake_tests:30: 4_jump_for_1000_test_ (jump for 1000)...ok
+        secret_handshake_tests:34: 5_combine_two_actions_test_ (combine two actions)...ok
+        secret_handshake_tests:39: 6_reverse_two_actions_test_ (reverse two actions)...ok
+        secret_handshake_tests:45: 7_reversing_one_action_gives_the_same_action_test_ (reversing one action gives the same action)...ok
+        secret_handshake_tests:50: 8_reversing_no_actions_still_gives_no_actions_test_ (reversing no actions still gives no actions)...ok
+        secret_handshake_tests:54: 9_all_possible_actions_test_ (all possible actions)...ok
+        secret_handshake_tests:60: 10_reverse_all_possible_actions_test_ (reverse all possible actions)...ok
+        secret_handshake_tests:66: 11_do_nothing_for_zero_test_ (do nothing for zero)...ok
+        [done in 0.172 s]
+      [done in 0.172 s]
+    [done in 0.172 s]
+  [done in 0.172 s]
+=======================================================
+  All 11 tests passed.
