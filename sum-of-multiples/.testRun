@@ -115,3 +115,40 @@ file "sum_of_multiples.app"
   [done in 0.719 s]
 =======================================================
   All 16 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling sum_of_multiples
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "sum_of_multiples.app"
+  application 'sum_of_multiples'
+    module 'sum_of_multiples'
+      module 'sum_of_multiples_tests'
+        sum_of_multiples_tests:16: 1_no_multiples_within_limit_test_ (no multiples within limit)...ok
+        sum_of_multiples_tests:20: 2_one_factor_has_multiples_within_limit_test_ (one factor has multiples within limit)...ok
+        sum_of_multiples_tests:24: 3_more_than_one_multiple_within_limit_test_ (more than one multiple within limit)...ok
+        sum_of_multiples_tests:29: 4_more_than_one_factor_with_multiples_within_limit_test_ (more than one factor with multiples within limit)...ok
+        sum_of_multiples_tests:33: 5_each_multiple_is_only_counted_once_test_ (each multiple is only counted once)...ok
+        sum_of_multiples_tests:37: 6_a_much_larger_limit_test_ (a much larger limit)...ok
+        sum_of_multiples_tests:42: 7_three_factors_test_ (three factors)...ok
+        sum_of_multiples_tests:47: 8_factors_not_relatively_prime_test_ (factors not relatively prime)...ok
+        sum_of_multiples_tests:52: 9_some_pairs_of_factors_relatively_prime_and_some_not_test_ (some pairs of factors relatively prime and some not)...ok
+        sum_of_multiples_tests:57: 10_one_factor_is_a_multiple_of_another_test_ (one factor is a multiple of another)...ok
+        sum_of_multiples_tests:61: 11_much_larger_factors_test_ (much larger factors)...ok
+        sum_of_multiples_tests:66: 12_all_numbers_are_multiples_of_1_test_ (all numbers are multiples of 1)...ok
+        sum_of_multiples_tests:70: 13_no_factors_means_an_empty_sum_test_ (no factors means an empty sum)...ok
+        sum_of_multiples_tests:74: 14_the_only_multiple_of_0_is_0_test_ (the only multiple of 0 is 0)...ok
+        sum_of_multiples_tests:79: 15_the_factor_0_does_not_affect_the_sum_of_multiples_of_other_factors_test_ (the factor 0 does not affect the sum of multiples of other factors)...ok
+        sum_of_multiples_tests:84: 16_solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3_test_ (solutions using include-exclude must extend to cardinality greater than 3)...ok
+        [done in 0.281 s]
+      [done in 0.281 s]
+    [done in 0.281 s]
+  [done in 0.281 s]
+=======================================================
+  All 16 tests passed.
