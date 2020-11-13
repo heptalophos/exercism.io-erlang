@@ -1,1 +1,9 @@
-{"track":"erlang","exercise":"sum-of-multiples","id":"21396926f8a04bf0ae0330fc028de4fb","url":"https://exercism.io/my/solutions/21396926f8a04bf0ae0330fc028de4fb","handle":"heptalophos","is_requester":true,"auto_approve":false}
+{
+    "track": "erlang",
+    "exercise": "sum-of-multiples",
+    "id": "21396926f8a04bf0ae0330fc028de4fb",
+    "url": "https://exercism.io/tracks/erlang/exercises/sum-of-multiples/solutions/21396926f8a04bf0ae0330fc028de4fb",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
+}
