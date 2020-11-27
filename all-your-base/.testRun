@@ -35,3 +35,45 @@ file "all_your_base.app"
   [done in 0.328 s]
 =======================================================
   All 21 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling all_your_base
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "all_your_base.app"
+  application 'all_your_base'
+    module 'all_your_base'
+      module 'all_your_base_tests'
+        all_your_base_tests:16: 1_single_bit_one_to_decimal_test_ (single bit one to decimal)...ok
+        all_your_base_tests:21: 2_binary_to_single_decimal_test_ (binary to single decimal)...ok
+        all_your_base_tests:26: 3_single_decimal_to_binary_test_ (single decimal to binary)...ok
+        all_your_base_tests:31: 4_binary_to_multiple_decimal_test_ (binary to multiple decimal)...ok
+        all_your_base_tests:36: 5_decimal_to_binary_test_ (decimal to binary)...ok
+        all_your_base_tests:41: 6_trinary_to_hexadecimal_test_ (trinary to hexadecimal)...ok
+        all_your_base_tests:46: 7_hexadecimal_to_trinary_test_ (hexadecimal to trinary)...ok
+        all_your_base_tests:51: 8_15_bit_integer_test_ (15-bit integer)...ok
+        all_your_base_tests:56: 9_empty_list_test_ (empty list)...ok
+        all_your_base_tests:61: 10_single_zero_test_ (single zero)...ok
+        all_your_base_tests:66: 11_multiple_zeros_test_ (multiple zeros)...ok
+        all_your_base_tests:71: 12_leading_zeros_test_ (leading zeros)...ok
+        all_your_base_tests:76: 13_input_base_is_one_test_ (input base is one)...ok
+        all_your_base_tests:81: 14_input_base_is_zero_test_ (input base is zero)...ok
+        all_your_base_tests:86: 15_input_base_is_negative_test_ (input base is negative)...ok
+        all_your_base_tests:91: 16_negative_digit_test_ (negative digit)...ok
+        all_your_base_tests:98: 17_invalid_positive_digit_test_ (invalid positive digit)...ok
+        all_your_base_tests:105: 18_output_base_is_one_test_ (output base is one)...ok
+        all_your_base_tests:110: 19_output_base_is_zero_test_ (output base is zero)...ok
+        all_your_base_tests:115: 20_output_base_is_negative_test_ (output base is negative)...ok
+        all_your_base_tests:120: 21_both_bases_are_negative_test_ (both bases are negative)...ok
+        [done in 0.328 s]
+      [done in 0.328 s]
+    [done in 0.328 s]
+  [done in 0.328 s]
+=======================================================
+  All 21 tests passed.
