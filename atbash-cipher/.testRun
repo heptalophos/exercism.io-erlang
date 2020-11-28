@@ -28,3 +28,38 @@ file "atbash_cipher.app"
   [done in 0.282 s]
 =======================================================
   All 14 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling atbash_cipher
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "atbash_cipher.app"
+  application 'atbash_cipher'
+    module 'atbash_cipher'
+      module 'atbash_cipher_tests'
+        atbash_cipher_tests:16: 1_encode_yes_test_ (encode yes)...ok
+        atbash_cipher_tests:20: 2_encode_no_test_ (encode no)...ok
+        atbash_cipher_tests:24: 3_encode_omg_test_ (encode OMG)...ok
+        atbash_cipher_tests:28: 4_encode_spaces_test_ (encode spaces)...ok
+        atbash_cipher_tests:32: 5_encode_mindblowingly_test_ (encode mindblowingly)...ok
+        atbash_cipher_tests:37: 6_encode_numbers_test_ (encode numbers)...ok
+        atbash_cipher_tests:42: 7_encode_deep_thought_test_ (encode deep thought)...ok
+        atbash_cipher_tests:47: 8_encode_all_the_letters_test_ (encode all the letters)...ok
+        atbash_cipher_tests:54: 9_decode_exercism_test_ (decode exercism)...ok
+        atbash_cipher_tests:59: 10_decode_a_sentence_test_ (decode a sentence)...ok
+        atbash_cipher_tests:64: 11_decode_numbers_test_ (decode numbers)...ok
+        atbash_cipher_tests:69: 12_decode_all_the_letters_test_ (decode all the letters)...ok
+        atbash_cipher_tests:75: 13_decode_with_too_many_spaces_test_ (decode with too many spaces)...ok
+        atbash_cipher_tests:80: 14_decode_with_no_spaces_test_ (decode with no spaces)...ok
+        [done in 0.329 s]
+      [done in 0.329 s]
+    [done in 0.344 s]
+  [done in 0.344 s]
+=======================================================
+  All 14 tests passed.
