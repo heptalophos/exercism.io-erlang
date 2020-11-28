@@ -42,7 +42,7 @@ divide(Z1, Z2) ->
 	#complex{real = R2, imag = I2} = Z2,
 	Den = R2 * R2 + I2 * I2,
 	Div = #complex{real = (R1 * R2 + I1 * I2) / Den, 
-		   		imag = (I1 * R2 - I2 * R1) / Den},
+		   		   imag = (I1 * R2 - I2 * R1) / Den},
 	Div.
 
 -spec equal(complex(), complex()) -> boolean().
