@@ -1,9 +1,1 @@
-{
-    "track": "erlang",
-    "exercise": "atbash-cipher",
-    "id": "5a2a0c3b964d4388b44c9de35225aee9",
-    "url": "https://exercism.io/tracks/erlang/exercises/atbash-cipher/solutions/5a2a0c3b964d4388b44c9de35225aee9",
-    "handle": "heptalophos",
-    "is_requester": true,
-    "auto_approve": false
-}
+{"track":"erlang","exercise":"atbash-cipher","id":"5a2a0c3b964d4388b44c9de35225aee9","url":"https://exercism.io/my/solutions/5a2a0c3b964d4388b44c9de35225aee9","handle":"heptalophos","is_requester":true,"auto_approve":false}
