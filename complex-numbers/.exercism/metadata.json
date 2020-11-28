@@ -1,9 +1,9 @@
 {
-    "track":"erlang",
-    "exercise":"complex-numbers",
-    "id":"55ff7f17cdca464291dbb3c785dac065",
-    "url":"https://exercism.io/tracks/erlang/exercises/complex-numbers/solutions/55ff7f17cdca464291dbb3c785dac065",
-    "handle":"heptalophos",
-    "is_requester":true,
-    "auto_approve":false
+    "track": "erlang",
+    "exercise": "complex-numbers",
+    "id": "55ff7f17cdca464291dbb3c785dac065",
+    "url": "https://exercism.io/tracks/erlang/exercises/complex-numbers/solutions/55ff7f17cdca464291dbb3c785dac065",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
 }
