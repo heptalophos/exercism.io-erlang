@@ -47,3 +47,55 @@ file "complex_numbers.app"
   [done in 0.515 s]
 =======================================================
   All 31 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling complex_numbers
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "complex_numbers.app"
+  application 'complex_numbers'
+    module 'complex_numbers'
+      module 'complex_numbers_tests'
+        complex_numbers_tests:16: 1_real_part_of_a_purely_real_number_test_ (Real part of a purely real number)...[0.016 s] ok
+        complex_numbers_tests:21: 2_real_part_of_a_purely_imaginary_number_test_ (Real part of a purely imaginary number)...ok
+        complex_numbers_tests:27: 3_real_part_of_a_number_with_real_and_imaginary_part_test_ (Real part of a number with real and imaginary part)...ok
+        complex_numbers_tests:32: 4_imaginary_part_of_a_purely_real_number_test_ (Imaginary part of a purely real number)...ok
+        complex_numbers_tests:38: 5_imaginary_part_of_a_purely_imaginary_number_test_ (Imaginary part of a purely imaginary number)...ok
+        complex_numbers_tests:44: 6_imaginary_part_of_a_number_with_real_and_imaginary_part_test_ (Imaginary part of a number with real and imaginary part)...ok
+        complex_numbers_tests:49: 7_imaginary_unit_test_ (Imaginary unit)...ok
+        complex_numbers_tests:58: 8_add_purely_real_numbers_test_ (Add purely real numbers)...ok
+        complex_numbers_tests:67: 9_add_purely_imaginary_numbers_test_ (Add purely imaginary numbers)...ok
+        complex_numbers_tests:77: 10_add_numbers_with_real_and_imaginary_part_test_ (Add numbers with real and imaginary part)...ok
+        complex_numbers_tests:86: 11_subtract_purely_real_numbers_test_ (Subtract purely real numbers)...ok
+        complex_numbers_tests:95: 12_subtract_purely_imaginary_numbers_test_ (Subtract purely imaginary numbers)...ok
+        complex_numbers_tests:105: 13_subtract_numbers_with_real_and_imaginary_part_test_ (Subtract numbers with real and imaginary part)...ok
+        complex_numbers_tests:114: 14_multiply_purely_real_numbers_test_ (Multiply purely real numbers)...ok
+        complex_numbers_tests:123: 15_multiply_purely_imaginary_numbers_test_ (Multiply purely imaginary numbers)...ok
+        complex_numbers_tests:133: 16_multiply_numbers_with_real_and_imaginary_part_test_ (Multiply numbers with real and imaginary part)...ok
+        complex_numbers_tests:142: 17_divide_purely_real_numbers_test_ (Divide purely real numbers)...ok
+        complex_numbers_tests:151: 18_divide_purely_imaginary_numbers_test_ (Divide purely imaginary numbers)...ok
+        complex_numbers_tests:161: 19_divide_numbers_with_real_and_imaginary_part_test_ (Divide numbers with real and imaginary part)...ok
+        complex_numbers_tests:171: 20_absolute_value_of_a_positive_purely_real_number_test_ (Absolute value of a positive purely real number)...ok
+        complex_numbers_tests:177: 21_absolute_value_of_a_negative_purely_real_number_test_ (Absolute value of a negative purely real number)...ok
+        complex_numbers_tests:183: 22_absolute_value_of_a_purely_imaginary_number_with_positive_imaginary_part_test_ (Absolute value of a purely imaginary number with positive imaginary part)...ok
+        complex_numbers_tests:189: 23_absolute_value_of_a_purely_imaginary_number_with_negative_imaginary_part_test_ (Absolute value of a purely imaginary number with negative imaginary part)...ok
+        complex_numbers_tests:195: 24_absolute_value_of_a_number_with_real_and_imaginary_part_test_ (Absolute value of a number with real and imaginary part)...ok
+        complex_numbers_tests:200: 25_conjugate_a_purely_real_number_test_ (Conjugate a purely real number)...ok
+        complex_numbers_tests:207: 26_conjugate_a_purely_imaginary_number_test_ (Conjugate a purely imaginary number)...ok
+        complex_numbers_tests:215: 27_conjugate_a_number_with_real_and_imaginary_part_test_ (Conjugate a number with real and imaginary part)...ok
+        complex_numbers_tests:222: 28_eulers_identityformula_test_ (Euler's identity/formula)...ok
+        complex_numbers_tests:229: 29_exponential_of_0_test_ (Exponential of 0)...ok
+        complex_numbers_tests:236: 30_exponential_of_a_purely_real_number_test_ (Exponential of a purely real number)...ok
+        complex_numbers_tests:244: 31_exponential_of_a_number_with_real_and_imaginary_part_test_ (Exponential of a number with real and imaginary part)...ok
+        [done in 0.531 s]
+      [done in 0.531 s]
+    [done in 0.531 s]
+  [done in 0.531 s]
+=======================================================
+  All 31 tests passed.
