@@ -31,3 +31,41 @@ file "isbn_verifier.app"
   [done in 0.265 s]
 =======================================================
   All 17 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling isbn_verifier
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "isbn_verifier.app"
+  application 'isbn_verifier'
+    module 'isbn_verifier'
+      module 'isbn_verifier_tests'
+        isbn_verifier_tests:16: 1_valid_isbn_test_ (valid isbn)...ok
+        isbn_verifier_tests:20: 2_invalid_isbn_check_digit_test_ (invalid isbn check digit)...ok
+        isbn_verifier_tests:24: 3_valid_isbn_with_a_check_digit_of_10_test_ (valid isbn with a check digit of 10)...ok
+        isbn_verifier_tests:28: 4_check_digit_is_a_character_other_than_x_test_ (check digit is a character other than X)...ok
+        isbn_verifier_tests:32: 5_invalid_character_in_isbn_test_ (invalid character in isbn)...ok
+        isbn_verifier_tests:36: 6_x_is_only_valid_as_a_check_digit_test_ (X is only valid as a check digit)...ok
+        isbn_verifier_tests:40: 7_valid_isbn_without_separating_dashes_test_ (valid isbn without separating dashes)...ok
+        isbn_verifier_tests:45: 8_isbn_without_separating_dashes_and_x_as_check_digit_test_ (isbn without separating dashes and X as check digit)...ok
+        isbn_verifier_tests:49: 9_isbn_without_check_digit_and_dashes_test_ (isbn without check digit and dashes)...ok
+        isbn_verifier_tests:53: 10_too_long_isbn_and_no_dashes_test_ (too long isbn and no dashes)...ok
+        isbn_verifier_tests:57: 11_too_short_isbn_test_ (too short isbn)...ok
+        isbn_verifier_tests:61: 12_isbn_without_check_digit_test_ (isbn without check digit)...ok
+        isbn_verifier_tests:66: 13_check_digit_of_x_should_not_be_used_for_0_test_ (check digit of X should not be used for 0)...ok
+        isbn_verifier_tests:69: 14_empty_isbn_test_ (empty isbn)...ok
+        isbn_verifier_tests:73: 15_input_is_9_characters_test_ (input is 9 characters)...ok
+        isbn_verifier_tests:77: 16_invalid_characters_are_not_ignored_test_ (invalid characters are not ignored)...ok
+        isbn_verifier_tests:82: 17_input_is_too_long_but_contains_a_valid_isbn_test_ (input is too long but contains a valid isbn)...ok
+        [done in 0.265 s]
+      [done in 0.265 s]
+    [done in 0.265 s]
+  [done in 0.265 s]
+=======================================================
+  All 17 tests passed.
