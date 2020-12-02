@@ -8,13 +8,13 @@ score(Word) ->
     lists:foldl(fun(Score, Total) -> Total + Score end, 
                 0,
                 lists:map(fun(L) -> 
-                                case lists:keyfind(L, 1, scores()) 
-                                of
-                                    {L, S} -> S;
-                                    false -> 0
-                                end
-                          end, 
-                          string:to_upper(Word))).
+                    case lists:keyfind(L, 1, scores()) 
+                    of
+                        {L, S} -> S;
+                        false -> 0
+                    end
+                end, 
+                string:to_upper(Word))).
 
 
 % auxiliary
@@ -28,7 +28,6 @@ scores() ->
                [$K] => 5,
                "JX" => 8,
                "QZ" => 10 },
-    lists:flatten([
-                    [{X, Score} || X <- Letter] ||
-                     {Letter, Score} <- maps:to_list(Scores)
-                  ]).
+    lists:flatten([[{X, Score} || X <- Letter] ||
+                  {Letter, Score} <- 
+                           maps:to_list(Scores)]).
