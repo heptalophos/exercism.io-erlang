@@ -18,16 +18,16 @@ can_attack(WhiteQueen, BlackQueen) ->
             {error, invalid_position_offboard};
         false -> %% both queens @ legal rank & file
             case ({abs(WX - BX), abs(WY - BY)}) of 
-                {0, 0} -> %% both queens @ same square
-                    {error, invalid_position_same};
-                {_, 0} -> %% both queens @ same file
-                    true;
-                {0, _} -> %% both queens @ same rank
-                    true;
-                {X, Y} when X / Y == 1 -> 
-                    true; %% queens @ same diagonal
-                {_, _} -> 
-                    false
+                %% both queens @ same square
+                {0, 0} -> {error, invalid_position_same};
+                %% both queens @ same file
+                {_, 0} -> true;
+                %% both queens @ same rank
+                {0, _} -> true;
+                %% queens @ same diagonal
+                {X, Y} when X / Y == 1 -> true; 
+                %% otherwise
+                {_, _} -> false
             end
     end.
 

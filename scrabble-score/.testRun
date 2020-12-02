@@ -55,3 +55,35 @@ file "scrabble_score.app"
   [done in 0.172 s]
 =======================================================
   All 11 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling scrabble_score
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "scrabble_score.app"
+  application 'scrabble_score'
+    module 'scrabble_score'
+      module 'scrabble_score_tests'
+        scrabble_score_tests:16: 1_lowercase_letter_test_ (lowercase letter)...ok
+        scrabble_score_tests:20: 2_uppercase_letter_test_ (uppercase letter)...ok
+        scrabble_score_tests:24: 3_valuable_letter_test_ (valuable letter)...ok
+        scrabble_score_tests:28: 4_short_word_test_ (short word)...ok
+        scrabble_score_tests:32: 5_short_valuable_word_test_ (short, valuable word)...ok
+        scrabble_score_tests:36: 6_medium_word_test_ (medium word)...ok
+        scrabble_score_tests:40: 7_medium_valuable_word_test_ (medium, valuable word)...ok
+        scrabble_score_tests:44: 8_long_mixed_case_word_test_ (long, mixed-case word)...ok
+        scrabble_score_tests:49: 9_english_like_word_test_ (english-like word)...ok
+        scrabble_score_tests:53: 10_empty_input_test_ (empty input)...ok
+        scrabble_score_tests:57: 11_entire_alphabet_available_test_ (entire alphabet available)...ok
+        [done in 0.172 s]
+      [done in 0.172 s]
+    [done in 0.172 s]
+  [done in 0.172 s]
+=======================================================
+  All 11 tests passed.
