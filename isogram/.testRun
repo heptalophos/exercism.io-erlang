@@ -27,3 +27,37 @@ file "isogram.app"
   [done in 0.203 s]
 =======================================================
   All 13 tests passed.
+
+
+
+
+>rebar3 eunit
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling isogram
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "isogram.app"
+  application 'isogram'
+    module 'isogram'
+      module 'isogram_tests'
+        isogram_tests:15: 1_empty_string_test_ (empty string)...ok
+        isogram_tests:19: 2_isogram_with_only_lower_case_characters_test_ (isogram with only lower case characters)...ok
+        isogram_tests:23: 3_word_with_one_duplicated_character_test_ (word with one duplicated character)...ok
+        isogram_tests:28: 4_word_with_one_duplicated_character_from_the_end_of_the_alphabet_test_ (word with one duplicated character from the end of the alphabet)...ok
+        isogram_tests:32: 5_longest_reported_english_isogram_test_ (longest reported english isogram)...ok
+        isogram_tests:37: 6_word_with_duplicated_character_in_mixed_case_test_ (word with duplicated character in mixed case)...ok
+        isogram_tests:42: 7_word_with_duplicated_character_in_mixed_case_lowercase_first_test_ (word with duplicated character in mixed case, lowercase first)...ok
+        isogram_tests:46: 8_hypothetical_isogrammic_word_with_hyphen_test_ (hypothetical isogrammic word with hyphen)...ok
+        isogram_tests:51: 9_hypothetical_word_with_duplicated_character_following_hyphen_test_ (hypothetical word with duplicated character following hyphen)...ok
+        isogram_tests:55: 10_isogram_with_duplicated_hyphen_test_ (isogram with duplicated hyphen)...ok
+        isogram_tests:59: 11_made_up_name_that_is_an_isogram_test_ (made-up name that is an isogram)...ok
+        isogram_tests:63: 12_duplicated_character_in_the_middle_test_ (duplicated character in the middle)...ok
+        isogram_tests:67: 13_same_first_and_last_characters_test_ (same first and last characters)...ok
+        [done in 0.203 s]
+      [done in 0.203 s]
+    [done in 0.203 s]
+  [done in 0.203 s]
+=======================================================
+  All 13 tests passed.
