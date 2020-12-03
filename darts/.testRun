@@ -19,3 +19,37 @@ file "darts.app"
   [done in 0.078 s]
 =======================================================
   All 5 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling darts
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "darts.app"
+  application 'darts'
+    module 'darts'
+      module 'darts_tests'
+        darts_tests:15: 1_missed_target_test_ (Missed target)...ok
+        darts_tests:19: 2_on_the_outer_circle_test_ (On the outer circle)...ok
+        darts_tests:23: 3_on_the_middle_circle_test_ (On the middle circle)...ok
+        darts_tests:27: 4_on_the_inner_circle_test_ (On the inner circle)...ok
+        darts_tests:31: 5_exactly_on_centre_test_ (Exactly on centre)...ok
+        darts_tests:35: 6_near_the_centre_test_ (Near the centre)...ok
+        darts_tests:39: 7_just_within_the_inner_circle_test_ (Just within the inner circle)...ok
+        darts_tests:45: 8_just_outside_the_inner_circle_test_ (Just outside the inner circle)...ok
+        darts_tests:49: 9_just_within_the_middle_circle_test_ (Just within the middle circle)...ok
+        darts_tests:53: 10_just_outside_the_middle_circle_test_ (Just outside the middle circle)...ok
+        darts_tests:57: 11_just_within_the_outer_circle_test_ (Just within the outer circle)...ok
+        darts_tests:61: 12_just_outside_the_outer_circle_test_ (Just outside the outer circle)...ok
+        darts_tests:68: 13_asymmetric_position_between_the_inner_and_middle_circles_test_ (Asymmetric position between the inner and middle circles)...ok
+        [done in 0.203 s]
+      [done in 0.203 s]
+    [done in 0.203 s]
+  [done in 0.203 s]
+=======================================================
+  All 13 tests passed.
