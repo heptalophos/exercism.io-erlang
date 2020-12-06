@@ -5,11 +5,12 @@
 
 -spec spaces(non_neg_integer()) -> [$ ,...].
 spaces (0) -> "";
-spaces (N) -> [" " || _ <- lists:seq(1, N) ].
+spaces (N) -> 
+    [" " || _ <- lists:seq(1, N) ].
 
 
 -spec row([$A..$Z], integer(), integer()) -> 
-        [[$A..$Z | $ ],...].
+                               [[$A..$Z | $ ],...].
 row(Letter, Outside, Middle) when Middle > 0 -> 
     lists:flatten([spaces(Outside), 
                    Letter, 
@@ -22,15 +23,14 @@ row(Letter, Outside, _) ->
                    spaces(Outside)]).
 
 
--spec diamond([$A..$Z], 
-              integer(), 
-              integer(), 
-              [[$A..$Z | $ ],...]) -> 
-    [[$A..$Z | $ ],...].
+-spec diamond([$A..$Z],integer(),integer(),[[$A..$Z | $ ],...]) -> 
+                                           [[$A..$Z | $ ],...].
 diamond(Letter, Outside, Middle, Acc) when Middle < 1 ->
-    Upper = [row(Letter, Outside, Middle) | Acc],
-    [_|Lower] = lists:reverse(Upper),
-    Upper ++ Lower;
+        Upper = 
+            [row(Letter, Outside, Middle) | Acc],
+        [_|Lower] = 
+            lists:reverse(Upper),
+        Upper ++ Lower;
 diamond(Letter, Outside, Middle, Acc) ->
     diamond(Letter - 1, 
             Outside + 1, 
