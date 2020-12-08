@@ -46,3 +46,27 @@ file "gigasecond.app"
 
 
 
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling gigasecond
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "gigasecond.app"
+  application 'gigasecond'
+    module 'gigasecond'
+      module 'gigasecond_tests'
+        gigasecond_tests:16: 1_date_only_specification_of_time_test_ (date only specification of time)...[0.016 s] ok
+        gigasecond_tests:22: 2_second_test_for_date_only_specification_of_time_test_ (second test for date only specification of time)...ok
+        gigasecond_tests:28: 3_third_test_for_date_only_specification_of_time_test_ (third test for date only specification of time)...ok
+        gigasecond_tests:33: 4_full_time_specified_test_ (full time specified)...ok
+        gigasecond_tests:38: 5_full_time_with_day_roll_over_test_ (full time with day roll-over)...ok
+        [done in 0.094 s]
+      [done in 0.094 s]
+    [done in 0.094 s]
+  [done in 0.094 s]
+=======================================================
+  All 5 tests passed.
