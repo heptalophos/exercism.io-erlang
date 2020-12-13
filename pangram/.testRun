@@ -63,3 +63,35 @@ file "pangram.app"
   [done in 0.390 s]
 =======================================================
   All 20 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling pangram
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "pangram.app"
+  application 'pangram'
+    module 'pangram'
+      module 'pangram_tests'
+        pangram_tests:15: 1_empty_sentence_test_ (empty sentence)...ok
+        pangram_tests:19: 2_perfect_lower_case_test_ (perfect lower case)...ok
+        pangram_tests:23: 3_only_lower_case_test_ (only lower case)...ok
+        pangram_tests:28: 4_missing_the_letter_x_test_ (missing the letter 'x')...ok
+        pangram_tests:33: 5_missing_the_letter_h_test_ (missing the letter 'h')...ok
+        pangram_tests:37: 6_with_underscores_test_ (with underscores)...ok
+        pangram_tests:41: 7_with_numbers_test_ (with numbers)...ok
+        pangram_tests:46: 8_missing_letters_replaced_by_numbers_test_ (missing letters replaced by numbers)...ok
+        pangram_tests:51: 9_mixed_case_and_punctuation_test_ (mixed case and punctuation)...ok
+        pangram_tests:56: 10_case_insensitive_test_ (case insensitive)...ok
+        [done in 0.157 s]
+      [done in 0.157 s]
+    module 'pangram2'
+    [done in 0.203 s]
+  [done in 0.250 s]
+=======================================================
+  All 10 tests passed.
