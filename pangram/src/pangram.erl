@@ -8,7 +8,11 @@ is_alpha(_) -> false.
 
 -spec is_pangram(string()) -> boolean().
 is_pangram(Sentence) -> 
-    lists:usort(
-        lists:filter(fun(X) ->
-                     is_alpha(X) end, 
-                     string:casefold(Sentence))) =:= lists:seq($a,$z).
+    sets:size(
+        sets:from_list(
+            lists:filter(
+                fun(X) -> is_alpha(X) end, 
+                string:casefold(Sentence)
+            )
+        )
+    ) =:= length(lists:seq($a,$z)).
