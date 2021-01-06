@@ -1,9 +1,9 @@
 {
-  "track": "erlang",
-  "exercise": "allergies",
-  "id": "035846ecac944f838fc90a134df5fa9a",
-  "url": "https://exercism.io/tracks/erlang/exercises/allergies/solutions/035846ecac944f838fc90a134df5fa9a",
-  "handle": "heptalophos",
-  "is_requester": true,
-  "auto_approve": false
+    "track": "erlang",
+    "exercise": "allergies",
+    "id": "035846ecac944f838fc90a134df5fa9a",
+    "url": "https://exercism.io/tracks/erlang/exercises/allergies/solutions/035846ecac944f838fc90a134df5fa9a",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
 }
