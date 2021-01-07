@@ -132,3 +132,37 @@ file "run_length_encoding.app"
   [done in 0.203 s]
 =======================================================
   All 13 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling run_length_encoding
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "run_length_encoding.app"
+  application 'run_length_encoding'
+    module 'run_length_encoding'
+      module 'run_length_encoding_tests'
+        run_length_encoding_tests:16: 1_empty_string_test_ (empty string)...ok
+        run_length_encoding_tests:21: 2_single_characters_only_are_encoded_without_count_test_ (single characters only are encoded without count)...ok
+        run_length_encoding_tests:26: 3_string_with_no_single_characters_test_ (string with no single characters)...ok
+        run_length_encoding_tests:32: 4_single_characters_mixed_with_repeated_characters_test_ (single characters mixed with repeated characters)...ok
+        run_length_encoding_tests:38: 5_multiple_whitespace_mixed_in_string_test_ (multiple whitespace mixed in string)...ok
+        run_length_encoding_tests:43: 6_lowercase_characters_test_ (lowercase characters)...ok
+        run_length_encoding_tests:48: 7_empty_string_test_ (empty string)...ok
+        run_length_encoding_tests:52: 8_single_characters_only_test_ (single characters only)...ok
+        run_length_encoding_tests:57: 9_string_with_no_single_characters_test_ (string with no single characters)...ok
+        run_length_encoding_tests:62: 10_single_characters_with_repeated_characters_test_ (single characters with repeated characters)...ok
+        run_length_encoding_tests:68: 11_multiple_whitespace_mixed_in_string_test_ (multiple whitespace mixed in string)...ok
+        run_length_encoding_tests:73: 12_lowercase_string_test_ (lowercase string)...ok
+        run_length_encoding_tests:79: 13_encode_followed_by_decode_gives_original_string_test_ (encode followed by decode gives original string)...ok
+        [done in 0.203 s]
+      [done in 0.203 s]
+    [done in 0.203 s]
+  [done in 0.203 s]
+=======================================================
+  All 13 tests passed.

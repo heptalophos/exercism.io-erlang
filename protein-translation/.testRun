@@ -119,3 +119,47 @@ file "protein_translation.app"
   [done in 0.359 s]
 =======================================================
   All 23 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling protein_translation
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "protein_translation.app"
+  application 'protein_translation'
+    module 'protein_translation'
+      module 'protein_translation_tests'
+        protein_translation_tests:16: 1_methionine_rna_sequence_test_ (Methionine RNA sequence)...ok
+        protein_translation_tests:21: 2_phenylalanine_rna_sequence_1_test_ (Phenylalanine RNA sequence 1)...ok
+        protein_translation_tests:26: 3_phenylalanine_rna_sequence_2_test_ (Phenylalanine RNA sequence 2)...ok
+        protein_translation_tests:31: 4_leucine_rna_sequence_1_test_ (Leucine RNA sequence 1)...ok
+        protein_translation_tests:36: 5_leucine_rna_sequence_2_test_ (Leucine RNA sequence 2)...ok
+        protein_translation_tests:41: 6_serine_rna_sequence_1_test_ (Serine RNA sequence 1)...ok
+        protein_translation_tests:46: 7_serine_rna_sequence_2_test_ (Serine RNA sequence 2)...ok
+        protein_translation_tests:51: 8_serine_rna_sequence_3_test_ (Serine RNA sequence 3)...ok
+        protein_translation_tests:56: 9_serine_rna_sequence_4_test_ (Serine RNA sequence 4)...ok
+        protein_translation_tests:61: 10_tyrosine_rna_sequence_1_test_ (Tyrosine RNA sequence 1)...ok
+        protein_translation_tests:66: 11_tyrosine_rna_sequence_2_test_ (Tyrosine RNA sequence 2)...ok
+        protein_translation_tests:71: 12_cysteine_rna_sequence_1_test_ (Cysteine RNA sequence 1)...ok
+        protein_translation_tests:76: 13_cysteine_rna_sequence_2_test_ (Cysteine RNA sequence 2)...ok
+        protein_translation_tests:81: 14_tryptophan_rna_sequence_test_ (Tryptophan RNA sequence)...ok
+        protein_translation_tests:86: 15_stop_codon_rna_sequence_1_test_ (STOP codon RNA sequence 1)...ok
+        protein_translation_tests:90: 16_stop_codon_rna_sequence_2_test_ (STOP codon RNA sequence 2)...ok
+        protein_translation_tests:94: 17_stop_codon_rna_sequence_3_test_ (STOP codon RNA sequence 3)...ok
+        protein_translation_tests:99: 18_translate_rna_strand_into_correct_protein_list_test_ (Translate RNA strand into correct protein list)...ok
+        protein_translation_tests:105: 19_translation_stops_if_stop_codon_at_beginning_of_sequence_test_ (Translation stops if STOP codon at beginning of sequence)...ok
+        protein_translation_tests:111: 20_translation_stops_if_stop_codon_at_end_of_two_codon_sequence_test_ (Translation stops if STOP codon at end of two-codon sequence)...ok
+        protein_translation_tests:117: 21_translation_stops_if_stop_codon_at_end_of_three_codon_sequence_test_ (Translation stops if STOP codon at end of three-codon sequence)...ok
+        protein_translation_tests:123: 22_translation_stops_if_stop_codon_in_middle_of_three_codon_sequence_test_ (Translation stops if STOP codon in middle of three-codon sequence)...ok
+        protein_translation_tests:129: 23_translation_stops_if_stop_codon_in_middle_of_six_codon_sequence_test_ (Translation stops if STOP codon in middle of six-codon sequence)...ok
+        [done in 0.375 s]
+      [done in 0.375 s]
+    [done in 0.375 s]
+  [done in 0.375 s]
+=======================================================
+  All 23 tests passed.
