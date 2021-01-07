@@ -8,8 +8,9 @@
 -spec decode(encoded()) -> plain().
 decode(String) ->
     case String of
-        [] -> "";
-        _  -> 
+        [] -> 
+            "";
+        _ -> 
             [L|R] = 
                 lists:dropwhile(fun(C) -> 
                                     C >= $0 andalso 
