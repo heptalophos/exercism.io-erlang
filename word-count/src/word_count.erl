@@ -1,6 +1,7 @@
 -module(word_count).
 -export([count_words/1]).
 
+% API
 -spec count_words(string()) -> 
             #{string() => pos_integer()}.
 count_words(Sentence) -> 
@@ -15,7 +16,6 @@ count_words(Sentence) ->
                 words(Sentence)).
 
 % Auxiliary
-
 -spec words(string()) -> [string()].
 words(Sentence) ->
     [string:to_lower(Word) || 
