@@ -4,13 +4,11 @@
 
 
 -spec primes(Limit) -> [Prime] 
-      when 
-      Limit :: pos_integer(), 
-      Prime :: pos_integer().
+      when Limit :: pos_integer(), 
+           Prime :: pos_integer().
 primes(Limit) -> 
-    Nums = lists:seq(2, Limit),
-    sieve(Nums, [], Limit).
-
+        Nums = lists:seq(2, Limit),
+        sieve(Nums, [], Limit).
 
 % Auxiliary
 
@@ -19,7 +17,7 @@ primes(Limit) ->
            Prime  :: pos_integer(),
            Limit :: pos_integer(). 
 sieve([], Primes, _) ->
-    lists:reverse(Primes);
+        lists:reverse(Primes);
 sieve([Num|Nums], Primes, Limit) ->
-    Comp = lists:seq(2 * Num, Limit, Num),
-    sieve(Nums -- Comp, [Num|Primes], Limit).
+        Comp = lists:seq(2 * Num, Limit, Num),
+        sieve(Nums -- Comp, [Num|Primes], Limit).
