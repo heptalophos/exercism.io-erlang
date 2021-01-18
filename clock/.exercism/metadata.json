@@ -1,9 +1,1 @@
-{
-    "track": "erlang",
-    "exercise": "clock",
-    "id": "86421393a1304c0bb6d635c3564f00f5",
-    "url": "https://exercism.io/tracks/erlang/exercises/clock/solutions/86421393a1304c0bb6d635c3564f00f5",
-    "handle": "heptalophos",
-    "is_requester": true,
-    "auto_approve": false
-}
+{"track":"erlang","exercise":"clock","id":"86421393a1304c0bb6d635c3564f00f5","url":"https://exercism.io/my/solutions/86421393a1304c0bb6d635c3564f00f5","handle":"heptalophos","is_requester":true,"auto_approve":false}
