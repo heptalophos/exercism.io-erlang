@@ -10,7 +10,8 @@
          relation/2]).
 
 
--spec is_equal(L1, L2) -> boolean() when
+-spec is_equal(L1, L2) -> boolean() 
+    when
     L1 :: [T], L2 :: [T], T :: term().
 is_equal(L1, L2) -> 
     case relation(L1, L2) of 
@@ -18,7 +19,8 @@ is_equal(L1, L2) ->
         _ -> false
     end.
 
--spec is_sublist(L1, L2) -> boolean() when
+-spec is_sublist(L1, L2) -> boolean() 
+    when
     L1 :: [T], L2 :: [T], T :: term().
 is_sublist(L1, L2) -> 
     case (relation(L1, L2)) of
@@ -27,7 +29,8 @@ is_sublist(L1, L2) ->
         _ -> false 
     end.
 
--spec is_superlist(L1, L2) -> boolean() when
+-spec is_superlist(L1, L2) -> boolean() 
+    when
     L1 :: [T], L2 :: [T], T :: term().
 is_superlist(L1, L2) ->     
     case (relation(L1, L2)) of
@@ -36,7 +39,8 @@ is_superlist(L1, L2) ->
         _ -> false 
     end.
 
--spec is_unequal(L1, L2) -> boolean() when
+-spec is_unequal(L1, L2) -> boolean() 
+  when
     L1 :: [T], L2 :: [T], T :: term().
 is_unequal(L1, L2) ->
     case (relation(L1, L2)) of
@@ -44,7 +48,8 @@ is_unequal(L1, L2) ->
         _ -> true
     end.
 
--spec relation(L1, L2) -> Relation when
+-spec relation(L1, L2) -> Relation 
+  when
     L1 :: [T], L2 :: [T], T :: term(), 
     Relation :: equal | sublist | superlist | unequal.
 relation(L1, L2) -> 
@@ -57,7 +62,8 @@ relation(L1, L2) ->
 
 % Auxiliary
 
--spec infix(L1, L2) -> boolean() when
+-spec infix(L1, L2) -> boolean() 
+  when
     L1 :: [T], L2 :: [T], T :: term().
 infix(L1, L2) -> 
     case {L1, L2} of

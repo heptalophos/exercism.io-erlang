@@ -75,3 +75,37 @@ in call from eunit_proc:run_group/2 (eunit_proc.erl, line 549)
 =======================================================
   Failed: 1.  Skipped: 0.  Passed: 12.
 ===> Error running tests
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling word_count
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "word_count.app"
+  application 'word_count'
+    module 'word_count'
+      module 'word_count_tests'
+        word_count_tests:20: 1_count_one_word_test_ (count one word)...ok
+        word_count_tests:25: 2_count_one_of_each_word_test_ (count one of each word)...ok
+        word_count_tests:31: 3_multiple_occurrences_of_a_word_test_ (multiple occurrences of a word)...ok
+        word_count_tests:37: 4_handles_cramped_lists_test_ (handles cramped lists)...ok
+        word_count_tests:43: 5_handles_expanded_lists_test_ (handles expanded lists)...ok
+        word_count_tests:49: 6_ignore_punctuation_test_ (ignore punctuation)...ok
+        word_count_tests:55: 7_include_numbers_test_ (include numbers)...ok
+        word_count_tests:61: 8_normalize_case_test_ (normalize case)...ok
+        word_count_tests:66: 9_with_apostrophes_test_ (with apostrophes)...ok
+        word_count_tests:72: 10_with_quotations_test_ (with quotations)...ok
+        word_count_tests:78: 11_substrings_from_the_beginning_test_ (substrings from the beginning)...ok
+        word_count_tests:85: 12_multiple_spaces_not_detected_as_a_word_test_ (multiple spaces not detected as a word)...ok
+        word_count_tests:92: 13_alternating_word_separators_not_detected_as_a_word_test_ (alternating word separators not detected as a word)...ok
+        [done in 0.218 s]
+      [done in 0.218 s]
+    [done in 0.218 s]
+  [done in 0.218 s]
+=======================================================
+  All 13 tests passed.
