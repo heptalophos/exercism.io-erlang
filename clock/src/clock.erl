@@ -13,8 +13,10 @@
 
 -spec create(integer(), integer()) -> clock().
 create(Hours, Minutes) -> 
-    Hour = minutes(Hours, Minutes) div 60,
-    Minute = minutes(Hours, Minutes) rem 60,
+    Hour = 
+        minutes(Hours, Minutes) div 60,
+    Minute = 
+        minutes(Hours, Minutes) rem 60,
     {Hour, Minute}.
 
 -spec is_equal(clock(), clock()) -> boolean().

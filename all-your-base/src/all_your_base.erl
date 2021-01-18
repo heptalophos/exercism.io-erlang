@@ -16,14 +16,17 @@ rebase(Digits, InputBase, OutputBase) ->
         OutputBase < 2 -> 
             {error, "output base must be >= 2"};
         true -> 
-            case lists:any(fun(D) -> D < 0 orelse
-                                     D >= InputBase 
+            case lists:any(fun(D) -> 
+                            D < 0 orelse
+                            D >= InputBase 
                            end, 
                            Digits) of
-                true -> 
-                        {error, "all digits must satisfy 0 <= d < input base"};
-                _    -> 
-                        {ok, digits(value(Digits, InputBase), OutputBase)}
+            true -> 
+                {error, 
+                 "all digits must satisfy 0 <= d < input base"};
+            _    -> 
+                {ok, 
+                 digits(value(Digits, InputBase), OutputBase)}
             end
     end. 
 
@@ -34,7 +37,7 @@ rebase(Digits, InputBase, OutputBase) ->
                 Representation :: integer().
 value(Digits, Base) ->
     lists:foldl(fun(D, V) -> 
-                        D + (V * Base) 
+                    D + (V * Base) 
                 end,
                 0, 
                 Digits).
