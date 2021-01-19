@@ -1,9 +1,1 @@
-{
-    "track": "erlang",
-    "exercise": "etl",
-    "id": "6dd573c6a5ff47f49dd72116313cf3e3",
-    "url": "https://exercism.io/tracks/erlang/exercises/etl/solutions/6dd573c6a5ff47f49dd72116313cf3e3",
-    "handle": "heptalophos",
-    "is_requester": true,
-    "auto_approve": false
-}
+{"track":"erlang","exercise":"etl","id":"6dd573c6a5ff47f49dd72116313cf3e3","url":"https://exercism.io/my/solutions/6dd573c6a5ff47f49dd72116313cf3e3","handle":"heptalophos","is_requester":true,"auto_approve":false}
