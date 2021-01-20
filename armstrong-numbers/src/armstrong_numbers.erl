@@ -1,4 +1,5 @@
 -module(armstrong_numbers).
+-author(heptalophos).
 
 -export([is_armstrong_number/1]).
 
