@@ -1,6 +1,7 @@
 -module(all_your_base).
--export([rebase/3]).
+-author(heptalophos).
 
+-export([rebase/3]).
 
 -spec rebase(Digits, IBase, OBase) -> 
         {ok, Val} | {error, string()} 
