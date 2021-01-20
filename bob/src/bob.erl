@@ -1,4 +1,5 @@
 -module(bob).
+-author(heptalophos).
 
 -export([response/1]).
 
