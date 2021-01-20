@@ -1,4 +1,5 @@
 -module(accumulate).
+-author(heptalophos).
 
 -export([accumulate/2]).
 
