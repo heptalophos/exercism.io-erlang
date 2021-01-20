@@ -1,4 +1,5 @@
 -module(allergies).
+-author(heptalophos).
 
 -export([allergies/1, is_allergic_to/2]).
 

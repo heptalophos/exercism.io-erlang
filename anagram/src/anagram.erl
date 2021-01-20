@@ -1,4 +1,5 @@
 -module(anagram).
+-author(heptalophos).
 
 -export([find_anagrams/2]).
 

@@ -1,4 +1,5 @@
 -module(atbash_cipher).
+-author(heptalophos).
 
 -export([decode/1, encode/1]).
 
