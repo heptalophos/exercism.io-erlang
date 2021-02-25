@@ -1,1 +1,9 @@
-{"track":"erlang","exercise":"nth-prime","id":"db8ff92c235f44b3b7749c7d30cc82ee","url":"https://exercism.io/my/solutions/db8ff92c235f44b3b7749c7d30cc82ee","handle":"heptalophos","is_requester":true,"auto_approve":false}
+{
+    "track": "erlang",
+    "exercise": "nth-prime",
+    "id": "db8ff92c235f44b3b7749c7d30cc82ee",
+    "url": "https://exercism.io/tracks/erlang/exercises/nth-prime/solutions/db8ff92c235f44b3b7749c7d30cc82ee",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
+}
