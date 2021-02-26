@@ -9,8 +9,6 @@
 -include_lib("eunit/include/eunit.hrl").
 
 
-
-
 '1_first_prime_test_'() ->
     {"first prime", ?_assertEqual(2, nth_prime:prime(1))}.
 
