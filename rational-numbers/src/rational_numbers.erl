@@ -22,10 +22,18 @@ divide(R1, R2) ->
     {X2, Y2} = R2,
     reduce({X1 * Y2, X2 * Y1}).
 
--spec exp(rational(), integer()) -> rational().
-exp(Base, Exponent) -> 
+-spec exp(rational(), integer()) -> rational();
+         (integer(), rational()) -> float();
+         (rational(), float()) -> float().
+exp(Base, Exponent) when is_integer(Exponent) -> 
     {X, Y} = Base,
-    reduce({pow(X, Exponent), pow(Y, Exponent)}).
+    reduce({ipow(X, Exponent), ipow(Y, Exponent)});
+exp(Base, Exponent) when is_integer(Base) -> 
+    {X, Y} = Exponent,
+    math:pow(Base, X / Y);
+exp(Base, Exponent) when is_float(Exponent) -> 
+    {X, Y} = Base,
+    math:pow(X, Exponent) / math:pow(Y, Exponent).
 
 -spec mul(rational(), rational()) -> rational().
 mul(R1, R2) -> 
@@ -61,9 +69,9 @@ gcd(X, Y) ->
         false -> gcd(Y, X rem Y)
     end. 
 
--spec pow(integer(), integer()) -> integer().
-pow(B, E) ->
+-spec ipow(integer(), integer()) -> integer().
+ipow(B, E) ->
     case E =:= 0 of
         true -> 1;
-        false -> B * pow(B, E - 1)
+        false -> B * ipow(B, E - 1)
     end.
