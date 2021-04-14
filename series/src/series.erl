@@ -2,7 +2,8 @@
 
 -export([slices/2]).
 
--spec slices(pos_integer(), [any()]) -> [any()] | {error, string()}.
+-spec slices(pos_integer(), [any()]) -> 
+                            [any()] | {error, string()}.
 slices(SliceLength, Series) ->
     if 
         SliceLength =< 0 ->
@@ -17,7 +18,10 @@ slices(SliceLength, Series) ->
 % Auxiliary
 
 -spec slices(pos_integer(), [any()], [any()]) -> [any()].
-slices(SLength, Series, SubSeries) when length(Series) < SLength ->
-    lists:reverse(SubSeries);
+slices(SLength, Series, SubSeries) 
+    when length(Series) < SLength ->
+                lists:reverse(SubSeries);
 slices(SLength, Series = [_|Rest], SubSeries) -> 
-    slices(SLength, Rest, [lists:sublist(Series, SLength) | SubSeries]).
+    slices(SLength, 
+           Rest, 
+           [lists:sublist(Series, SLength) | SubSeries]).
