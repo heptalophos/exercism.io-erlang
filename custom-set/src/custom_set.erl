@@ -106,5 +106,5 @@ union(Set1, Set2) ->
 %Auxiliary 
 
 -spec dedup(list()) -> list().
-dedup(L) -> 
-	ordsets:from_list(ordsets:to_list(L)).
+dedup(List) -> 
+	ordsets:from_list(ordsets:to_list(List)).
