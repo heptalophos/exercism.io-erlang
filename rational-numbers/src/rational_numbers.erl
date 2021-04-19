@@ -2,76 +2,77 @@
 
 -export([absolute/1, add/2, divide/2, exp/2, mul/2, reduce/1, sub/2]).
 
--type rational() :: {integer(), integer()}.
+-type rational() :: {Numerator :: integer(), Denominator :: integer()}.
 
 
 -spec absolute(rational()) -> rational().
-absolute(R) -> 
-    {X, Y} = R,
-    {abs(X), abs(Y)}.
+absolute(Rational) -> 
+    {Num, Den} = Rational,
+    {abs(Num), abs(Den)}.
 
 -spec add(rational(), rational()) -> rational().
-add(R1, R2) -> 
-    {X1, Y1} = R1,
-    {X2, Y2} = R2,
-    reduce({X1 * Y2 + X2 * Y1, Y1 * Y2}).
+add(Rational1, Rational2) -> 
+    {Num1, Den1} = Rational1,
+    {Num2, Den2} = Rational2,
+    reduce({Num1 * Den2 + Num2 * Den1, Den1 * Den2}).
 
 -spec divide(rational(), rational()) -> rational().
-divide(R1, R2) -> 
-    {X1, Y1} = R1,
-    {X2, Y2} = R2,
-    reduce({X1 * Y2, X2 * Y1}).
+divide(Rational1, Rational2) -> 
+    {Num1, Den1} = Rational1,
+    {Num2, Den2} = Rational2,
+    reduce({Num1 * Den2, Num2 * Den1}).
 
 -spec exp(rational(), integer()) -> rational();
          (integer(), rational()) -> float();
          (rational(), float()) -> float().
 exp(Base, Exponent) when is_integer(Exponent) -> 
-    {X, Y} = Base,
-    reduce({ipow(X, Exponent), ipow(Y, Exponent)});
+    {Num, Den} = Base,
+    reduce({ipow(Num, Exponent), ipow(Den, Exponent)});
 exp(Base, Exponent) when is_integer(Base) -> 
-    {X, Y} = Exponent,
-    math:pow(Base, X / Y);
+    {Num, Den} = Exponent,
+    math:pow(Base, Num / Den);
 exp(Base, Exponent) when is_float(Exponent) -> 
-    {X, Y} = Base,
-    math:pow(X, Exponent) / math:pow(Y, Exponent).
+    {Num, Den} = Base,
+    math:pow(Num, Exponent) / math:pow(Den, Exponent).
 
 -spec mul(rational(), rational()) -> rational().
-mul(R1, R2) -> 
-    {X1, Y1} = R1,
-    {X2, Y2} = R2,
-    reduce({X1 * X2, Y1 * Y2}).
+mul(Rational1, Rational2) -> 
+    {Num1, Den1} = Rational1,
+    {Num2, Den2} = Rational2,
+    reduce({Num1 * Num2, Den1 * Den2}).
 
 -spec reduce(rational()) -> rational().
-reduce(R) -> 
-    {X, Y} = R,
-    sign({X div gcd(X, Y), Y div gcd(X, Y)}).     
+reduce(Rational) -> 
+    {Num, Den} = Rational,
+    sign({Num div gcd(Num, Den), Den div gcd(Num, Den)}).     
 
 -spec sub(rational(), rational()) -> rational().
-sub(R1, R2) -> 
-    {X1, Y1} = R1,
-    {X2, Y2} = R2,
-    reduce({X1 * Y2 - X2 * Y1, Y1 * Y2}).
+sub(Rational1, Rational2) -> 
+    {Num1, Den1} = Rational1,
+    {Num2, Den2} = Rational2,
+    reduce({Num1 * Den2 - Num2 * Den1, Den1 * Den2}).
 
 
 % Auxiliary
 
 -spec sign(rational()) -> rational().
-sign({X, Y}) ->
+sign(Rational) ->
+    {X, Y} = Rational,
     case Y < 0 of
-        true -> {-X, -Y};
-        false -> {X, Y}
+        true  -> {-X, -Y};
+        false -> { X,  Y}
     end.  
 
 -spec gcd(integer(), integer()) -> integer().
 gcd(X, Y) -> 
     case Y =:= 0 of
-        true -> abs(X);
+        true  -> abs(X);
         false -> gcd(Y, X rem Y)
     end. 
 
 -spec ipow(integer(), integer()) -> integer().
 ipow(B, E) ->
     case E =:= 0 of
-        true -> 1;
+        true  -> 1;
         false -> B * ipow(B, E - 1)
     end.
