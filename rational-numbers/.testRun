@@ -60,3 +60,70 @@ file "rational_numbers.app"
 >rebar3 eunit
 
 ===> Verifying dependencies...
+===> Fetching erl_exercism ({pkg,<<"erl_exercism">>,<<"0.1.2">>})
+===> Version cached at c:/Users/Chris/.cache/rebar3/hex/hexpm/packages/erl_exercism-0.1.2.tar is up to date, reusing it
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Fetching parse_trans ({pkg,<<"parse_trans">>,<<"3.1.0">>})
+===> Version cached at c:/Users/Chris/.cache/rebar3/hex/hexpm/packages/parse_trans-3.1.0.tar is up to date, reusing it
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling parse_trans
+_build/default/lib/parse_trans/src/parse_trans.erl:129: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:326: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:346: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:737: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:868: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
+
+===> Compiling erl_exercism
+===> Compiling rational_numbers
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "rational_numbers.app"
+  application 'rational_numbers'
+    module 'rational_numbers'
+      module 'rational_numbers_tests'
+        rational_numbers_tests:18: 1_add_two_positive_rational_numbers_test_ (Add two positive rational numbers)...ok
+        rational_numbers_tests:24: 2_add_a_positive_rational_number_and_a_negative_rational_number_test_ (Add a positive rational number and a negative rational number)...ok
+        rational_numbers_tests:29: 3_add_two_negative_rational_numbers_test_ (Add two negative rational numbers)...ok
+        rational_numbers_tests:35: 4_add_a_rational_number_to_its_additive_inverse_test_ (Add a rational number to its additive inverse)...ok
+        rational_numbers_tests:40: 5_subtract_two_positive_rational_numbers_test_ (Subtract two positive rational numbers)...ok
+        rational_numbers_tests:46: 6_subtract_a_positive_rational_number_and_a_negative_rational_number_test_ (Subtract a positive rational number and a negative rational number)...ok
+        rational_numbers_tests:51: 7_subtract_two_negative_rational_numbers_test_ (Subtract two negative rational numbers)...ok
+        rational_numbers_tests:56: 8_subtract_a_rational_number_from_itself_test_ (Subtract a rational number from itself)...ok
+        rational_numbers_tests:61: 9_multiply_two_positive_rational_numbers_test_ (Multiply two positive rational numbers)...ok
+        rational_numbers_tests:67: 10_multiply_a_negative_rational_number_by_a_positive_rational_number_test_ (Multiply a negative rational number by a positive rational number)...ok
+        rational_numbers_tests:72: 11_multiply_two_negative_rational_numbers_test_ (Multiply two negative rational numbers)...ok
+        rational_numbers_tests:77: 12_multiply_a_rational_number_by_its_reciprocal_test_ (Multiply a rational number by its reciprocal)...ok
+        rational_numbers_tests:82: 13_multiply_a_rational_number_by_1_test_ (Multiply a rational number by 1)...ok
+        rational_numbers_tests:87: 14_multiply_a_rational_number_by_0_test_ (Multiply a rational number by 0)...ok
+        rational_numbers_tests:92: 15_divide_two_positive_rational_numbers_test_ (Divide two positive rational numbers)...ok
+        rational_numbers_tests:98: 16_divide_a_positive_rational_number_by_a_negative_rational_number_test_ (Divide a positive rational number by a negative rational number)...ok
+        rational_numbers_tests:103: 17_divide_two_negative_rational_numbers_test_ (Divide two negative rational numbers)...ok
+        rational_numbers_tests:108: 18_divide_a_rational_number_by_1_test_ (Divide a rational number by 1)...ok
+        rational_numbers_tests:114: 19_absolute_value_of_a_positive_rational_number_test_ (Absolute value of a positive rational number)...ok
+        rational_numbers_tests:120: 20_absolute_value_of_a_positive_rational_number_with_negative_numerator_and_denominator_test_ (Absolute value of a positive rational number with negative numerator and denominator)...ok
+        rational_numbers_tests:126: 21_absolute_value_of_a_negative_rational_number_test_ (Absolute value of a negative rational number)...ok
+        rational_numbers_tests:132: 22_absolute_value_of_a_negative_rational_number_with_negative_denominator_test_ (Absolute value of a negative rational number with negative denominator)...ok
+        rational_numbers_tests:137: 23_absolute_value_of_zero_test_ (Absolute value of zero)...ok
+        rational_numbers_tests:143: 24_raise_a_positive_rational_number_to_a_positive_integer_power_test_ (Raise a positive rational number to a positive integer power)...ok
+        rational_numbers_tests:148: 25_raise_a_negative_rational_number_to_a_positive_integer_power_test_ (Raise a negative rational number to a positive integer power)...ok
+        rational_numbers_tests:153: 26_raise_zero_to_an_integer_power_test_ (Raise zero to an integer power)...ok
+        rational_numbers_tests:157: 27_raise_one_to_an_integer_power_test_ (Raise one to an integer power)...ok
+        rational_numbers_tests:162: 28_raise_a_positive_rational_number_to_the_power_of_zero_test_ (Raise a positive rational number to the power of zero)...ok
+        rational_numbers_tests:167: 29_raise_a_negative_rational_number_to_the_power_of_zero_test_ (Raise a negative rational number to the power of zero)...ok
+        rational_numbers_tests:173: 30_raise_a_real_number_to_a_positive_rational_number_test_ (Raise a real number to a positive rational number)...ok
+        rational_numbers_tests:179: 31_raise_a_real_number_to_a_negative_rational_number_test_ (Raise a real number to a negative rational number)...ok
+        rational_numbers_tests:185: 32_raise_a_real_number_to_a_zero_rational_number_test_ (Raise a real number to a zero rational number)...ok
+        rational_numbers_tests:191: 33_reduce_a_positive_rational_number_to_lowest_terms_test_ (Reduce a positive rational number to lowest terms)...ok
+        rational_numbers_tests:196: 34_reduce_a_negative_rational_number_to_lowest_terms_test_ (Reduce a negative rational number to lowest terms)...ok
+        rational_numbers_tests:202: 35_reduce_a_rational_number_with_a_negative_denominator_to_lowest_terms_test_ (Reduce a rational number with a negative denominator to lowest terms)...ok
+        rational_numbers_tests:207: 36_reduce_zero_to_lowest_terms_test_ (Reduce zero to lowest terms)...ok
+        rational_numbers_tests:211: 37_reduce_an_integer_to_lowest_terms_test_ (Reduce an integer to lowest terms)...ok
+        rational_numbers_tests:216: 38_reduce_one_to_lowest_terms_test_ (Reduce one to lowest terms)...ok
+        [done in 1.031 s]
+      [done in 1.031 s]
+    [done in 1.031 s]
+  [done in 1.031 s]
+=======================================================
+  All 38 tests passed.
