@@ -12,43 +12,96 @@
 	 	 union/2
 		]).
 
--spec add(any(), list()) -> list().
-add(Elem, Set) -> 
-	maps:put(Elem, true, Set).
+-record(custom_set, {elements = []}).
+-type custom_set() :: #custom_set{}.
 
--spec contains(any(), list()) -> boolean().
+
+-spec contains(any(), custom_set()) -> boolean().
+contains(_, Set) when Set#custom_set.elements == [] -> 
+	false;
 contains(Elem, Set) -> 
-	maps:get(Elem, Set, false).
+	Elements = Set#custom_set.elements,
+	[H|T] = Elements,
+	case H of
+		Elem -> true;
+		_ -> contains(Elem, #custom_set{elements = T})
+	end.
 
--spec difference(list(), list()) -> list().
+-spec add(any(), custom_set()) -> custom_set().
+add(Elem, Set) -> 
+	Elems = Set#custom_set.elements,
+	case contains(Elem, Set) of
+		true -> 
+			Elements = Elems;
+		false -> 
+			Elements = [Elem|Elems]
+	end,
+	#custom_set{elements = Elements}.
+
+-spec difference(custom_set(), custom_set()) -> custom_set().
 difference(Set1, Set2) -> 
-	maps:without(maps:keys(Set2), Set1).
+	Elements1 = Set1#custom_set.elements,
+	Elements2 = Set2#custom_set.elements,
+	#custom_set{elements = Elements1 -- Elements2}.
 
--spec disjoint(list(), list()) -> boolean().
+-spec disjoint(custom_set(), custom_set()) -> boolean().
 disjoint(Set1, Set2) -> 
-	maps:size(intersection(Set1, Set2)) =:= 0.
+	Elements1 = Set1#custom_set.elements,
+	difference(Set1, Set2) == #custom_set{elements = Elements1}.
 
--spec empty(list()) -> boolean.
-empty(Set) -> 
-	maps:size(Set) =:= 0.
+-spec empty(custom_set()) -> boolean().
+empty(Set) ->
+	Set#custom_set.elements == [].
 
--spec equal(list(), list()) -> boolean().
+-spec equal(custom_set(), custom_set()) -> boolean().
 equal(Set1, Set2) -> 
-	Set1 =:= Set2.
+	difference(Set1, Set2) == #custom_set{elements = []} 
+	andalso 
+	difference(Set2, Set1) == #custom_set{elements = []}.
 
--spec from_list(list()) -> list().
+-spec from_list(list()) -> custom_set().
 from_list(List) -> 
-	maps:from_list([{Elem, true} || Elem <- List]).
+	#custom_set{elements = 
+		lists:foldl(fun(Elem, Acc) -> 
+					[Elem] ++ Acc 
+				end, 
+				[], 
+				List)}.
 
--spec intersection(list(), list()) -> list().
+-spec intersection(custom_set(), custom_set()) -> custom_set().
 intersection(Set1, Set2) -> 
-	from_list([E || E <- maps:keys(Set1), contains(E, Set2)]).
-	% [Elem || Elem <- Set1, contains(Elem, Set2)].
+	Elements1 = Set1#custom_set.elements,
+	Elements2 = Set2#custom_set.elements,
+	#custom_set{elements = 
+		lists:filter(fun(Elem) -> 
+					 contains(Elem, 
+					 		 #custom_set{elements = Elements2}) 
+		             end, 
+					 Elements1)}.
 
--spec subset(list(), list()) -> boolean().
+-spec subset(custom_set(), custom_set()) -> boolean().
 subset(Set1, Set2) -> 
-	lists:all(fun(E) -> contains(E, Set2) end, maps:keys(Set1)).
+	Elements1 = Set1#custom_set.elements,
+	Elements2 = Set2#custom_set.elements,
+	lists:all(fun(Elem) -> 
+				contains(Elem, 
+						 #custom_set{elements = Elements2}) 
+			  end, 
+			  Elements1).
 
--spec union(list(), list()) -> list().
+-spec union(custom_set(), custom_set()) -> custom_set().
 union(Set1, Set2) -> 
-	maps:merge(Set1, Set2).
+	Elements1 = Set1#custom_set.elements,
+	Elements2 = Set2#custom_set.elements,
+	#custom_set{elements = 
+		dedup(lists:foldl(fun(Elem, Acc) -> 
+							[Elem] ++ Acc 
+						  end, 
+						  Elements1, 
+						  Elements2))}.
+
+%Auxiliary 
+
+-spec dedup(list()) -> list().
+dedup(L) -> 
+	ordsets:from_list(ordsets:to_list(L)).
