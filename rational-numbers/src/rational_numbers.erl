@@ -56,22 +56,23 @@ sub(R1, R2) ->
 % Auxiliary
 
 -spec sign(rational()) -> rational().
-sign({X, Y}) ->
+sign(R) ->
+    {X, Y} = R,
     case Y < 0 of
-        true -> {-X, -Y};
-        false -> {X, Y}
+        true  -> {-X, -Y};
+        false -> { X,  Y}
     end.  
 
 -spec gcd(integer(), integer()) -> integer().
 gcd(X, Y) -> 
     case Y =:= 0 of
-        true -> abs(X);
+        true  -> abs(X);
         false -> gcd(Y, X rem Y)
     end. 
 
 -spec ipow(integer(), integer()) -> integer().
 ipow(B, E) ->
     case E =:= 0 of
-        true -> 1;
+        true  -> 1;
         false -> B * ipow(B, E - 1)
     end.
