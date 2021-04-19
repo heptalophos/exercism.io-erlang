@@ -54,3 +54,9 @@ file "rational_numbers.app"
   [done in 0.610 s]
 =======================================================
   All 38 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
