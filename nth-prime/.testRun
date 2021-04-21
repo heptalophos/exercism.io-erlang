@@ -21,3 +21,29 @@ file "nth_prime.app"
   [done in 0.828 s]
 =======================================================
   All 5 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling nth_prime
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "nth_prime.app"
+  application 'nth_prime'
+    module 'nth_prime'
+      module 'nth_prime_tests'
+        nth_prime_tests:13: 1_first_prime_test_ (first prime)...ok
+        nth_prime_tests:16: 2_second_prime_test_ (second prime)...ok
+        nth_prime_tests:19: 3_sixth_prime_test_ (sixth prime)...ok
+        nth_prime_tests:23: 4_big_prime_test_ (big prime)...[1.391 s] ok
+        nth_prime_tests:27: 5_there_is_no_zeroth_prime_test_ (there is no zeroth prime)...ok
+        [done in 1.469 s]
+      [done in 1.469 s]
+    [done in 1.469 s]
+  [done in 1.469 s]
+=======================================================
+  All 5 tests passed.
