@@ -9,12 +9,12 @@
          from_native_list/1, 
          to_native_list/1]).
 
--record(node, {payload :: any(), 
-               next    :: node()}).
+% -record(node, {payload :: any(), 
+%                next    :: node()}).
 
--record(sllist, {head  :: node(), 
-                 tail  :: [node()], 
-                 count :: pos_integer()}).
+% -record(sllist, {head  :: node(), 
+%                  tail  :: [node()], 
+%                  count :: pos_integer()}).
 
 -record(sllist, {payload = none :: any(), next = [] :: [any()]}).
 
