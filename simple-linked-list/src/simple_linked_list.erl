@@ -28,8 +28,8 @@ empty() ->
 
 -spec cons(any(), sl_list()) -> sl_list().
 cons(Elt, List) -> 
-    Count = 1 + #sllist.count,
-    Next = List#node.next,
+    % Count = 1 + #sllist.count,
+    % Next = List#node.next,
     #sllist{payload = Elt, next = List}.
 
 head(List) -> 
