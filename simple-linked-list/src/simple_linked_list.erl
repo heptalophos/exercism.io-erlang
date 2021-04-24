@@ -18,7 +18,7 @@
 
 -record(sllist, {payload = none :: any(), next = [] :: [any()]}).
 
--type node() :: #node{}.
+% -type node() :: #node{}.
 
 -type sl_list() :: #sllist{}.
 
