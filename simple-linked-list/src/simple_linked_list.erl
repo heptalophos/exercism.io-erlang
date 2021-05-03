@@ -9,41 +9,91 @@
          from_native_list/1, 
          to_native_list/1]).
 
-% -record(node, {payload :: any(), 
-%                next    :: node()}).
-
-% -record(sllist, {head  :: node(), 
-%                  tail  :: [node()], 
-%                  count :: pos_integer()}).
-
--record(sllist, {payload = none :: any(), next = [] :: [any()]}).
+-record(node, {payload = none :: undefined | any(), 
+               next = none :: undefined | [any()]}).
 
 % -type node() :: #node{}.
 
--type sl_list() :: #sllist{}.
+-type sl_list() :: #node{}.
 
 -spec empty() -> sl_list().
 empty() -> 
-    #sllist{payload = none, next = []}.
+    #node{payload = none, next = none}.
 
 -spec cons(any(), sl_list()) -> sl_list().
 cons(Elt, List) -> 
-    % Count = 1 + #sllist.count,
-    % Next = List#node.next,
-    #sllist{payload = Elt, next = List}.
+    #node{payload = Elt, next = List}.
 
+-spec head(sl_list()) -> any() | error.
 head(List) -> 
-    #sllist{payload = Head, next = _} = List,
-    Head.
+    case List =/= empty() of
+        true ->
+            List#node.payload;
+        false -> 
+            error(badarg)
+        end.
 
+-spec tail(sl_list()) -> sl_list().
 tail(List) -> 
-    #sllist{payload = _, next = Tail} = List,
-    Tail.
+    case List =/= empty() of
+        true ->
+            List#node.next;
+        false -> 
+            empty()
+        end.
 
-reverse(_List) -> undefined.
+-spec reverse(sl_list()) -> sl_list().
+reverse(List) -> 
+    case List =:= empty() of 
+        true -> 
+            empty();
+        false ->
+            from_native_list(
+                lists:foldl(
+                    fun(X, Acc) -> [X|Acc] 
+                    end, 
+                    [], 
+                    to_native_list(List)))
+    end.
 
-count(_List) -> undefined.
+-spec count(sl_list()) -> 
+        fun((sl_list(), pos_integer()) -> 
+            pos_integer()).
+count(List) -> count(List, 0).
 
-to_native_list(_List) -> undefined.
+-spec to_native_list(sl_list()) -> list().
+to_native_list(List) -> 
+    #node{payload = H, next = T} = List,
+    case List  =:= empty() of 
+        true -> 
+            [];
+        false ->
+            [H | to_native_list(T)]
+        end.
 
-from_native_list(_NativeList) -> undefined.
+-spec from_native_list(list()) -> sl_list().
+from_native_list(NativeList) ->
+    case NativeList of 
+        [] -> empty();
+        [H | T] -> 
+            #node{payload = H, 
+                    next = from_native_list(T)}
+    end.
+
+% Auxiliary
+
+-spec count(sl_list(), pos_integer()) -> pos_integer().
+count(List, Length) ->
+    case List  =/= empty() of
+        true -> 
+            count(List#node.next, Length + 1);
+        false -> Length  
+    end.
+
+% append(Elm, List) -> 
+%     case List =:= empty() of 
+%         true ->
+%             #node{payload = Elm, next = []};
+%         false ->
+%             #node{payload = head(List), next = append(Elm, tail(List))}
+%         end.
