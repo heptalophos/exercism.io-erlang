@@ -1,0 +1,36 @@
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling simple_linked_list
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "simple_linked_list.app"
+  application 'simple_linked_list'
+    module 'simple_linked_list'
+      module 'simple_linked_list_tests'
+        simple_linked_list_tests: 1_new_lists_should_have_length_0_test...ok
+        simple_linked_list_tests: 2_adding_a_element_increments_length_test...ok
+        simple_linked_list_tests: 3_adding_two_elements_increments_twice_test...ok
+        simple_linked_list_tests: 4_new_lists_have_a_null_head_element_test...ok
+        simple_linked_list_tests: 5_an_element_added_to_an_empty_list_becomes_the_head_test...ok
+        simple_linked_list_tests: 6_adding_a_second_element_changes_the_head_test...ok
+        simple_linked_list_tests: 7_can_get_the_next_element_from_the_head_test...ok
+        simple_linked_list_tests: 8_from_native_list_preserves_empty_list_length_test...ok
+        simple_linked_list_tests: 9_from_native_list_preserves_list_length_test...ok
+        simple_linked_list_tests: 10_can_traverse_the_list_test...ok
+        simple_linked_list_tests: 11_can_convert_empty_list_to_a_native_list_test...ok
+        simple_linked_list_tests: 12_can_convert_to_a_non_empty_native_list_test...ok
+        simple_linked_list_tests: 13_can_convert_from_an_empty_native_list_test...ok
+        simple_linked_list_tests: 14_can_convert_from_a_non_empty_native_list_test...ok
+        simple_linked_list_tests: 15_converting_to_and_from_a_native_list_is_identity_test...ok
+        simple_linked_list_tests: 16_empty_list_can_be_reversed_test...ok
+        simple_linked_list_tests: 17_non_empty_list_can_be_reversed_test...ok
+        simple_linked_list_tests: 18_can_reverse_a_reversal_test...ok
+        [done in 0.281 s]
+      [done in 0.281 s]
+    [done in 0.281 s]
+  [done in 0.281 s]
+=======================================================
+  All 18 tests passed.
