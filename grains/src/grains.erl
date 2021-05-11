@@ -3,10 +3,8 @@
 -export([square/1, total/0]).
 
 
--spec square(pos_integer()) -> 
-      pos_integer() 
-      | {error, string}.
-square(Square) when is_integer(Square) -> 
+-spec square(pos_integer()) -> pos_integer() | {error, string}.
+square(Square) -> 
     case Square > 0 andalso Square < 65 of 
         true  -> 
             1 bsl (Square - 1);
@@ -17,5 +15,4 @@ square(Square) when is_integer(Square) ->
 
 -spec total() -> pos_integer().
 total() -> 
-    lists:sum([square(Square) 
-              || Square <- lists:seq(1, 64)]).
+    lists:sum([square(Square) || Square <- lists:seq(1, 64)]).
