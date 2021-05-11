@@ -6,24 +6,29 @@
 -type strand() :: [nucleotide()].
 -type nuc_count() :: {nucleotide(), non_neg_integer()}.
 
--spec valid(nucleotide()) -> 
-        nucleotide() | {error, atom()}.
-valid(N) when N =:= "A"; 
-              N =:= "C"; 
-              N =:= "G"; 
-              N =:= "T"  -> 
-    N;
-valid(_) -> 
-    erlang:error(invalid_nucleotide).
 
 -spec count(strand(), nucleotide()) -> non_neg_integer().
 count(Strand, Nucleotide) -> 
     string:length(lists:filter(fun(X) -> 
-                    valid([X]) =:= Nucleotide end, 
-                    Strand)).
+                                valid([X]) =:= Nucleotide 
+                               end, 
+                               Strand)).
 
 -spec nucleotide_counts(strand()) -> [nuc_count()].
 nucleotide_counts(Strand) -> 
     lists:map(fun(X) -> 
-                {X, count(Strand, X)} end, 
-                ["A", "C", "G", "T"]).
+                    {X, count(Strand, X)} 
+              end, 
+              ["A", "C", "G", "T"]).
+
+% Auxiliary
+
+-spec valid(nucleotide()) -> nucleotide() | {error, atom()}.
+valid(N) ->
+    case N of 
+        "A" -> N;
+        "C" -> N;
+        "G" -> N;
+        "T" -> N;
+         _  -> erlang:error(invalid_nucleotide)
+    end.
