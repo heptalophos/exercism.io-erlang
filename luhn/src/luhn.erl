@@ -10,24 +10,24 @@ valid(Value) ->
 
 % Auxiliary
 
--spec valid(string(), pos_integer(), pos_integer()) -> boolean().
-valid([], Pos, Sum) ->
+-spec valid(string(), integer(), integer()) -> boolean().
+valid([], Pos, CSum) ->
     case Pos == 1 orelse Pos == 2 of
         true -> false;
-        false -> Sum rem 10 =:= 0
+        false -> CSum rem 10 =:= 0
     end;
-valid([D|N], Pos, Sum) ->
+valid([D|N], Pos, CSum) ->
     case D of
         $ -> 
-            valid(N, Pos, Sum);
+            valid(N, Pos, CSum);
         X when X >= $0 andalso X =< $9 ->
-            valid(N, Pos + 1, Sum + adjust(D - $0, Pos));
+            valid(N, Pos + 1, CSum + adjust(D - $0, Pos));
         _ -> false
     end. 
 
 -spec adjust(pos_integer(), pos_integer()) -> pos_integer().
 adjust(Digit, Position) ->
-    case {Position rem 2 == 0, Digit * 2 > 9} of
+    case { Position rem 2 == 0, Digit > 4 } of
         {true, true} -> 
             Digit * 2 - 9;
         {true, _} -> 
