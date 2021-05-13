@@ -1,105 +1,119 @@
 -module(robot_simulator).
 
-% this will warn us if we don't implement all the required methods
-% though it won't fail if we don't - it's just a warning
--behaviour(gen_fsm).
+-behaviour(gen_server).
 
-% public API
--export([create/0, place/3, direction/1, position/1,
-          left/1, right/1, advance/1]).
+-export([advance/1, create/0, 
+         direction/1, left/1, 
+         place/3, position/1, 
+         right/1]).
 
-% methods for gen_fsm
--export([init/1, handle_event/3, handle_sync_event/4, terminate/3]).
+-export([init/1, handle_call/3, handle_cast/2]).
 
-% FSM - though there's only one state currently : ()
--export([idle/3, idle/2]).
+-type direction() :: north | east | south | west.
+-type position() :: { X :: integer(), 
+                      Y :: integer() }.
 
-% (L)eft, (R)ight, (A)dvance
--define(VALID_COMMANDS, "LRA").
+-record(robot, { pid = undefined :: pid() | undefined }).
 
--record(robot,
-        {direction=undefined,
-        position={undefined, undefined}
-        }).
+-record(state, {position = {undefined, undefined} :: position(), 
+                direction = undefined :: direction()}).
 
-init(_Args) ->
-  State = #robot{},
-  {ok, idle, State}.
+-type(robot() :: #robot{}).
 
-% stubs, but it works
-handle_event(_Event, StateName, StateData) ->
-  {next_state, StateName, StateData}.
-handle_sync_event(_Event, _From, StateName, StateData) ->
-  {reply, ok, StateName, StateData}.
-% handle_info(_Info, StateName, StateData) ->
-%   {next_state, StateName, StateData}.
-terminate(_Reason, _StateName, _StateData) ->
-    ok.
+-spec advance(robot()) -> none().
+advance(Robot) -> 
+   #robot{pid = Pid} = Robot,
+   gen_server:cast(Pid, advance).
 
-% 'getters'
-idle({get_direction}, _From, State) ->
-  {reply, State#robot.direction, idle, State};
-idle({get_position}, _From, State) ->
-  {reply, State#robot.position, idle, State}.
+-spec create() -> robot(). 
+create() -> 
+   % {ok, Pid} = start_link(#robot{}),
+   {ok, PID} = gen_server:start_link(?MODULE, [], []),
+   #robot{pid = PID}.
 
-% the set/action methods don't expect a reply
-idle({set_position, Position}, State) ->
-  {next_state, idle, State#robot{position=Position}};
-idle({set_direction, Direction}, State) ->
-  {next_state, idle, State#robot{direction=Direction}};
-idle({turn, WhichWay}, State) ->
-  NewDirection = change_direction(State#robot.direction, WhichWay),
-  {next_state, idle, State#robot{direction=NewDirection}};
-idle({advance}, State) ->
-  NewPosition = move(State#robot.direction, State#robot.position),
-  {next_state, idle, State#robot{position=NewPosition}}.
+-spec direction(robot()) -> none().
+direction(Robot) -> 
+   #robot{pid = Pid} = Robot,
+   gen_server:call(Pid, direction).
 
-create() ->
-  % we could use this to pass arguments to our init function
-  Args = [], Options = [],
-  {ok, Pid} = gen_statem:start_link(?MODULE, Args, Options),
-  Pid.
+-spec left(robot()) -> none().
+left(Robot) -> 
+   #robot{pid = Pid} = Robot,
+   gen_server:cast(Pid, {clockwise}).
 
-place(Robot, Direction, Position) ->
-  gen_statem:cast(Robot, {set_direction, Direction}),
-  gen_statem:cast(Robot, {set_position, Position}).
+-spec place(robot(), direction(), position()) -> none().
+place(Robot, Direction, Position) -> 
+   #robot{pid = Pid} = Robot,
+   gen_server:cast(Pid, {position, Position}),
+   gen_server:cast(Pid, {direction, Direction}).
 
-direction(Robot) ->
-  gen_statem:call(Robot, {get_direction}).
+-spec position(robot()) -> position().
+position(Robot) -> 
+   #robot{pid = Pid} = Robot,
+   gen_server:call(Pid, position).
 
-position(Robot) ->
-  gen_statem:call(Robot, {get_position}).
+-spec right(robot()) -> none().
+right(Robot) -> 
+   #robot{pid = Pid} = Robot,
+   gen_server:cast(Pid, {counter_clockwise}).
 
-left(Robot) ->
-  gen_statem:cast(Robot, {turn, left}).
+% Auxiliary
 
-right(Robot) ->
-  gen_statem:cast(Robot, {turn, right}).
+-spec(advance(position(), direction()) -> position()).
+advance(P, D)  ->
+   {X, Y} = P,
+   case D of 
+      east  -> {X + 1, Y};
+      west  -> {X - 1, Y};
+      north -> {X, Y + 1}; 
+      south -> {X, Y - 1}
+   end.
 
-advance(Robot) ->
-  gen_statem:cast(Robot, {advance}).
+turn_left(D) ->
+   case D of
+      north -> west;
+      west  -> south;
+      south -> east;
+      east  -> north 
+   end.
 
-% cmd($R, Robot) ->
-%   right(Robot);
-% cmd($L, Robot) ->
-%   left(Robot);
-% cmd($A, Robot) ->
-%   advance(Robot).
+turn_right(D) ->
+   case D of
+      north -> east;
+      west  -> north;
+      south -> west;
+      east  -> south 
+   end.
 
-% control(Robot, Commands) ->
-%   % though we don't need to return a list
-%   [cmd(C, Robot) || C <- Commands, lists:member(C, ?VALID_COMMANDS)].
+%% gen_server callbacks
 
-change_direction(north, left)   -> west;
-change_direction(north, right)  -> east;
-change_direction(west, left)    -> south;
-change_direction(west, right)   -> north;
-change_direction(south, left)   -> east;
-change_direction(south, right)  -> west;
-change_direction(east, left)    -> north;
-change_direction(east, right)   -> south.
+% start_link(Name) ->
+%    gen_server:start_link({local, Name}, ?MODULE, [], []).
 
-move(north, {X, Y}) -> {X, Y+1};
-move(west, {X, Y})  -> {X-1, Y};
-move(south, {X, Y}) -> {X, Y-1};
-move(east, {X, Y})  -> {X+1, Y}.
+init(_) ->
+   {ok, #state{}}.
+
+handle_call(Request, _, _) ->
+   case Request of 
+      position -> 
+         {reply, Request, #state{position = Request}};
+      direction -> 
+         {reply, Request, #state{direction = Request}}
+      end.
+
+handle_cast(Msg, State) ->
+   case Msg of
+      {direction, Direction} ->
+         {noreply, #state{direction = Direction}};
+      {position, Position} ->
+         {noreply, #state{position = Position}};
+      {counter_clockwise} ->
+         D = turn_left(State#state.direction),
+         handle_cast({direction, D}, State);
+      {clockwise} ->
+         D = turn_right(State#state.direction),
+         handle_cast({direction, D}, State);
+      {advance} ->
+         D = advance(State#state.position, State#state.direction),
+         handle_cast({position, D}, State)
+      end.
