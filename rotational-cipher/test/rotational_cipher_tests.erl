@@ -9,8 +9,6 @@
 -include_lib("eunit/include/eunit.hrl").
 
 
-
-
 '1_rotate_a_by_0_same_output_as_input_test_'() ->
     [{"rotate a by 0, same output as input "
       "(encrypt)",
