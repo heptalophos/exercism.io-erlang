@@ -36,3 +36,44 @@ file "rotational_cipher.app"
   [done in 0.313 s]
 =======================================================
   All 20 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling rotational_cipher
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "rotational_cipher.app"
+  application 'rotational_cipher'
+    module 'rotational_cipher'
+      module 'rotational_cipher_tests'
+        rotational_cipher_tests:15: 1_rotate_a_by_0_same_output_as_input_test_ (rotate a by 0, same output as input (encrypt))...ok
+        rotational_cipher_tests:18: 1_rotate_a_by_0_same_output_as_input_test_ (rotate a by 0, same output as input (decrypt))...ok
+        rotational_cipher_tests:22: 2_rotate_a_by_1_test_ (rotate a by 1 (encrypt))...ok
+        rotational_cipher_tests:24: 2_rotate_a_by_1_test_ (rotate a by 1 (decrypt))...ok
+        rotational_cipher_tests:29: 3_rotate_a_by_26_same_output_as_input_test_ (rotate a by 26, same output as input (encrypt))...ok
+        rotational_cipher_tests:32: 3_rotate_a_by_26_same_output_as_input_test_ (rotate a by 26, same output as input (decrypt))...ok
+        rotational_cipher_tests:37: 4_rotate_m_by_13_test_ (rotate m by 13 (encrypt))...ok
+        rotational_cipher_tests:39: 4_rotate_m_by_13_test_ (rotate m by 13 (decrypt))...ok
+        rotational_cipher_tests:45: 5_rotate_n_by_13_with_wrap_around_alphabet_test_ (rotate n by 13 with wrap around alphabet (encrypt))...ok
+        rotational_cipher_tests:48: 5_rotate_n_by_13_with_wrap_around_alphabet_test_ (rotate n by 13 with wrap around alphabet (decrypt))...ok
+        rotational_cipher_tests:53: 6_rotate_capital_letters_test_ (rotate capital letters (encrypt))...ok
+        rotational_cipher_tests:56: 6_rotate_capital_letters_test_ (rotate capital letters (decrypt))...ok
+        rotational_cipher_tests:61: 7_rotate_spaces_test_ (rotate spaces (encrypt))...ok
+        rotational_cipher_tests:64: 7_rotate_spaces_test_ (rotate spaces (decrypt))...ok
+        rotational_cipher_tests:69: 8_rotate_numbers_test_ (rotate numbers (encrypt))...ok
+        rotational_cipher_tests:72: 8_rotate_numbers_test_ (rotate numbers (decrypt))...ok
+        rotational_cipher_tests:78: 9_rotate_punctuation_test_ (rotate punctuation (encrypt))...ok
+        rotational_cipher_tests:81: 9_rotate_punctuation_test_ (rotate punctuation (decrypt))...ok
+        rotational_cipher_tests:86: 10_rotate_all_letters_test_ (rotate all letters (encrypt))...ok
+        rotational_cipher_tests:92: 10_rotate_all_letters_test_ (rotate all letters (decrypt))...ok
+        [done in 0.329 s]
+      [done in 0.329 s]
+    [done in 0.329 s]
+  [done in 0.329 s]
+=======================================================
+  All 20 tests passed.
