@@ -23,13 +23,11 @@ decrypt(String, Key) ->
 
 -spec rotate(char(), non_neg_integer()) -> char().
 rotate(C, Shift) ->
-    case lists:member(C, ?ALPHA_LOWER) of 
-        true -> rotate(C, Shift, $a);
-        false -> 
-            case lists:member(C, ?ALPHA_UPPER) of
-                true -> rotate(C, Shift, $A);
-                _ -> C
-            end
+    case {lists:member(C, ?ALPHA_LOWER),
+          lists:member(C, ?ALPHA_UPPER)} of 
+        {true, _} -> rotate(C, Shift, $a);
+        {_, true} -> rotate(C, Shift, $A);
+        {_,    _} -> C
     end.
 
 -spec rotate(char(), non_neg_integer(), char()) -> char().

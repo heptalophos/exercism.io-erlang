@@ -117,3 +117,4 @@ handle_cast(Msg, State) ->
          D = advance(State#state.position, State#state.direction),
          handle_cast({position, D}, State)
       end.
+%% clockwise_plus, clockwise_minus

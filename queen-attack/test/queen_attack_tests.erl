@@ -38,3 +38,11 @@
 '7_can_attack_on_fourth_diagonal_test_'() ->
     {"can attack on fourth diagonal",
      ?_assert(queen_attack:can_attack({7, 1}, {6, 0}))}.
+
+'8_queens_occupying_same_square_test_'() -> 
+    {"queens occupying same square",
+     ?_assertError(on_same_square, queen_attack:can_attack({2, 4}, {2, 4}))}.
+
+'9_both_queens_outside_chessboard_test_'() ->
+    {"both queens outside chessboard",
+     ?_assertError(invalid_position, queen_attack:can_attack({0, 9}, {8, -1}))}.
