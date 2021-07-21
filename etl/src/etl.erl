@@ -10,11 +10,11 @@
 transform(Legacy) -> 
     Transformation =
         fun({Letter, Points}, Transformed) ->
-            Reformed = 
+            Reformatted = 
                 lists:map(fun (L) -> 
                     {string:to_lower(L), Letter} 
                           end, 
                 Points),
-            lists:merge(Transformed, Reformed)
+            lists:merge(Transformed, Reformatted)
         end,
     lists:foldl(Transformation, [], Legacy).

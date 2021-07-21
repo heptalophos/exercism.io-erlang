@@ -53,8 +53,6 @@ file "queen_attack.app"
 
 
 
-
-
 >rebar3 eunit
 
 ===> Verifying dependencies...
@@ -108,5 +106,35 @@ file "queen_attack.app"
       [done in 0.141 s]
     [done in 0.141 s]
   [done in 0.156 s]
+=======================================================
+  All 9 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling queen_attack
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "queen_attack.app"
+  application 'queen_attack'
+    module 'queen_attack'
+      module 'queen_attack_tests'
+        queen_attack_tests:16: 1_can_not_attack_test_ (can not attack)...ok
+        queen_attack_tests:20: 2_can_attack_on_same_row_test_ (can attack on same row)...ok
+        queen_attack_tests:24: 3_can_attack_on_same_column_test_ (can attack on same column)...ok
+        queen_attack_tests:28: 4_can_attack_on_first_diagonal_test_ (can attack on first diagonal)...ok
+        queen_attack_tests:32: 5_can_attack_on_second_diagonal_test_ (can attack on second diagonal)...ok
+        queen_attack_tests:36: 6_can_attack_on_third_diagonal_test_ (can attack on third diagonal)...ok
+        queen_attack_tests:40: 7_can_attack_on_fourth_diagonal_test_ (can attack on fourth diagonal)...ok
+        queen_attack_tests:44: 8_queens_occupying_same_square_test_ (queens occupying same square)...ok
+        queen_attack_tests:48: 9_both_queens_outside_chessboard_test_ (both queens outside chessboard)...ok
+        [done in 0.140 s]
+      [done in 0.140 s]
+    [done in 0.140 s]
+  [done in 0.140 s]
 =======================================================
   All 9 tests passed.

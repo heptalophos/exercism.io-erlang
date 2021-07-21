@@ -1,9 +1,10 @@
 -module(rational_numbers).
 
--export([absolute/1, add/2, divide/2, exp/2, mul/2, reduce/1, sub/2]).
+-export([absolute/1, add/2, divide/2, 
+         exp/2, mul/2, reduce/1, sub/2]).
 
--type rational() :: {Numerator :: integer(), Denominator :: integer()}.
-
+-type rational() :: {Numerator :: integer(), 
+                     Denominator :: integer()}.
 
 -spec absolute(rational()) -> rational().
 absolute(Rational) -> 

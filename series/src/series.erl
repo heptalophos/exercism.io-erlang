@@ -3,7 +3,7 @@
 -export([slices/2]).
 
 -spec slices(pos_integer(), [any()]) -> 
-                            [any()] | {error, string()}.
+                            [any()] | error.
 slices(SliceLength, Series) ->
     if 
         SliceLength =< 0 ->

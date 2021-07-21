@@ -22,7 +22,7 @@ can_attack(WhiteQueen, BlackQueen) ->
                 {0, 0} -> error(on_same_square);
                 {_, 0} -> true;
                 {0, _} -> true;
-                {X, Y} -> X / Y == 1 
+                {X, Y} -> X == Y 
             end
     end.
 
