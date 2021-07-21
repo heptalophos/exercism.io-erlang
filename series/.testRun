@@ -71,3 +71,34 @@ file "series.app"
   [done in 0.172 s]
 =======================================================
   All 10 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling series
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "series.app"
+  application 'series'
+    module 'series'
+      module 'series_tests'
+        series_tests:9: 1_slices_of_one_from_one_test_ (slices of one from one)...ok
+        series_tests:13: 2_slices_of_one_from_two_test_ (slices of one from two)...ok
+        series_tests:17: 3_slices_of_two_test_ (slices of two)...ok
+        series_tests:21: 4_slices_of_two_overlap_test_ (slices of two overlap)...ok
+        series_tests:26: 5_slices_can_include_duplicates_test_ (slices can include duplicates)...ok
+        series_tests:31: 6_slices_of_a_long_series_test_ (slices of a long series)...ok
+        series_tests:37: 7_slice_length_is_too_large_test_ (slice length is too large)...ok
+        series_tests:41: 8_slice_length_cannot_be_zero_test_ (slice length cannot be zero)...ok
+        series_tests:45: 9_slice_length_cannot_be_negative_test_ (slice length cannot be negative)...ok
+        series_tests:49: 10_empty_series_is_invalid_test_ (empty series is invalid)...ok
+        [done in 0.156 s]
+      [done in 0.156 s]
+    [done in 0.156 s]
+  [done in 0.156 s]
+=======================================================
+  All 10 tests passed.
