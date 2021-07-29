@@ -1,0 +1,26 @@
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling pascals_triangle
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "pascals_triangle.app"
+  application 'pascals_triangle'
+    module 'pascals_triangle'
+      module 'pascals_triangle_tests'
+        pascals_triangle_tests:16: 1_zero_rows_test_ (zero rows)...ok
+        pascals_triangle_tests:20: 2_single_row_test_ (single row)...ok
+        pascals_triangle_tests:24: 3_two_rows_test_ (two rows)...ok
+        pascals_triangle_tests:28: 4_three_rows_test_ (three rows)...ok
+        pascals_triangle_tests:33: 5_four_rows_test_ (four rows)...ok
+        pascals_triangle_tests:38: 6_five_rows_test_ (five rows)...ok
+        pascals_triangle_tests:44: 7_six_rows_test_ (six rows)...ok
+        pascals_triangle_tests:50: 8_ten_rows_test_ (ten rows)...ok
+        [done in 0.125 s]
+      [done in 0.125 s]
+    [done in 0.125 s]
+  [done in 0.125 s]
+=======================================================
+  All 8 tests passed.
