@@ -23,14 +23,18 @@
     {"even and odd steps",
      ?_assertMatch(9, collatz_conjecture:steps(12))}.
 
-'4_large_number_of_even_and_odd_steps_test_'() ->
-    {"large number of even and odd steps",
+'4_many_steps_for_a_small_number_test_'() ->
+    {"moderately many steps for a small number",
+     ?_assertMatch(111, collatz_conjecture:steps(27))}.
+
+'5_many_steps_for_a_large_number_test_'() ->
+    {"large number of steps for a large number",
      ?_assertMatch(152, collatz_conjecture:steps(1000000))}.
 
-'5_zero_is_an_error_test_'() ->
+'6_zero_is_an_error_test_'() ->
     {"zero is an error",
      ?_assertError(badarg, collatz_conjecture:steps(0))}.
 
-'6_negative_value_is_an_error_test_'() ->
+'7_negative_value_is_an_error_test_'() ->
     {"negative value is an error",
      ?_assertError(badarg, collatz_conjecture:steps(-15))}.
