@@ -55,39 +55,6 @@ file "collatz_conjecture.app"
   All 14 tests passed.
 
 
-===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
-===> Compiling collatz_conjecture
-===> Performing EUnit tests...
-======================== EUnit ========================
-file "collatz_conjecture.app"
-  application 'collatz_conjecture'
-    module 'collatz_conjecture'
-      module 'collatz_conjecture_tests'
-        collatz_conjecture_tests: 1_zero_steps_for_one_test...ok
-        collatz_conjecture_tests: 2_divide_if_even_test...ok
-        collatz_conjecture_tests: 3_even_and_odd_steps_test...ok
-        collatz_conjecture_tests: 4_large_number_of_even_and_odd_steps_test...ok
-        collatz_conjecture_tests: 5_zero_is_an_error_test...ok
-        collatz_conjecture_tests: 6_negative_value_is_an_error_test...ok
-        collatz_conjecture_tests: 7_non_integer_value_is_an_error_test...ok
-        collatz_conjecture_tests: 8_zero_steps_for_one_tail_recursive_version_test...ok
-        collatz_conjecture_tests: 9_divide_if_even_tail_recursive_version_test...ok
-        collatz_conjecture_tests: 10_even_and_odd_steps_tail_recursive_version_test...ok
-        collatz_conjecture_tests: 11_large_number_of_even_and_odd_steps_tail_recursive_version_test...ok
-        collatz_conjecture_tests: 12_zero_is_an_error_tail_recursive_version_test...ok
-        collatz_conjecture_tests: 13_negative_value_is_an_error_tail_recursive_version_test...ok
-        collatz_conjecture_tests: 14_non_integer_value_is_an_error_tail_recursive_version_test...ok
-        [done in 0.218 s]
-      [done in 0.218 s]
-    module 'collatz_conjecture_tr'
-    [done in 1.000 s]
-  [done in 1.110 s]
-=======================================================
-  All 14 tests passed.
-
-
 
 ===> Verifying dependencies...
 ===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
@@ -117,22 +84,8 @@ file "collatz_conjecture.app"
 >rebar3 eunit
 
 ===> Verifying dependencies...
-===> Fetching erl_exercism ({pkg,<<"erl_exercism">>,<<"0.1.2">>})
-===> Version cached at c:/Users/Chris/.cache/rebar3/hex/hexpm/packages/erl_exercism-0.1.2.tar is up to date, reusing it
 ===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Fetching parse_trans ({pkg,<<"parse_trans">>,<<"3.1.0">>})
-===> Version cached at c:/Users/Chris/.cache/rebar3/hex/hexpm/packages/parse_trans-3.1.0.tar is up to date, reusing it
 ===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
-===> Compiling parse_trans
-_build/default/lib/parse_trans/src/parse_trans.erl:129: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
-_build/default/lib/parse_trans/src/parse_trans.erl:326: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
-_build/default/lib/parse_trans/src/parse_trans.erl:346: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
-_build/default/lib/parse_trans/src/parse_trans.erl:737: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
-_build/default/lib/parse_trans/src/parse_trans.erl:868: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
-_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
-_build/default/lib/parse_trans/src/parse_trans.erl:874: Warning: erlang:get_stacktrace/0: deprecated; use the new try/catch syntax for retrieving the stack backtrace
-
-===> Compiling erl_exercism
 ===> Compiling collatz_conjecture
 ===> Performing EUnit tests...
 ======================== EUnit ========================
@@ -143,12 +96,41 @@ file "collatz_conjecture.app"
         collatz_conjecture_tests:16: 1_zero_steps_for_one_test_ (zero steps for one)...ok
         collatz_conjecture_tests:20: 2_divide_if_even_test_ (divide if even)...ok
         collatz_conjecture_tests:24: 3_even_and_odd_steps_test_ (even and odd steps)...ok
-        collatz_conjecture_tests:28: 4_large_number_of_even_and_odd_steps_test_ (large number of even and odd steps)...ok
-        collatz_conjecture_tests:32: 5_zero_is_an_error_test_ (zero is an error)...ok
-        collatz_conjecture_tests:36: 6_negative_value_is_an_error_test_ (negative value is an error)...ok
+        collatz_conjecture_tests:28: 4_many_steps_for_a_small_number_test_ (moderately many steps for a small number)...ok
+        collatz_conjecture_tests:32: 5_many_steps_for_a_large_number_test_ (large number of steps for a large number)...ok
+        collatz_conjecture_tests:36: 6_zero_is_an_error_test_ (zero is an error)...ok
+        collatz_conjecture_tests:40: 7_negative_value_is_an_error_test_ (negative value is an error)...ok
+        [done in 0.109 s]
+      [done in 0.109 s]
+    [done in 0.125 s]
+  [done in 0.125 s]
+=======================================================
+  All 7 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling collatz_conjecture
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "collatz_conjecture.app"
+  application 'collatz_conjecture'
+    module 'collatz_conjecture'
+      module 'collatz_conjecture_tests'
+        collatz_conjecture_tests:16: 1_zero_steps_for_one_test_ (zero steps for one)...ok
+        collatz_conjecture_tests:20: 2_divide_if_even_test_ (divide if even)...ok
+        collatz_conjecture_tests:24: 3_even_and_odd_steps_test_ (even and odd steps)...ok
+        collatz_conjecture_tests:28: 4_many_steps_for_a_small_number_test_ (moderately many steps for a small number)...ok
+        collatz_conjecture_tests:32: 5_many_steps_for_a_large_number_test_ (large number of steps for a large number)...ok
+        collatz_conjecture_tests:36: 6_zero_is_an_error_test_ (zero is an error)...ok
+        collatz_conjecture_tests:40: 7_negative_value_is_an_error_test_ (negative value is an error)...ok
         [done in 0.109 s]
       [done in 0.109 s]
     [done in 0.109 s]
-  [done in 0.109 s]
+  [done in 0.125 s]
 =======================================================
-  All 6 tests passed.
+  All 7 tests passed.
