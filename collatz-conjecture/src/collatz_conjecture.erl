@@ -11,6 +11,9 @@ steps(N) ->
             error(badarg)
     end.
 
+
+%Auxiliary
+
 -spec steps(N::integer(), 
             Step::non_neg_integer()) -> 
                                 non_neg_integer().
