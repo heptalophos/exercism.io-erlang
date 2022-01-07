@@ -1,0 +1,32 @@
+{
+  "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",
+  "authors": [
+    "robinhilliard"
+  ],
+  "contributors": [
+    "adolfopa",
+    "ErikSchierboom",
+    "etrepum",
+    "iHiD",
+    "JordanAdams",
+    "juhlig",
+    "kytrinyx",
+    "macintux",
+    "NobbZ",
+    "tmcgilchrist",
+    "xymbol"
+  ],
+  "files": {
+    "solution": [
+      "src/beer_song.erl"
+    ],
+    "test": [
+      "test/beer_song_tests.erl"
+    ],
+    "example": [
+      ".meta/example.erl"
+    ]
+  },
+  "source": "Learn to Program by Chris Pine",
+  "source_url": "http://pine.fm/LearnToProgram/?Chapter=06"
+}
