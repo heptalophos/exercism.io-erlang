@@ -1,0 +1,24 @@
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling beer_song
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "beer_song.app"
+  application 'beer_song'
+    module 'beer_song'
+      module 'beer_song_tests'
+        beer_song_tests: verse_test...ok
+        beer_song_tests: verse_0_test...ok
+        beer_song_tests: verse_1_test...ok
+        beer_song_tests: verse_2_test...ok
+        beer_song_tests: singing_several_verses_test...ok
+        beer_song_tests: sing_all_the_rest_of_the_verses_test...ok
+        [done in 0.094 s]
+      [done in 0.094 s]
+    [done in 0.094 s]
+  [done in 0.094 s]
+=======================================================
+  All 6 tests passed.
