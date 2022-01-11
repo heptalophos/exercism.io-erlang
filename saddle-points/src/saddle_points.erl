@@ -2,6 +2,7 @@
 
 -export([saddle_points/1]).
 
+-spec saddle_points([[integer()]]) -> [{integer(), integer()}].
 saddle_points(Matrix) ->
 	Saddle_point = 
 		fun (R, C, M) ->
