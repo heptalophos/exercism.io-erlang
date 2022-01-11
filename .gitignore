@@ -23,5 +23,6 @@ cleanup.*
 /*/*.iml
 /*/rebar3.crashdump
 /*/*~
+HELP.md
 
 .fake

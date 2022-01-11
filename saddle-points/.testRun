@@ -1,0 +1,27 @@
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling saddle_points
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "saddle_points.app"
+  application 'saddle_points'
+    module 'saddle_points'
+      module 'saddle_points_tests'
+        saddle_points_tests: can_identify_single_saddle_point_test...ok
+        saddle_points_tests: can_identify_that_empty_matrix_has_no_saddle_points_test...ok
+        saddle_points_tests: can_identify_lack_of_saddle_points_when_there_are_none_test...ok
+        saddle_points_tests: can_identify_multiple_saddle_points_in_a_column_test...ok
+        saddle_points_tests: can_identify_multiple_saddle_points_in_a_row_test...ok
+        saddle_points_tests: can_identify_saddle_point_in_bottom_right_corner_test...ok
+        saddle_points_tests: can_identify_saddle_points_in_a_non_square_matrix_test...ok
+        saddle_points_tests: can_identify_that_saddle_points_in_a_single_column_matrix_are_those_with_the_minimum_value_test...ok
+        saddle_points_tests: can_identify_that_saddle_points_in_a_single_row_matrix_are_those_with_the_maximum_value_test...ok
+        [done in 0.141 s]
+      [done in 0.141 s]
+    [done in 0.141 s]
+  [done in 0.141 s]
+=======================================================
+  All 9 tests passed.
