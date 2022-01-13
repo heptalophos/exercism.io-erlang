@@ -1,0 +1,25 @@
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling grade_school
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "grade_school.app"
+  application 'grade_school'
+    module 'grade_school'
+      module 'grade_school_tests'
+        grade_school_tests:19: 1_adding_a_student_adds_them_to_the_sorted_roster_test_ (Adding a student adds them to the sorted roster)...ok
+        grade_school_tests:29: 2_adding_more_students_adds_them_to_the_sorted_roster_test_ (Adding more students adds them to the sorted roster)...ok
+        grade_school_tests:38: 3_adding_students_to_different_grades_adds_them_to_the_same_sorted_roster_test_ (Adding students to different grades adds them to the same sorted roster)...ok
+        grade_school_tests:45: 4_roster_returns_an_empty_list_if_there_are_no_students_enrolled_test_ (Roster returns an empty list if there are no students enrolled)...ok
+        grade_school_tests:58: 5_student_names_with_grades_are_displayed_in_the_same_sorted_roster_test_ (Student names with grades are displayed in the same sorted roster)...ok
+        grade_school_tests:69: 6_grade_returns_the_students_in_that_grade_in_alphabetical_order_test_ (Grade returns the students in that grade in alphabetical order)...ok
+        grade_school_tests:76: 7_grade_returns_an_empty_list_if_there_are_no_students_in_that_grade_test_ (Grade returns an empty list if there are no students in that grade)...ok
+        [done in 0.109 s]
+      [done in 0.109 s]
+    [done in 0.109 s]
+  [done in 0.109 s]
+=======================================================
+  All 7 tests passed.
