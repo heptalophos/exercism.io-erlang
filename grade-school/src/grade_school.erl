@@ -4,11 +4,21 @@
 
 -export([add/3, get/2, get/1, new/0]).
 
+-type grade() :: 1..7.
+-type student() :: unicode:chardata().
+-type school() :: [{grade(), student()}].
 
-add(_Name, _Grade, _School) -> undefined.
 
-get(_Grade, _School) -> undefined.
+-spec new() -> school().
+new() -> [].
 
-get(_School) -> undefined.
+-spec add(student(), grade(), school()) -> school().
+add(Name, Grade, School) -> [{Grade, Name} | School].   
+    
+-spec get(grade(), school()) -> [student()].
+get(Grade, School) -> [Student || {_, Student} <- 
+                       lists:sort([{G, S} || {G, S} <- School, G == Grade])
+                      ].
 
-new() -> undefined.
+-spec get(school()) -> [student()].
+get(School) -> lists:sort([Student || {_, Student} <- School]).
