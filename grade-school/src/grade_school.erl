@@ -17,7 +17,7 @@ add(Name, Grade, School) -> [{Grade, Name} | School].
     
 -spec get(grade(), school()) -> [student()].
 get(Grade, School) -> [Student || {_, Student} <- 
-                       lists:sort([{G, S} || {G, S} <- School, G == Grade])
+                       lists:sort([{G, _S} || {G, _S} <- School, G == Grade])
                       ].
 
 -spec get(school()) -> [student()].

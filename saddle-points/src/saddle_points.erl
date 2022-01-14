@@ -6,9 +6,9 @@
 saddle_points(Matrix) ->
 	Saddle_point = 
 		fun (R, C) ->
-			Row =  lists:nth(R, Matrix),
+			Row = lists:nth(R, Matrix),
 			Col = [lists:nth(C, Nth) || Nth <- Matrix],
-			Val =  lists:nth(C, lists:nth(R, Matrix)),
+			Val = lists:nth(C, lists:nth(R, Matrix)),
 			Val =:= lists:max(Row) andalso 
 			Val =:= lists:min(Col)			  
 		end,
