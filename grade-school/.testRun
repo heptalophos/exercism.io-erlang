@@ -23,6 +23,11 @@ file "grade_school.app"
   [done in 0.109 s]
 =======================================================
   All 7 tests passed.
+
+
+
+>rebar3 eunit
+
 ===> Verifying dependencies...
 ===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
 ===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
