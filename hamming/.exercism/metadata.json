@@ -1,1 +1,9 @@
-{"track":"erlang","exercise":"hamming","id":"db10195bff3d4827bb87972c7deb5309","url":"https://exercism.org/tracks/erlang/exercises/hamming","handle":"heptalophos","is_requester":true,"auto_approve":false}
+{
+    "track": "erlang",
+    "exercise": "hamming",
+    "id": "db10195bff3d4827bb87972c7deb5309",
+    "url": "https://exercism.org/tracks/erlang/exercises/hamming/solutions/db10195bff3d4827bb87972c7deb5309",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
+}
