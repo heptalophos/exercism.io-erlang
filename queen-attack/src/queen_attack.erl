@@ -2,27 +2,27 @@
 
 -export([can_attack/2]).
 
--spec can_attack({0..7, 0..7}, {0..7, 0..7}) -> 
-                 boolean() | error.
+-spec can_attack({0..7, 0..7}, {0..7, 0..7}) -> boolean() | {error, atom()}.
 
 can_attack(WhiteQueen, BlackQueen) -> 
     {WX, WY} = WhiteQueen,
     {BX, BY} = BlackQueen,
     OffBoard = fun(X) -> 
         if 
-            X < 0 orelse X > 7 -> true;
+            X < 0 orelse X > 7 -> true; 
             true -> false 
         end 
     end,
     case lists:any(OffBoard, [WX, WY, BX, BY]) of  
-        true  -> 
-            error(invalid_position);
-        false -> 
+        true  -> %% any queen @ illegal rank or file
+            {error, invalid_position_offboard};
+        false -> %% both queens @ legal rank & file
             case ({abs(WX - BX), abs(WY - BY)}) of 
-                {0, 0} -> error(on_same_square);
-                {_, 0} -> true;
-                {0, _} -> true;
-                {X, Y} -> X == Y 
+                {0, 0} -> {error, invalid_position_same}; %% both queens @ same square
+                {_, 0} -> true; %% both queens @ same file
+                {0, _} -> true; %% both queens @ same rank
+                {X, Y} when X =:= Y -> true; %% queens @ same diagonal
+                {_, _} -> false
             end
     end.
 
