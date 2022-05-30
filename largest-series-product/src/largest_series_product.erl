@@ -2,7 +2,7 @@
 
 -export([largest_product/2]).
 
--spec largest_product(string(), integer()) -> integer() | erlang_error:error(atom()).
+-spec largest_product(string(), integer()) -> integer() | erlang:error(atom()).
 largest_product(Digits, Span) -> 
     case Span of 
         0 -> 1;
