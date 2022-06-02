@@ -1,6 +1,6 @@
 {application, rational_numbers,
   [{description, "exercism.io - rational-numbers"},
-    {vsn, "0.0.2"},
+    {vsn, "0.0.1"},
     {modules, []},
     {registered, []},
     {applications, [kernel,
