@@ -3,13 +3,12 @@
 -export([absolute/1, add/2, divide/2, 
          exp/2, mul/2, reduce/1, sub/2]).
 
--type rational() :: {Numerator :: integer(), 
-                     Denominator :: integer()}.
+-type rational() :: {Numerator :: integer(), Denominator :: integer()}.
 
 -spec absolute(rational()) -> rational().
 absolute(Rational) -> 
-    {Num, Den} = Rational,
-    {abs(Num), abs(Den)}.
+    {Num, Den} = Rational, 
+    reduce({abs(Num), abs(Den)}).
 
 -spec add(rational(), rational()) -> rational().
 add(Rational1, Rational2) -> 
@@ -52,7 +51,6 @@ sub(Rational1, Rational2) ->
     {Num1, Den1} = Rational1,
     {Num2, Den2} = Rational2,
     reduce({Num1 * Den2 - Num2 * Den1, Den1 * Den2}).
-
 
 % Auxiliary
 
