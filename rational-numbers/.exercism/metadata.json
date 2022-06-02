@@ -1,9 +1,1 @@
-{
-    "track": "erlang",
-    "exercise": "rational-numbers",
-    "id": "c980cadd10bb4a46948c4f26668149bb",
-    "url": "https://exercism.io/tracks/erlang/exercises/rational-numbers/solutions/c980cadd10bb4a46948c4f26668149bb",
-    "handle": "heptalophos",
-    "is_requester": true,
-    "auto_approve": false
-}
+{"track":"erlang","exercise":"rational-numbers","id":"c980cadd10bb4a46948c4f26668149bb","url":"https://exercism.org/tracks/erlang/exercises/rational-numbers","handle":"heptalophos","is_requester":true,"auto_approve":false}
