@@ -23,12 +23,16 @@ divide(Rational1, Rational2) ->
     reduce({Num1 * Den2, Num2 * Den1}).
 
 -spec exp(rational(), integer()) -> rational();
-         (integer(), rational()) -> float();
+         (number(), rational()) -> float();
          (rational(), float()) -> float().
+exp(Base, Exponent) when Exponent < 0 ->
+    {Num, Den} = Base,
+    reduce({trunc(math:pow(Den, abs(Exponent))), 
+            trunc(math:pow(Num, abs(Exponent)))});
 exp(Base, Exponent) when is_integer(Exponent) -> 
     {Num, Den} = Base,
     reduce({ipow(Num, Exponent), ipow(Den, Exponent)});
-exp(Base, Exponent) when is_integer(Base) -> 
+exp(Base, Exponent) when is_number(Base) -> 
     {Num, Den} = Exponent,
     math:pow(Base, Num / Den);
 exp(Base, Exponent) when is_float(Exponent) -> 
