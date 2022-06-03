@@ -31,3 +31,39 @@ file "largest_series_product.app"
   [done in 0.234 s]
 =======================================================
   All 15 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling largest_series_product
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "largest_series_product.app"
+  application 'largest_series_product'
+    module 'largest_series_product'
+      module 'largest_series_product_tests'
+        largest_series_product_tests:17: 1_finds_the_largest_product_if_span_equals_length_test_ (finds the largest product if span equals length)...ok
+        largest_series_product_tests:23: 2_can_find_the_largest_product_of_2_with_numbers_in_order_test_ (can find the largest product of 2 with numbers in order)...ok
+        largest_series_product_tests:29: 3_can_find_the_largest_product_of_2_test_ (can find the largest product of 2)...ok
+        largest_series_product_tests:36: 4_can_find_the_largest_product_of_3_with_numbers_in_order_test_ (can find the largest product of 3 with numbers in order)...ok
+        largest_series_product_tests:42: 5_can_find_the_largest_product_of_3_test_ (can find the largest product of 3)...ok
+        largest_series_product_tests:49: 6_can_find_the_largest_product_of_5_with_numbers_in_order_test_ (can find the largest product of 5 with numbers in order)...ok
+        largest_series_product_tests:56: 7_can_get_the_largest_product_of_a_big_number_test_ (can get the largest product of a big number)...ok
+        largest_series_product_tests:64: 8_reports_zero_if_the_only_digits_are_zero_test_ (reports zero if the only digits are zero)...ok
+        largest_series_product_tests:69: 9_reports_zero_if_all_spans_include_zero_test_ (reports zero if all spans include zero)...ok
+        largest_series_product_tests:74: 10_rejects_span_longer_than_string_length_test_ (rejects span longer than string length)...ok
+        largest_series_product_tests:80: 11_reports_1_for_empty_string_and_empty_product_0_span_test_ (reports 1 for empty string and empty product (0 span))...ok
+        largest_series_product_tests:86: 12_reports_1_for_nonempty_string_and_empty_product_0_span_test_ (reports 1 for nonempty string and empty product (0 span))...ok
+        largest_series_product_tests:91: 13_rejects_empty_string_and_nonzero_span_test_ (rejects empty string and nonzero span)...ok
+        largest_series_product_tests:96: 14_rejects_invalid_character_in_digits_test_ (rejects invalid character in digits)...ok
+        largest_series_product_tests:101: 15_rejects_negative_span_test_ (rejects negative span)...ok
+        [done in 0.234 s]
+      [done in 0.234 s]
+    [done in 0.234 s]
+  [done in 0.234 s]
+=======================================================
+  All 15 tests passed.
