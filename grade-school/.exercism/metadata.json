@@ -1,9 +1,1 @@
-{
-    "track": "erlang",
-    "exercise": "grade-school",
-    "id": "3bf4edeeb0f445258836bd79694a7853",
-    "url": "https://exercism.org/tracks/erlang/exercises/grade-school/solutions/3bf4edeeb0f445258836bd79694a7853",
-    "handle": "heptalophos",
-    "is_requester": true,
-    "auto_approve": false
-}
+{"track":"erlang","exercise":"grade-school","id":"3bf4edeeb0f445258836bd79694a7853","url":"https://exercism.org/tracks/erlang/exercises/grade-school","handle":"heptalophos","is_requester":true,"auto_approve":false}
