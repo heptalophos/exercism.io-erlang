@@ -11,14 +11,18 @@
 -spec new() -> school().
 new() -> [].
 
-
 -spec add(student(), grade(), school()) -> school().
 add(Name, Grade, School) -> 
-    lists:sort([{G, S} || {G, S} <- [{Grade, Name} | School]]). 
+    Names = lists:sort([S || {_, S} <- School]),
+    case lists:member(Name, Names) of 
+        true -> School; 
+        _    -> [{Grade, Name} | School]
+    end.
 
 -spec get(grade(), school()) -> [student()].
 get(Grade, School) -> 
-    [Student || {_, Student} <- lists:sort([{G, _S} || {G, _S} <- School, G == Grade])].
+    [Student || {_, Student} <- lists:sort([{G, _S} 
+             || {G, _S} <- School, G =:= Grade])].
 
 -spec get(school()) -> [student()].
 get(School) -> 
