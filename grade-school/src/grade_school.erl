@@ -16,7 +16,7 @@ add(Name, Grade, School) ->
     Names = lists:sort([S || {_, S} <- School]),
     case lists:member(Name, Names) of 
         true -> School; 
-        _    -> [{Grade, Name} | School]
+        _ -> [{Grade, Name} | School]
     end.
 
 -spec get(grade(), school()) -> [student()].

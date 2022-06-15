@@ -9,25 +9,26 @@ largest_product(Digits, Span) ->
         N when N < 0 -> erlang:error(negative_span);
         N when N > length(Digits) -> erlang:error(span_larger_than_series);
         _ -> case digits_to_ints(Digits, []) of
-                {ok, IntDigs} -> Products = [lists:foldl(
-                                                fun erlang:'*'/2, 
-                                                1, 
-                                                S) 
-                                             || S <- slices(IntDigs, Span, [])],
-                                 lists:max(Products);
-                {error, _}    -> erlang:error(invalid_digits)
+                {ok, IntDigs} -> 
+                    Products = [lists:foldl(fun erlang:'*'/2, 1, S) || 
+                                S <- slices(IntDigs, Span, [])],
+                    lists:max(Products);
+                {error, _} -> 
+                    erlang:error(invalid_digits)
              end
-    end.    
+    end.   
 
 % Auxiliary
 
 -spec digits_to_ints(string(), list(integer())) -> {ok, list(integer())} | {error, atom()}.
 digits_to_ints(Digits, Acc) -> 
     case Digits of 
-        [] ->   {ok, Acc};
+        [] ->   
+                {ok, Acc};
         [H | T] when H >= $0 andalso H =< $9 -> 
                 digits_to_ints(T, [erlang:list_to_integer([H], 10) | Acc]);
-        _  ->   {error, not_a_digit}
+        _  ->   
+                {error, not_a_digit}
     end.
 
 -spec slices(list(), integer(), list()) -> list().
