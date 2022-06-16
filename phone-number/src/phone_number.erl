@@ -6,10 +6,8 @@
 -spec number(string()) -> [$0..$9].
 number(String) ->
   case [C || C <- String, is_digit(C)] of
-    [$1 | Ds] when length(Ds) == 10 -> 
-      Ds;
-    Ds when length(Ds) == 10 -> 
-      Ds;
+    [$1 | Ds] when length(Ds) == 10 -> Ds;
+    Ds when length(Ds) == 10 -> Ds;
     _ -> lists:duplicate(10, $0)
   end.
 
