@@ -21,3 +21,36 @@ file "phone_number.app"
   [done in 0.109 s]
 =======================================================
   All 7 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Fetching erl_exercism ({pkg,<<"erl_exercism">>,<<"0.1.2">>})
+===> Version cached at ~/.cache/rebar3/hex/hexpm/packages/erl_exercism-0.1.2.tar is up to date, reusing it
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Fetching parse_trans ({pkg,<<"parse_trans">>,<<"3.1.0">>})
+===> Version cached at c:/Users/Chris/.cache/rebar3/hex/hexpm/packages/parse_trans-3.1.0.tar is up to date, reusing it
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling erl_exercism
+===> Compiling phone_number
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "phone_number.app"
+  application 'phone_number'
+    module 'phone_number'
+      module 'phone_number_tests'
+        phone_number_tests: cleans_number_test...ok
+        phone_number_tests: cleans_number_with_dots_test...ok
+        phone_number_tests: valid_when_eleven_digits_test...ok
+        phone_number_tests: invalid_when_eleven_digits_test...ok
+        phone_number_tests: invalid_when_nine_digits_test...ok
+        phone_number_tests: area_code_test...ok
+        phone_number_tests: pretty_print_test...ok
+        [done in 0.110 s]
+      [done in 0.110 s]
+    [done in 0.110 s]
+  [done in 0.110 s]
+=======================================================
+  All 7 tests passed.
