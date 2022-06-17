@@ -5,12 +5,12 @@
 -spec rows(pos_integer()) -> [[pos_integer()]].
 rows(Count) -> 
     lists:map(fun(X) -> 
-                    lists:map(fun(Y) -> 
-                                binomial(X - 1, Y) 
-                              end, 
-                              lists:seq(0, X - 1) ) 
-              end,
-              lists:seq(1, Count)).
+        lists:map(fun(Y) -> 
+            binomial(X - 1, Y) 
+            end, 
+            lists:seq(0, X - 1)) 
+        end,
+        lists:seq(1, Count)).
 
 % Auxiliary
 
