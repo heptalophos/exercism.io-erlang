@@ -1,1 +1,9 @@
-{"track":"erlang","exercise":"anagram","id":"e3c92c58a4d3411185fd008743e3e365","url":"https://exercism.org/tracks/erlang/exercises/anagram","handle":"heptalophos","is_requester":true,"auto_approve":false}
+{
+    "track": "erlang",
+    "exercise": "anagram",
+    "id": "e3c92c58a4d3411185fd008743e3e365",
+    "url": "https://exercism.org/tracks/erlang/exercises/anagram/solutions/e3c92c58a4d3411185fd008743e3e365",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
+}
