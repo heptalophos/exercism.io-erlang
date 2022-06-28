@@ -1,37 +1,41 @@
 # Anagram
 
-Given a word and a list of possible anagrams, select the correct sublist.
+Welcome to Anagram on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-Given `"listen"` and a list of candidates like `"enlists" "google"
-"inlets" "banana"` the program should return a list containing
-`"inlets"`.
+## Instructions
 
-## Running tests
+An anagram is a rearrangement of letters to form a new word: for example `"owns"` is an anagram of `"snow"`.
+A word is not its own anagram: for example, `"stop"` is not an anagram of `"stop"`.
 
-In order to run the tests, issue the following command from the exercise
-directory:
+Given a target word and a set of candidate words, this exercise requests the anagram set: the subset of the candidates that are anagrams of the target.
 
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
+The target and candidates are words of one or more ASCII alphabetic characters (`A`-`Z` and `a`-`z`).
+Lowercase and uppercase characters are equivalent: for example, `"PoTS"` is an anagram of `"sTOp"`, but `StoP` is not an anagram of `sTOp`.
+The anagram set is the subset of the candidate set that are anagrams of the target (in any order).
+Words in the anagram set should have the same letter case as in the candidate set.
 
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
+Given the target `"stone"` and candidates `"stone"`, `"tones"`, `"banana"`, `"tons"`, `"notes"`, `"Seton"`, the anagram set is `"tones"`, `"notes"`, `"Seton"`.
 
 ## Source
 
-Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @robinhilliard
+
+### Contributed to by
+
+- @adolfopa
+- @ErikSchierboom
+- @etrepum
+- @iHiD
+- @JordanAdams
+- @juhlig
+- @kytrinyx
+- @NobbZ
+- @tmcgilchrist
+- @xymbol
+
+### Based on
+
+Inspired by the Extreme Startup game - https://github.com/rchatley/extreme_startup
