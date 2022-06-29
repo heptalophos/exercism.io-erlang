@@ -4,9 +4,8 @@
 
 -spec find_anagrams(S::string(), Cs::[string()]) -> [string()].
 find_anagrams(Subject, Candidates) -> 
-    [Candidate || Candidate <- Candidates, 
-                  is_anagram(Subject, Candidate) andalso 
-                  not duplicate(Subject, Candidate)].
+    [Candidate || Candidate <- Candidates, is_anagram(Subject, Candidate) andalso 
+                                           not duplicate(Subject, Candidate)].
 
 % Auxiliary
 

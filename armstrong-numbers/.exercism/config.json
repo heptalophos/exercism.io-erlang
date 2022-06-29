@@ -1,0 +1,24 @@
+{
+  "blurb": "Determine if a number is an Armstrong number.",
+  "authors": [
+    "juhlig"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "iHiD",
+    "NobbZ"
+  ],
+  "files": {
+    "solution": [
+      "src/armstrong_numbers.erl"
+    ],
+    "test": [
+      "test/armstrong_numbers_tests.erl"
+    ],
+    "example": [
+      ".meta/example.erl"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}
