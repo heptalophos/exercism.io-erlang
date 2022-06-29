@@ -1,9 +1,1 @@
-{
-    "track": "erlang",
-    "exercise": "armstrong-numbers",
-    "id": "8a629cb501604a208313abb495749563",
-    "url": "https://exercism.io/tracks/erlang/exercises/armstrong-numbers/solutions/8a629cb501604a208313abb495749563",
-    "handle": "heptalophos",
-    "is_requester": true,
-    "auto_approve": false
-}
+{"track":"erlang","exercise":"armstrong-numbers","id":"8a629cb501604a208313abb495749563","url":"https://exercism.org/tracks/erlang/exercises/armstrong-numbers","handle":"heptalophos","is_requester":true,"auto_approve":false}
