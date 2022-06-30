@@ -61,3 +61,37 @@ file "perfect_numbers.app"
   [done in 4.031 s]
 =======================================================
   All 13 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling perfect_numbers
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "perfect_numbers.app"
+  application 'perfect_numbers'
+    module 'perfect_numbers'
+      module 'perfect_numbers_tests'
+        perfect_numbers_tests:17: 1_smallest_perfect_number_is_classified_correctly_test_ (Smallest perfect number is classified correctly)...ok
+        perfect_numbers_tests:22: 2_medium_perfect_number_is_classified_correctly_test_ (Medium perfect number is classified correctly)...ok
+        perfect_numbers_tests:26: 3_large_perfect_number_is_classified_correctly_test_ (Large perfect number is classified correctly)...[1.844 s] ok
+        perfect_numbers_tests:32: 4_smallest_abundant_number_is_classified_correctly_test_ (Smallest abundant number is classified correctly)...ok
+        perfect_numbers_tests:37: 5_medium_abundant_number_is_classified_correctly_test_ (Medium abundant number is classified correctly)...ok
+        perfect_numbers_tests:42: 6_large_abundant_number_is_classified_correctly_test_ (Large abundant number is classified correctly)...[0.875 s] ok
+        perfect_numbers_tests:48: 7_smallest_prime_deficient_number_is_classified_correctly_test_ (Smallest prime deficient number is classified correctly)...ok
+        perfect_numbers_tests:53: 8_smallest_non_prime_deficient_number_is_classified_correctly_test_ (Smallest non-prime deficient number is classified correctly)...ok
+        perfect_numbers_tests:58: 9_medium_deficient_number_is_classified_correctly_test_ (Medium deficient number is classified correctly)...ok
+        perfect_numbers_tests:63: 10_large_deficient_number_is_classified_correctly_test_ (Large deficient number is classified correctly)...[0.797 s] ok
+        perfect_numbers_tests:69: 11_edge_case_no_factors_other_than_itself_is_classified_correctly_test_ (Edge case (no factors other than itself) is classified correctly)...ok
+        perfect_numbers_tests:74: 12_zero_is_rejected_as_it_is_not_a_positive_integer_test_ (Zero is rejected (as it is not a positive integer))...ok
+        perfect_numbers_tests:79: 13_negative_integer_is_rejected_as_it_is_not_a_positive_integer_test_ (Negative integer is rejected (as it is not a positive integer))...ok
+        [done in 3.718 s]
+      [done in 3.718 s]
+    [done in 3.718 s]
+  [done in 3.718 s]
+=======================================================
+  All 13 tests passed.
