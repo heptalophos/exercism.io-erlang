@@ -16,9 +16,9 @@ triplets_with_sum(Sum, Start) ->
             R = (square(Sum) - 2 * Sum * A) rem (2 * Sum - 2 * A),
 	        C = Sum - A - B,
             Not_Pythagorean = R =/= 0 orelse A - B >= 0,
-            if Not_Pythagorean -> 
-                    triplets_with_sum(Sum, A + 1); % continue
-               true -> 
+            if Not_Pythagorean -> % continue
+                    triplets_with_sum(Sum, A + 1); 
+               true -> % found triplet, append it to list
                     [{A, B, C} | triplets_with_sum(Sum, A + 2)]
             end;
         false -> []
