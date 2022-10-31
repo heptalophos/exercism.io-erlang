@@ -11,7 +11,6 @@ decode(Phrase) ->
 encode(Phrase) -> 
     chunks(5, decode(Phrase)).
 
-
 % Auxiliary
 
 -spec atbash(char()) -> {true, char()} | false. 
