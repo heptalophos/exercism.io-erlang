@@ -23,3 +23,31 @@ file "pythagorean_triplet.app"
   [done in 0.125 s]
 =======================================================
   All 7 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling pythagorean_triplet
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "pythagorean_triplet.app"
+  application 'pythagorean_triplet'
+    module 'pythagorean_triplet'
+      module 'pythagorean_triplet_tests'
+        pythagorean_triplet_tests:16: 1_triplets_whose_sum_is_12_test_ (triplets whose sum is 12)...ok
+        pythagorean_triplet_tests:21: 2_triplets_whose_sum_is_108_test_ (triplets whose sum is 108)...ok
+        pythagorean_triplet_tests:26: 3_triplets_whose_sum_is_1000_test_ (triplets whose sum is 1000)...ok
+        pythagorean_triplet_tests:31: 4_no_matching_triplets_for_1001_test_ (no matching triplets for 1001)...ok
+        pythagorean_triplet_tests:36: 5_returns_all_matching_triplets_test_ (returns all matching triplets)...ok
+        pythagorean_triplet_tests:41: 6_several_matching_triplets_test_ (several matching triplets)...ok
+        pythagorean_triplet_tests:48: 7_triplets_for_large_number_test_ (triplets for large number)...ok
+        [done in 0.109 s]
+      [done in 0.109 s]
+    [done in 0.109 s]
+  [done in 0.109 s]
+=======================================================
+  All 7 tests passed.
