@@ -12,21 +12,17 @@
 
 
 -spec allergies(score()) -> [allergen()].
-allergies(Score) -> 
-    allergies(Score, ?ALLERGIES).
+allergies(Score) -> allergies(Score, ?ALLERGIES).
 
--spec is_allergic_to(allergen(), score()) -> 
-                                    boolean().
+-spec is_allergic_to(allergen(), score()) -> boolean().
 is_allergic_to(Substance, Score) -> 
     lists:member(Substance, allergies(Score)).
 
 
 % Auxiliary
 
--spec allergies(score(), [allergen()]) -> 
-                                [allergen()].
-allergies(_, []) -> 
-    [];
+-spec allergies(score(), [allergen()]) -> [allergen()].
+allergies(_, []) -> [];
 allergies(S, [A | As]) -> 
     case S rem 2 of 
         0 -> 
