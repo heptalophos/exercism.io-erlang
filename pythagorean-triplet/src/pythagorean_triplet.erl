@@ -12,9 +12,9 @@ triplets_with_sum(Sum, Start) ->
     case Sum div 3 >= Start of
         true -> 
             A = Start,
-	        B = (square(Sum) - 2 * Sum * A) div (2 * Sum - 2 * A),
+            B = (square(Sum) - 2 * Sum * A) div (2 * Sum - 2 * A),
             R = (square(Sum) - 2 * Sum * A) rem (2 * Sum - 2 * A),
-	        C = Sum - A - B,
+            C = Sum - A - B,
             Not_Pythagorean = R =/= 0 orelse A - B >= 0,
             if Not_Pythagorean -> % continue
                     triplets_with_sum(Sum, A + 1); 
