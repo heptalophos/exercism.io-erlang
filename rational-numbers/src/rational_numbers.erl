@@ -12,15 +12,15 @@ absolute(Rational) ->
 
 -spec add(rational(), rational()) -> rational().
 add(Rational1, Rational2) -> 
-    {Num1, Den1} = Rational1,
-    {Num2, Den2} = Rational2,
-    reduce({Num1 * Den2 + Num2 * Den1, Den1 * Den2}).
+    {NumA, DenA} = Rational1,
+    {NumB, DenB} = Rational2,
+    reduce({NumA * DenB + NumB * DenA, DenA * DenB}).
 
 -spec divide(rational(), rational()) -> rational().
 divide(Rational1, Rational2) -> 
-    {Num1, Den1} = Rational1,
-    {Num2, Den2} = Rational2,
-    reduce({Num1 * Den2, Num2 * Den1}).
+    {NumA, DenA} = Rational1,
+    {NumB, DenB} = Rational2,
+    reduce({NumA * DenB, NumB * DenA}).
 
 -spec exp(rational(), integer()) -> rational();
          (number(), rational()) -> float();
@@ -41,9 +41,9 @@ exp(Base, Exponent) when is_float(Exponent) ->
 
 -spec mul(rational(), rational()) -> rational().
 mul(Rational1, Rational2) -> 
-    {Num1, Den1} = Rational1,
-    {Num2, Den2} = Rational2,
-    reduce({Num1 * Num2, Den1 * Den2}).
+    {NumA, DenA} = Rational1,
+    {NumB, DenB} = Rational2,
+    reduce({NumA * NumB, DenA * DenB}).
 
 -spec reduce(rational()) -> rational().
 reduce(Rational) -> 
@@ -52,9 +52,9 @@ reduce(Rational) ->
 
 -spec sub(rational(), rational()) -> rational().
 sub(Rational1, Rational2) -> 
-    {Num1, Den1} = Rational1,
-    {Num2, Den2} = Rational2,
-    reduce({Num1 * Den2 - Num2 * Den1, Den1 * Den2}).
+    {NumA, DenA} = Rational1,
+    {NumB, DenB} = Rational2,
+    reduce({NumA * DenB - NumB * DenA, DenA * DenB}).
 
 % Auxiliary
 
