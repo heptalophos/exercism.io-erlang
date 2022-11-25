@@ -1,0 +1,35 @@
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
+===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Compiling matching_brackets
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "matching_brackets.app"
+  application 'matching_brackets'
+    module 'matching_brackets'
+      module 'matching_brackets_tests'
+        matching_brackets_tests: 1_paired_square_brackets_test...ok
+        matching_brackets_tests: 2_empty_string_test...ok
+        matching_brackets_tests: 3_unpaired_brackets_test...ok
+        matching_brackets_tests: 4_wrong_ordered_brackets_test...ok
+        matching_brackets_tests: 5_wrong_closing_bracket_test...ok
+        matching_brackets_tests: 6_paired_with_whitespace_test...ok
+        matching_brackets_tests: 7_partially_paired_brackets_test...ok
+        matching_brackets_tests: 8_simple_nested_brackets_test...ok
+        matching_brackets_tests: 9_several_paired_brackets_test...ok
+        matching_brackets_tests: 10_paired_and_nested_brackets_test...ok
+        matching_brackets_tests: 11_unopened_closing_brackets_test...ok
+        matching_brackets_tests: 12_unpaired_and_nested_brackets_test...ok
+        matching_brackets_tests: 13_paired_and_wrong_nested_brackets_test...ok
+        matching_brackets_tests: 14_paired_and_incomplete_brackets_test...ok
+        matching_brackets_tests: 15_too_many_closing_brackets_test...ok
+        matching_brackets_tests: 16_math_expression_test...ok
+        matching_brackets_tests: 17_complex_latex_expression_test...ok
+        [done in 0.360 s]
+      [done in 0.360 s]
+    [done in 0.360 s]
+  [done in 0.360 s]
+=======================================================
+  All 17 tests passed.

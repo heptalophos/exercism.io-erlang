@@ -1,0 +1,21 @@
+{
+  "blurb": "Make sure the brackets and braces all match.",
+  "authors": [
+    "juhlig"
+  ],
+  "contributors": [
+    "NobbZ"
+  ],
+  "files": {
+    "solution": [
+      "src/matching_brackets.erl"
+    ],
+    "test": [
+      "test/matching_brackets_tests.erl"
+    ],
+    "example": [
+      ".meta/example.erl"
+    ]
+  },
+  "source": "Ginna Baker"
+}
