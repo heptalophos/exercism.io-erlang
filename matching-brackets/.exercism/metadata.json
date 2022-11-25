@@ -1,1 +1,9 @@
-{"track":"erlang","exercise":"matching-brackets","id":"2fc6e7fc7bc24258837a6deafbd63d52","url":"https://exercism.org/tracks/erlang/exercises/matching-brackets","handle":"heptalophos","is_requester":true,"auto_approve":false}
+{
+    "track": "erlang",
+    "exercise": "matching-brackets",
+    "id": "2fc6e7fc7bc24258837a6deafbd63d52",
+    "url": "https://exercism.org/tracks/erlang/exercises/matching-brackets/solutions/2fc6e7fc7bc24258837a6deafbd63d52",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
+}
