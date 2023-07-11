@@ -4,6 +4,7 @@
 
 cleanup.*
 
+/*/*.lock
 /*/.rebar3
 /*/_*
 /*/.eunit
