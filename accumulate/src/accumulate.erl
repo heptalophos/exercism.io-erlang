@@ -4,15 +4,23 @@
 -export([accumulate/2]).
 
 -spec accumulate(fun((A) -> B), list(A)) -> list(B).
-accumulate(Fn, Ls) -> accumulate(Fn, Ls, []).
+accumulate(Function, List) -> accumulate(Function, List, []).
+
+% Auxiliary fcns
 
 -spec accumulate(fun((A) -> B), list(A), list(B)) -> list(B).
-accumulate(_, [], Acc) -> reverse(Acc);
-accumulate(Fn, [H|T], Acc) -> accumulate(Fn, T, [Fn(H)|Acc]).
+accumulate(Function, List, Accumulator) ->
+    case List of 
+        []    -> reverse(Accumulator);
+        [H|T] -> accumulate(Function, T, [Function(H)|Accumulator])
+    end.
 
 -spec reverse(list(A)) -> list(A).
-reverse(Ls) -> reverse(Ls, []).
+reverse(List) -> reverse(List, []).
 
 -spec reverse(list(A), list(A)) -> list(A).
-reverse([], Ls) -> Ls;
-reverse([H|T], Ls) -> reverse(T, [H|Ls]).
+reverse(List, Reversed) -> 
+    case List of 
+        []    -> Reversed;
+        [H|T] -> reverse(T, [H|Reversed])
+    end.
