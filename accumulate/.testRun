@@ -43,3 +43,28 @@ file "accumulate.app"
   [done in 0.078 s]
 =======================================================
   All 5 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling accumulate
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "accumulate.app"
+  application 'accumulate'
+    module 'accumulate'
+      module 'accumulate_tests'
+        accumulate_tests: accumulate_empty_list_test...ok
+        accumulate_tests: accumulate_squares_test...ok
+        accumulate_tests: accumulate_upcases_test...ok
+        accumulate_tests: accumulate_reversed_strings_test...ok
+        accumulate_tests: accumulate_recursively_test...ok
+        [done in 0.066 s]
+      [done in 0.066 s]
+    [done in 0.066 s]
+  [done in 0.066 s]
+=======================================================
+  All 5 tests passed.
