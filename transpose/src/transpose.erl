@@ -1,5 +1,4 @@
 -module(transpose).
-
 -export([transpose/1]).
 
 -spec transpose([string()]) -> [string()].

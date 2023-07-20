@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement the classic method for composing secret messages called a square code.",
+  "authors": [
+    "juhlig"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "iHiD",
+    "NobbZ"
+  ],
+  "files": {
+    "solution": [
+      "src/crypto_square.erl"
+    ],
+    "test": [
+      "test/crypto_square_tests.erl"
+    ],
+    "example": [
+      ".meta/example.erl"
+    ]
+  },
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

@@ -28,3 +28,35 @@ file "transpose.app"
   [done in 0.203 s]
 =======================================================
   All 12 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling transpose
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "transpose.app"
+  application 'transpose'
+    module 'transpose'
+      module 'transpose_tests'
+        transpose_tests:20: -1_empty_string_test_/0-fun-1- (empty string)...ok
+        transpose_tests:31: -2_two_characters_in_a_row_test_/0-fun-1- (two characters in a row)...ok
+        transpose_tests:42: -3_two_characters_in_a_column_test_/0-fun-1- (two characters in a column)...ok
+        transpose_tests:55: -4_simple_test_/0-fun-1- (simple)...ok
+        transpose_tests:76: -5_single_line_test_/0-fun-1- (single line)...ok
+        transpose_tests:102: -6_first_line_longer_than_second_line_test_/0-fun-1- (first line longer than second line)...ok
+        transpose_tests:128: -7_second_line_longer_than_first_line_test_/0-fun-1- (second line longer than first line)...ok
+        transpose_tests:157: -8_mixed_line_length_test_/0-fun-1- (mixed line length)...ok
+        transpose_tests:175: -9_square_test_/0-fun-1- (square)...ok
+        transpose_tests:195: -10_rectangle_test_/0-fun-1- (rectangle)...ok
+        transpose_tests:215: -11_triangle_test_/0-fun-1- (triangle)...ok
+        transpose_tests:235: -12_jagged_triangle_test_/0-fun-1- (jagged triangle)...ok
+        [done in 0.173 s]
+      [done in 0.173 s]
+    [done in 0.174 s]
+  [done in 0.174 s]
+=======================================================
+  All 12 tests passed.
