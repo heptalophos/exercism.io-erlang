@@ -9,10 +9,9 @@ ciphertext(PlainText) ->
     Text = PlainText,
     case Text of
         [] -> "";
-        _  -> 
-            Normal = normalized(PlainText),
-            Square = split(Normal, ceil(math:sqrt(length(Normal)))),
-            lists:append(lists:join(" ", transpose(Square)))
+        _  -> Normal = normalized(PlainText),
+              Square = split(Normal, ceil(math:sqrt(length(Normal)))),
+              lists:append(lists:join(" ", transpose(Square)))
     end.
 
 % Auxiliary
@@ -26,8 +25,7 @@ is_alphanumeric(C) ->
     end.
 
 -spec is_empty(list()) -> boolean().
-is_empty(Ls) -> 
-    lists:all(fun(L) -> L =:= [] end, Ls).
+is_empty(Ls) -> lists:all(fun(L) -> L =:= [] end, Ls).
 
 -spec normalized(string()) -> cleanstring().
 normalized(String) ->
@@ -36,11 +34,9 @@ normalized(String) ->
 -spec split(string(), pos_integer()) -> [string()].
 split(Text, Lines) ->
     case Lines >= length(Text) of
-        true ->
-            [Text ++ lists:duplicate(Lines - length(Text), $ )];
-        _ -> 
-            {Line, Rest} = lists:split(Lines, Text),
-            [Line | split(Rest, Lines)]
+        true -> [Text ++ lists:duplicate(Lines - length(Text), $ )];
+        _ -> {Line, Rest} = lists:split(Lines, Text),
+             [Line | split(Rest, Lines)]
     end.
 
 -spec transpose([string()]) -> [string()].
@@ -48,8 +44,6 @@ transpose(M) ->
     Hs = [H || [H | _] <- M],
     Ts = [T || [_ | T] <- M],
     case not lists:all(fun is_empty/1, Ts) of
-        true -> 
-            [Hs | transpose(Ts)];
-        _ -> 
-            [Hs] %% stop
+        true -> [Hs | transpose(Ts)];
+        _ ->    [Hs] %% stop
     end.   
