@@ -1,5 +1,6 @@
 -module(pythagorean_triplet).
 -export([triplets_with_sum/1]).
+
 -type triplet() :: {pos_integer(), pos_integer(), pos_integer()}.
 
 -spec triplets_with_sum(pos_integer()) -> list(triplet()).
