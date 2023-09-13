@@ -2,16 +2,8 @@
 
 -export([colors/0, color_code/1]).
 
--type resistor_color() :: black 
-                        | brown 
-                        | red 
-                        | orange 
-                        | yellow 
-                        | green 
-                        | blue 
-                        | violet 
-                        | grey 
-                        | white.
+-type resistor_color() :: black | brown | red | orange | yellow 
+                        | green | blue | violet | grey | white.
 
 -spec colors() -> list(resistor_color()).
 colors() ->
@@ -26,10 +18,13 @@ color_code(Color) ->
 
 -spec color_code(resistor_color(), list(resistor_color()), 
                  non_neg_integer()) -> 0..9 | {error, atom()}.
-color_code(C, Cs, P) ->
-    [_|T] = Cs,
-    case {C, Cs, P} of
-        {_, [], _} -> {error, color_not_found};
-        {Color, [Color|_], N} -> N;
-        {Color, [_|T], N} -> color_code(Color, T, N + 1)
+color_code(C, Cs, Val) ->
+    case Cs of
+        [] -> 
+            {error, color_not_found};
+        [H|T] -> 
+            if 
+                C =:= H -> Val;
+                true -> color_code(C, T, Val + 1)
+            end
     end.
