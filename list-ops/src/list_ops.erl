@@ -51,6 +51,7 @@ foldr(Function, Start, List) ->
 -spec reverse(list()) -> list().
 reverse(List) -> reverse(List, []).
 
+
 %% auxiliary
 
 -spec reverse(list(), list()) -> list().
