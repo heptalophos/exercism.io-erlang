@@ -19,3 +19,27 @@ file "resistor_color.app"
   [done in 0.063 s]
 =======================================================
   All 4 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling resistor_color
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "resistor_color.app"
+  application 'resistor_color'
+    module 'resistor_color'
+      module 'resistor_color_tests'
+        resistor_color_tests:13: -1_color_codes_black_test_/0-fun-1- (black)...ok
+        resistor_color_tests:20: -2_color_codes_white_test_/0-fun-1- (white)...ok
+        resistor_color_tests:27: -3_color_codes_orange_test_/0-fun-1- (orange)...ok
+        resistor_color_tests:32: -4_colors_test_/0-fun-1- (colors)...ok
+        [done in 0.053 s]
+      [done in 0.053 s]
+    [done in 0.053 s]
+  [done in 0.053 s]
+=======================================================
+  All 4 tests passed.
