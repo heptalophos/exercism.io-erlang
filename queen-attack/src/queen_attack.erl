@@ -1,4 +1,5 @@
 -module(queen_attack).
+-author("heptalophos").
 
 -export([can_attack/2]).
 
@@ -20,8 +21,7 @@ can_attack(WhiteQueen, BlackQueen) ->
                 {0, 0} -> {error, invalid_position_same}; %% both @ same square
                 {_, 0} -> true; %% both queens @ same file
                 {0, _} -> true; %% both queens @ same rank
-                {X, Y} when X =:= Y -> true; %% queens @ same diagonal
-                {_, _} -> false %% otherwise
+                {X, Y} -> X =:= Y %% queens @ same diagonal
             end
     end.
 

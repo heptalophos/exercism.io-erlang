@@ -1,60 +1,60 @@
 -module(list_ops).
 -compile({no_auto_import,[length/1]}).
-
 -author("heptalophos").
 
--export([append/2, concat/1, 
-		 filter/2, length/1, 
-		 map/2, foldl/3, 
-		 foldr/3, reverse/1]).
+-export([append/2, concat/1, filter/2, length/1, 
+		 map/2, foldl/3, foldr/3, reverse/1]).
 
 -type pred() :: fun((any()) -> boolean()).
 -type transform() :: fun((any()) -> any()).
 -type injection() :: fun((any(), any()) -> any()).
 
 -spec append(list(), list()) -> list().
-append([], List2) -> List2;
-append([Element | List1], List2) -> 
-	[Element | append(List1, List2)].
+append(Xs, Ys) ->
+	foldr(fun(X, Acc) -> [X | Acc] end, Ys, Xs).
 
 -spec concat(list()) -> list().
-concat([]) -> [];
-concat([Element | List]) -> 
-	append(Element, concat(List)).
+concat(Ls) ->
+	foldl(fun(Acc, Xs) -> append(Xs, Acc) end, [], Ls).
 
 -spec filter(pred(), list()) -> list().
-filter(_, []) -> [];
-filter(Function, [Element | List]) -> 
-	case Function(Element) of 
-		true -> [Element | filter(Function, List)]; 
-		false -> filter(Function, List) 
-	end.
+filter(Pred, Ls) ->
+	foldl(	fun(L, Acc) -> 
+				case Pred(L) of 
+					true -> append(Acc, [L]);
+					false -> Acc
+				end
+		 	end, 
+		 	[], Ls	). 
 
 -spec length(list()) -> non_neg_integer().
-length([]) -> 0;
-length([_ | List]) -> 1 + length(List).
+length(Ls) -> 
+	foldl(fun(_, Acc) -> Acc + 1 end, 0, Ls).
 
 -spec map(transform(), list()) -> list().
 map(_, []) -> [];
-map(Function, [Element | List]) -> 
-	[Function(Element) | map(Function, List)].
+map(Transform, Ls) ->
+	foldl(	fun(L, Acc) -> 
+				append(Acc, [Transform(L)]) 
+		  	end, 
+		  	[], Ls	).
 
 -spec foldl(injection(), any(), list()) -> any().
-foldl(_, Start, []) -> Start;
-foldl(Function, Start, [Element | List]) -> 
-	foldl(Function, Function(Element, Start), List).
+foldl(Fn, Acc, Ls) ->
+	case Ls of
+		[] -> Acc;
+		[H | Ts] -> foldl(Fn, Fn(H, Acc), Ts)
+	end.
 
 -spec foldr(injection(), any(), list()) -> any().
-foldr(Function, Start, List) -> 
-	foldl(Function, Start, reverse(List)).
+foldr(Fn, Acc, Ls) -> 
+	case Ls of
+		[] -> Acc;
+		[H | Ts] -> Fn(H, foldr(Fn, Acc, Ts))
+	end.
 
 -spec reverse(list()) -> list().
-reverse(List) -> reverse(List, []).
+reverse(Ls) -> 
+	foldl(fun(L, Init) -> [L | Init] end, [], Ls).
 
-
-%% auxiliary
-
--spec reverse(list(), list()) -> list().
-reverse([], Acc) -> Acc;
-reverse([X | List], Acc) -> 
-	reverse(List, [X | Acc]).
+%% Auxiliary
