@@ -1,43 +1,4 @@
 ===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
-===> Compiling list_ops
-===> Performing EUnit tests...
-======================== EUnit ========================
-file "list_ops.app"
-  application 'list_ops'
-    module 'list_ops'
-      module 'list_ops_tests'
-        list_ops_tests: append_empty_lists_test...ok
-        list_ops_tests: append_empty_list_to_list_test...ok
-        list_ops_tests: append_non_empty_lists_test...ok
-        list_ops_tests: concat_empty_list_test...ok
-        list_ops_tests: concat_list_of_lists_test...ok
-        list_ops_tests: concat_list_of_nested_lists_test...ok
-        list_ops_tests: filter_empty_list_test...ok
-        list_ops_tests: filter_non_empty_list_test...ok
-        list_ops_tests: length_empty_list_test...ok
-        list_ops_tests: length_non_empty_list_test...ok
-        list_ops_tests: map_empty_list_test...ok
-        list_ops_tests: map_non_empty_list_test...ok
-        list_ops_tests: foldl_empty_list_test...ok
-        list_ops_tests: foldl_direction_independent_function_applied_to_non_empty_list_test...ok
-        list_ops_tests: foldl_direction_dependent_function_applied_to_non_empty_list_test...ok
-        list_ops_tests: foldr_empty_list_test...ok
-        list_ops_tests: foldr_direction_independent_function_applied_to_non_empty_list_test...ok
-        list_ops_tests: foldr_direction_dependent_function_applied_to_non_empty_list_test...ok
-        list_ops_tests: reverse_empty_list_test...ok
-        list_ops_tests: reverse_non_empty_list_test...ok
-        [done in 0.312 s]
-      [done in 0.312 s]
-    [done in 0.312 s]
-  [done in 0.312 s]
-=======================================================
-  All 20 tests passed.
-
-
-
-===> Verifying dependencies...
 ===> Fetching erl_exercism ({pkg,<<"erl_exercism">>,<<"0.1.2">>})
 ===> Version cached at ~/.cache/rebar3/hex/hexpm/packages/erl_exercism-0.1.2.tar is up to date, reusing it
 ===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
@@ -85,5 +46,45 @@ file "list_ops.app"
       [done in 0.312 s]
     [done in 0.312 s]
   [done in 0.312 s]
+=======================================================
+  All 20 tests passed.
+
+
+
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling list_ops
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "list_ops.app"
+  application 'list_ops'
+    module 'list_ops'
+      module 'list_ops_tests'
+        list_ops_tests: append_empty_lists_test...ok
+        list_ops_tests: append_empty_list_to_list_test...ok
+        list_ops_tests: append_non_empty_lists_test...ok
+        list_ops_tests: concat_empty_list_test...ok
+        list_ops_tests: concat_list_of_lists_test...ok
+        list_ops_tests: concat_list_of_nested_lists_test...ok
+        list_ops_tests: filter_empty_list_test...ok
+        list_ops_tests: filter_non_empty_list_test...ok
+        list_ops_tests: length_empty_list_test...ok
+        list_ops_tests: length_non_empty_list_test...ok
+        list_ops_tests: map_empty_list_test...ok
+        list_ops_tests: map_non_empty_list_test...ok
+        list_ops_tests: foldl_empty_list_test...ok
+        list_ops_tests: foldl_direction_independent_function_applied_to_non_empty_list_test...ok
+        list_ops_tests: foldl_direction_dependent_function_applied_to_non_empty_list_test...ok
+        list_ops_tests: foldr_empty_list_test...ok
+        list_ops_tests: foldr_direction_independent_function_applied_to_non_empty_list_test...ok
+        list_ops_tests: foldr_direction_dependent_function_applied_to_non_empty_list_test...ok
+        list_ops_tests: reverse_empty_list_test...ok
+        list_ops_tests: reverse_non_empty_list_test...ok
+        [done in 0.307 s]
+      [done in 0.307 s]
+    [done in 0.307 s]
+  [done in 0.307 s]
 =======================================================
   All 20 tests passed.
