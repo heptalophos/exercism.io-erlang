@@ -22,11 +22,12 @@ is_allergic_to(Substance, Score) ->
 % Auxiliary
 
 -spec allergies(score(), [allergen()]) -> [allergen()].
-allergies(_, []) -> [];
-allergies(S, [A | As]) -> 
-    case S rem 2 of 
-        0 -> 
-            allergies(S div 2, As);
-        _ -> 
-            [A | allergies(S div 2, As)]
+allergies(Score, Allergens) -> 
+    case Allergens of 
+        [] -> [];
+        [A | As] -> 
+            case Score rem 2 of 
+                0 -> allergies(Score div 2, As);
+                _ -> [A | allergies(Score div 2, As)]
+            end
     end.

@@ -10,16 +10,11 @@ response(String) ->
     Yell     = quasibool(yell(String)), 
     Silence  = quasibool(silence(String)),
     Question = quasibool(question(String)),
-    Calm = 
-        "Calm down, I know what I'm doing!",
-    Sure = 
-        "Sure.",
-    Whoa = 
-        "Whoa, chill out!",
-    Fine = 
-        "Fine. Be that way!",
-    Whatever = 
-        "Whatever.",
+    Calm = "Calm down, I know what I'm doing!",
+    Sure = "Sure.",
+    Whoa = "Whoa, chill out!",
+    Fine = "Fine. Be that way!",
+    Whatever = "Whatever.",
 
     case ({Question, Yell, Silence}) of
         {1, 1, 0} -> Calm;
@@ -40,7 +35,8 @@ silence(S) ->
 
 -spec yell(string()) -> boolean().
 yell(S) -> 
-    string:to_upper(S) =:= S andalso S =/= string:casefold(S).
+    string:to_upper(S) =:= S andalso 
+    S =/= string:casefold(S).
 
 -spec quasibool(boolean()) -> 1 | 0.
 quasibool(Premise) -> 

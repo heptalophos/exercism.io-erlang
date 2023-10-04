@@ -27,6 +27,5 @@ atbash(C) ->
 chunks(N, S) ->
     case (N >= length(S)) of 
         true -> S;
-        _ -> {H, Rest} = lists:split(N, S), 
-             H ++ " " ++ chunks(N, Rest)
+        _ -> {H, Rest} = lists:split(N, S), H ++ " " ++ chunks(N, Rest)
     end.

@@ -96,3 +96,71 @@ file "allergies.app"
   [done in 0.766 s]
 =======================================================
   All 49 tests passed.
+
+
+
+>rebar3 eunit
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling allergies
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "allergies.app"
+  application 'allergies'
+    module 'allergies'
+      module 'allergies_tests'
+        allergies_tests:17: -1_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:22: -2_allergic_only_to_eggs_test_/0-fun-1- (allergic only to eggs)...ok
+        allergies_tests:27: -3_allergic_to_eggs_and_something_else_test_/0-fun-1- (allergic to eggs and something else)...ok
+        allergies_tests:32: -4_allergic_to_something_but_not_eggs_test_/0-fun-1- (allergic to something, but not eggs)...ok
+        allergies_tests:37: -5_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:42: -6_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:47: -7_allergic_only_to_peanuts_test_/0-fun-1- (allergic only to peanuts)...ok
+        allergies_tests:52: -8_allergic_to_peanuts_and_something_else_test_/0-fun-1- (allergic to peanuts and something else)...ok
+        allergies_tests:57: -9_allergic_to_something_but_not_peanuts_test_/0-fun-1- (allergic to something, but not peanuts)...ok
+        allergies_tests:62: -10_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:67: -11_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:73: -12_allergic_only_to_shellfish_test_/0-fun-1- (allergic only to shellfish)...ok
+        allergies_tests:79: -13_allergic_to_shellfish_and_something_else_test_/0-fun-1- (allergic to shellfish and something else)...ok
+        allergies_tests:84: -14_allergic_to_something_but_not_shellfish_test_/0-fun-1- (allergic to something, but not shellfish)...ok
+        allergies_tests:90: -15_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:95: -16_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:101: -17_allergic_only_to_strawberries_test_/0-fun-1- (allergic only to strawberries)...ok
+        allergies_tests:108: -18_allergic_to_strawberries_and_something_else_test_/0-fun-1- (allergic to strawberries and something else)...ok
+        allergies_tests:114: -19_allergic_to_something_but_not_strawberries_test_/0-fun-1- (allergic to something, but not strawberries)...ok
+        allergies_tests:120: -20_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:126: -21_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:131: -22_allergic_only_to_tomatoes_test_/0-fun-1- (allergic only to tomatoes)...ok
+        allergies_tests:136: -23_allergic_to_tomatoes_and_something_else_test_/0-fun-1- (allergic to tomatoes and something else)...ok
+        allergies_tests:141: -24_allergic_to_something_but_not_tomatoes_test_/0-fun-1- (allergic to something, but not tomatoes)...ok
+        allergies_tests:146: -25_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:151: -26_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:157: -27_allergic_only_to_chocolate_test_/0-fun-1- (allergic only to chocolate)...ok
+        allergies_tests:163: -28_allergic_to_chocolate_and_something_else_test_/0-fun-1- (allergic to chocolate and something else)...ok
+        allergies_tests:168: -29_allergic_to_something_but_not_chocolate_test_/0-fun-1- (allergic to something, but not chocolate)...ok
+        allergies_tests:174: -30_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:179: -31_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:184: -32_allergic_only_to_pollen_test_/0-fun-1- (allergic only to pollen)...ok
+        allergies_tests:189: -33_allergic_to_pollen_and_something_else_test_/0-fun-1- (allergic to pollen and something else)...ok
+        allergies_tests:194: -34_allergic_to_something_but_not_pollen_test_/0-fun-1- (allergic to something, but not pollen)...ok
+        allergies_tests:199: -35_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:204: -36_not_allergic_to_anything_test_/0-fun-1- (not allergic to anything)...ok
+        allergies_tests:209: -37_allergic_only_to_cats_test_/0-fun-1- (allergic only to cats)...ok
+        allergies_tests:214: -38_allergic_to_cats_and_something_else_test_/0-fun-1- (allergic to cats and something else)...ok
+        allergies_tests:219: -39_allergic_to_something_but_not_cats_test_/0-fun-1- (allergic to something, but not cats)...ok
+        allergies_tests:224: -40_allergic_to_everything_test_/0-fun-1- (allergic to everything)...ok
+        allergies_tests:228: -41_no_allergies_test_/0-fun-1- (no allergies)...ok
+        allergies_tests:232: -42_just_eggs_test_/0-fun-1- (just eggs)...ok
+        allergies_tests:237: -43_just_peanuts_test_/0-fun-1- (just peanuts)...ok
+        allergies_tests:242: -44_just_strawberries_test_/0-fun-1- (just strawberries)...ok
+        allergies_tests:247: -45_eggs_and_peanuts_test_/0-fun-1- (eggs and peanuts)...ok
+        allergies_tests:252: -46_more_than_eggs_but_not_peanuts_test_/0-fun-1- (more than eggs but not peanuts)...ok
+        allergies_tests:257: -47_lots_of_stuff_test_/0-fun-1- (lots of stuff)...ok
+        allergies_tests:263: -48_everything_test_/0-fun-1- (everything)...ok
+        allergies_tests:269: -49_no_allergen_score_parts_test_/0-fun-1- (no allergen score parts)...ok
+        [done in 0.808 s]
+      [done in 0.808 s]
+    [done in 0.808 s]
+  [done in 0.809 s]
+=======================================================
+  All 49 tests passed.

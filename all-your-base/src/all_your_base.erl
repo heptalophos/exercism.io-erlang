@@ -4,10 +4,8 @@
 -export([rebase/3]).
 
 -spec rebase(Digits, IBase, OBase) -> {ok, Val} | {error, string()} 
-    when Digits :: [integer()], 
-         IBase :: integer(), 
-         OBase :: integer(), 
-         Val :: [non_neg_integer()].
+    when Digits :: [integer()], IBase :: integer(), 
+         OBase :: integer(), Val :: [non_neg_integer()].
 rebase(Digits, InputBase, OutputBase) -> 
     if 
         InputBase < 2  -> {error, "input base must be >= 2"};
@@ -22,9 +20,7 @@ rebase(Digits, InputBase, OutputBase) ->
 % Auxiliary
 
 -spec value(Digits, Base) -> Representation 
-    when Base :: pos_integer(), 
-         Digits :: [0..9],
-         Representation :: integer().
+    when Base :: pos_integer(), Digits :: [0..9], Representation :: integer().
 value(Digits, Base) -> 
     lists:foldl(fun(D, V) -> D + (V * Base) end, 0, Digits).
 
