@@ -73,3 +73,40 @@ file "luhn.app"
   [done in 0.281 s]
 =======================================================
   All 18 tests passed.
+
+
+
+>rebar3 eunit
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling luhn
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "luhn.app"
+  application 'luhn'
+    module 'luhn'
+      module 'luhn_tests'
+        luhn_tests:16: -1_single_digit_strings_can_not_be_valid_test_/0-fun-1- (single digit strings can not be valid)...ok
+        luhn_tests:20: -2_a_single_zero_is_invalid_test_/0-fun-1- (a single zero is invalid)...ok
+        luhn_tests:25: -3_a_simple_valid_sin_that_remains_valid_if_reversed_test_/0-fun-1- (a simple valid SIN that remains valid if reversed)...ok
+        luhn_tests:30: -4_a_simple_valid_sin_that_becomes_invalid_if_reversed_test_/0-fun-1- (a simple valid SIN that becomes invalid if reversed)...ok
+        luhn_tests:34: -5_a_valid_canadian_sin_test_/0-fun-1- (a valid Canadian SIN)...ok
+        luhn_tests:38: -6_invalid_canadian_sin_test_/0-fun-1- (invalid Canadian SIN)...ok
+        luhn_tests:42: -7_invalid_credit_card_test_/0-fun-1- (invalid credit card)...ok
+        luhn_tests:46: -8_invalid_long_number_with_an_even_remainder_test_/0-fun-1- (invalid long number with an even remainder)...ok
+        luhn_tests:51: -9_valid_number_with_an_even_number_of_digits_test_/0-fun-1- (valid number with an even number of digits)...ok
+        luhn_tests:55: -10_valid_number_with_an_odd_number_of_spaces_test_/0-fun-1- (valid number with an odd number of spaces)...ok
+        luhn_tests:60: -11_valid_strings_with_a_non_digit_added_at_the_end_become_invalid_test_/0-fun-1- (valid strings with a non-digit added at the end become invalid)...ok
+        luhn_tests:65: -12_valid_strings_with_punctuation_included_become_invalid_test_/0-fun-1- (valid strings with punctuation included become invalid)...ok
+        luhn_tests:70: -13_valid_strings_with_symbols_included_become_invalid_test_/0-fun-1- (valid strings with symbols included become invalid)...ok
+        luhn_tests:74: -14_single_zero_with_space_is_invalid_test_/0-fun-1- (single zero with space is invalid)...ok
+        luhn_tests:78: -15_more_than_a_single_zero_is_valid_test_/0-fun-1- (more than a single zero is valid)...ok
+        luhn_tests:83: -16_input_digit_9_is_correctly_converted_to_output_digit_9_test_/0-fun-1- (input digit 9 is correctly converted to output digit 9)...ok
+        luhn_tests:88: -17_using_ascii_value_for_non_doubled_non_digit_isnt_allowed_test_/0-fun-1- (using ascii value for non-doubled non-digit isn't allowed)...ok
+        luhn_tests:93: -18_using_ascii_value_for_doubled_non_digit_isnt_allowed_test_/0-fun-1- (using ascii value for doubled non-digit isn't allowed)...ok
+        [done in 0.270 s]
+      [done in 0.270 s]
+    [done in 0.270 s]
+  [done in 0.271 s]
+=======================================================
+  All 18 tests passed.

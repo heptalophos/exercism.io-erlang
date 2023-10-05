@@ -3,8 +3,11 @@
 -export([is_pangram/1]).
 
 -spec is_alpha(char()) -> boolean().
-is_alpha(C) when C >= $a andalso C =< $z -> true;
-is_alpha(_) -> false.
+is_alpha(C) -> 
+    if 
+        C >= $a andalso C =< $z -> true;
+        true -> false
+    end.
 
 -spec is_pangram(string()) -> boolean().
 is_pangram(Sentence) -> 
