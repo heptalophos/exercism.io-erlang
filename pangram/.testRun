@@ -18,34 +18,6 @@ file "pangram.app"
         pangram_tests: 8_missing_letters_replaced_by_numbers_test...ok
         pangram_tests: 9_pangram_with_mixed_case_and_punctuation_test...ok
         pangram_tests: 10_upper_and_lower_case_versions_of_the_same_character_should_not_be_counted_separately_test...ok
-        [done in 0.156 s]
-      [done in 0.156 s]
-    [done in 0.156 s]
-  [done in 0.156 s]
-=======================================================
-  All 10 tests passed.
-
-
-===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
-===> Compiling pangram
-===> Performing EUnit tests...
-======================== EUnit ========================
-file "pangram.app"
-  application 'pangram'
-    module 'pangram'
-      module 'pangram_tests'
-        pangram_tests: 1_sentence_empty_test...ok
-        pangram_tests: 2_recognizes_a_perfect_lower_case_pangram_test...ok
-        pangram_tests: 3_pangram_with_only_lower_case_test...ok
-        pangram_tests: 4_missing_character_x_test...ok
-        pangram_tests: 5_another_missing_character_eg_h_test...ok
-        pangram_tests: 6_pangram_with_underscores_test...ok
-        pangram_tests: 7_pangram_with_numbers_test...ok
-        pangram_tests: 8_missing_letters_replaced_by_numbers_test...ok
-        pangram_tests: 9_pangram_with_mixed_case_and_punctuation_test...ok
-        pangram_tests: 10_upper_and_lower_case_versions_of_the_same_character_should_not_be_counted_separately_test...ok
         pangram_tests: 11_sentence_empty_test...ok
         pangram_tests: 12_recognizes_a_perfect_lower_case_pangram_test...ok
         pangram_tests: 13_pangram_with_only_lower_case_test...ok
@@ -93,5 +65,35 @@ file "pangram.app"
     module 'pangram2'
     [done in 0.203 s]
   [done in 0.250 s]
+=======================================================
+  All 10 tests passed.
+
+
+
+>rebar3 eunit
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling pangram
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "pangram.app"
+  application 'pangram'
+    module 'pangram'
+      module 'pangram_tests'
+        pangram_tests:15: -1_empty_sentence_test_/0-fun-1- (empty sentence)...ok
+        pangram_tests:19: -2_perfect_lower_case_test_/0-fun-1- (perfect lower case)...[0.034 s] ok
+        pangram_tests:23: -3_only_lower_case_test_/0-fun-1- (only lower case)...ok
+        pangram_tests:28: -4_missing_the_letter_x_test_/0-fun-1- (missing the letter 'x')...ok
+        pangram_tests:33: -5_missing_the_letter_h_test_/0-fun-1- (missing the letter 'h')...ok
+        pangram_tests:37: -6_with_underscores_test_/0-fun-1- (with underscores)...ok
+        pangram_tests:41: -7_with_numbers_test_/0-fun-1- (with numbers)...ok
+        pangram_tests:46: -8_missing_letters_replaced_by_numbers_test_/0-fun-1- (missing letters replaced by numbers)...[0.001 s] ok
+        pangram_tests:51: -9_mixed_case_and_punctuation_test_/0-fun-1- (mixed case and punctuation)...ok
+        pangram_tests:56: -10_case_insensitive_test_/0-fun-1- (case insensitive)...ok
+        [done in 0.175 s]
+      [done in 0.175 s]
+    module 'pangram2'
+    [done in 0.189 s]
+  [done in 0.198 s]
 =======================================================
   All 10 tests passed.
