@@ -11,8 +11,7 @@ is_paired(String) ->
 % Auxiliary 
 
 -spec is_bracket(char()) -> boolean().
-is_bracket(C) ->
-    lists:member(C, [${, $}, $[, $], $(, $)]).
+is_bracket(C) -> lists:member(C, [${, $}, $[, $], $(, $)]).
 
 -spec is_paired([char()], [char()]) -> boolean().
 %% is stack empty - when input is empty ? -> true : false
