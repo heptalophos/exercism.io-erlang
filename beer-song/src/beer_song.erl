@@ -10,10 +10,8 @@ sing(N) -> sing(N, 0).
 
 -spec sing(non_neg_integer(), non_neg_integer()) -> string().
 sing(From, To) -> 
-  lists:flatten(
-        [[verse(N), io_lib:nl()] || 
-        N <- lists:reverse(lists:seq(To, From))]
-  ).
+  lists:flatten ( [[verse(N), io_lib:nl()] || 
+                    N <- lists:reverse(lists:seq(To, From))]).
 
 % Auxiliary
 
@@ -25,11 +23,8 @@ premise(N) ->
       1 -> 
         "1 bottle of beer on the wall, 1 bottle of beer.\n";
       _ -> 
-        io_lib:format(
-              "~B bottles of beer on the wall, "
-              "~B bottles of beer.\n", 
-              [N, N]
-        )
+        io_lib:format( "~B bottles of beer on the wall, "
+                       "~B bottles of beer.\n", [N, N] )
     end.
 
 -spec conclusion(non_neg_integer()) -> string().
@@ -42,9 +37,6 @@ conclusion(N) ->
       2 -> 
         "Take one down and pass it around, 1 bottle of beer on the wall.\n";
       _ -> 
-        io_lib:format(
-              "Take one down and pass it around, "
-              "~B bottles of beer on the wall.\n", 
-              [N-1]
-        )
+        io_lib:format ( "Take one down and pass it around, "
+                        "~B bottles of beer on the wall.\n", [N-1] )
     end.
