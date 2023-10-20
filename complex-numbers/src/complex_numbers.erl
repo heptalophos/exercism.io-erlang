@@ -18,47 +18,41 @@
 
 -spec abs(complex()) -> number().
 abs(Z) -> 
-	#complex{real = R, imag = I} = Z,
-	trunc(math:sqrt(R * R + I * I)).
+	#complex {real = R, imag = I} = Z,
+	trunc (math:sqrt (R * R + I * I)).
 
 
 -spec add(complex(), complex()) -> complex().
 add(Z1, Z2) -> 
-	#complex{real = R1, imag = I1} = Z1,
-	#complex{real = R2, imag = I2} = Z2,
-	Sum = #complex{real = R1 + R2, 
-				 imag = I1 + I2},
-	Sum.
+	#complex {real = R1, imag = I1} = Z1,
+	#complex {real = R2, imag = I2} = Z2,
+	#complex {real = R1 + R2, imag = I1 + I2}.
 
 -spec conjugate(complex()) -> complex().
 conjugate(Z) -> 
 	#complex{real = R, imag = I} = Z,
-	Conj = #complex{real = R, imag = -1 * I},
-	Conj.
+	#complex{real = R, imag = -1 * I}.
 
 -spec divide(complex(), complex()) -> complex().
 divide(Z1, Z2) -> 
 	#complex{real = R1, imag = I1} = Z1,
 	#complex{real = R2, imag = I2} = Z2,
 	Den = R2 * R2 + I2 * I2,
-	Div = #complex{real = (R1 * R2 + I1 * I2) / Den, 
-		   		   imag = (I1 * R2 - I2 * R1) / Den},
-	Div.
+	#complex{real = (R1 * R2 + I1 * I2) / Den, 
+		   	 imag = (I1 * R2 - I2 * R1) / Den}.
 
 -spec equal(complex(), complex()) -> boolean().
 equal(Z1, Z2) -> 
 	#complex{real = R1, imag = I1} = Z1,
 	#complex{real = R2, imag = I2} = Z2,
 	D = 0.005,
-	erlang:abs(R1 - R2) < D andalso 
-	erlang:abs(I1 - I2) < D.
+	erlang:abs(R1 - R2) < D andalso  erlang:abs(I1 - I2) < D.
 
 -spec exp(complex()) -> complex().
 exp(Z) -> 
 	#complex{real = R, imag = I} = Z,
-	Exp = #complex{real = math:exp(R) * math:cos(I), 
-		           imag = math:exp(R) * math:sin(I)},
-	Exp.
+	#complex{real = math:exp(R) * math:cos(I), 
+		     imag = math:exp(R) * math:sin(I)}.
 
 -spec imaginary(complex()) -> number().
 imaginary(Z) -> 
@@ -69,9 +63,7 @@ imaginary(Z) ->
 mul(Z1, Z2) -> 
 	#complex{real = R1, imag = I1} = Z1,
 	#complex{real = R2, imag = I2} = Z2,
-	Mul = #complex{real = R1 * R2 - I1 * I2, 
-				   imag = R2 * I1 + R1 * I2},
-	Mul.
+	#complex{real = R1 * R2 - I1 * I2, imag = R2 * I1 + R1 * I2}.
 
 -spec new(number(), number()) -> complex().
 new(R, I) -> 
@@ -86,6 +78,4 @@ real(Z) ->
 sub(Z1, Z2) ->
 	#complex{real = R1, imag = I1} = Z1,
 	#complex{real = R2, imag = I2} = Z2, 
-	Diff = #complex{real = R1 - R2, 
-				    imag = I1 - I2},
-	Diff.
+	#complex{real = R1 - R2, imag = I1 - I2}.
