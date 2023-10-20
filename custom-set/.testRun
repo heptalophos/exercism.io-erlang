@@ -48,65 +48,6 @@ file "custom_set.app"
         custom_set_tests:257: 36_union_of_an_empty_set_and_non_empty_set_is_the_non_empty_set_test_ (union of an empty set and non-empty set is the non-empty set)...ok
         custom_set_tests:264: 37_union_of_a_non_empty_set_and_empty_set_is_the_non_empty_set_test_ (union of a non-empty set and empty set is the non-empty set)...ok
         custom_set_tests:271: 38_union_of_non_empty_sets_contains_all_unique_elements_test_ (union of non-empty sets contains all unique elements)...ok
-        [done in 0.672 s]
-      [done in 0.672 s]
-    [done in 0.672 s]
-  [done in 0.688 s]
-=======================================================
-  All 38 tests passed.
-
-
-
->rebar3 eunit
-
-===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
-===> Compiling custom_set
-===> Performing EUnit tests...
-======================== EUnit ========================
-file "custom_set.app"
-  application 'custom_set'
-    module 'custom_set'
-      module 'custom_set_tests'
-        custom_set_tests:16: 1_empty_sets_are_equal_test_ (empty sets are equal)...ok
-        custom_set_tests:22: 2_empty_set_is_not_equal_to_non_empty_set_test_ (empty set is not equal to non-empty set)...ok
-        custom_set_tests:28: 3_non_empty_set_is_not_equal_to_empty_set_test_ (non-empty set is not equal to empty set)...ok
-        custom_set_tests:34: 4_sets_with_the_same_elements_are_equal_test_ (sets with the same elements are equal)...ok
-        custom_set_tests:40: 5_sets_with_different_elements_are_not_equal_test_ (sets with different elements are not equal)...ok
-        custom_set_tests:47: 6_set_is_not_equal_to_larger_set_with_same_elements_test_ (set is not equal to larger set with same elements)...ok
-        custom_set_tests:53: 7_sets_with_no_elements_are_empty_test_ (sets with no elements are empty)...ok
-        custom_set_tests:57: 8_sets_with_elements_are_not_empty_test_ (sets with elements are not empty)...ok
-        custom_set_tests:61: 9_nothing_is_contained_in_an_empty_set_test_ (nothing is contained in an empty set)...ok
-        custom_set_tests:66: 10_when_the_element_is_in_the_set_test_ (when the element is in the set)...ok
-        custom_set_tests:71: 11_when_the_element_is_not_in_the_set_test_ (when the element is not in the set)...ok
-        custom_set_tests:77: 12_empty_set_is_a_subset_of_another_empty_set_test_ (empty set is a subset of another empty set)...ok
-        custom_set_tests:82: 13_empty_set_is_a_subset_of_non_empty_set_test_ (empty set is a subset of non-empty set)...ok
-        custom_set_tests:88: 14_non_empty_set_is_not_a_subset_of_empty_set_test_ (non-empty set is not a subset of empty set)...ok
-        custom_set_tests:94: 15_set_is_a_subset_of_set_with_exact_same_elements_test_ (set is a subset of set with exact same elements)...ok
-        custom_set_tests:101: 16_set_is_a_subset_of_larger_set_with_same_elements_test_ (set is a subset of larger set with same elements)...ok
-        custom_set_tests:108: 17_set_is_not_a_subset_of_set_that_does_not_contain_its_elements_test_ (set is not a subset of set that does not contain its elements)...ok
-        custom_set_tests:114: 18_the_empty_set_is_disjoint_with_itself_test_ (the empty set is disjoint with itself)...ok
-        custom_set_tests:120: 19_empty_set_is_disjoint_with_non_empty_set_test_ (empty set is disjoint with non-empty set)...ok
-        custom_set_tests:126: 20_non_empty_set_is_disjoint_with_empty_set_test_ (non-empty set is disjoint with empty set)...ok
-        custom_set_tests:132: 21_sets_are_not_disjoint_if_they_share_an_element_test_ (sets are not disjoint if they share an element)...ok
-        custom_set_tests:138: 22_sets_are_disjoint_if_they_share_no_elements_test_ (sets are disjoint if they share no elements)...ok
-        custom_set_tests:144: 23_add_to_empty_set_test_ (add to empty set)...ok
-        custom_set_tests:149: 24_add_to_non_empty_set_test_ (add to non-empty set)...ok
-        custom_set_tests:158: 25_adding_an_existing_element_does_not_change_the_set_test_ (adding an existing element does not change the set)...ok
-        custom_set_tests:167: 26_intersection_of_two_empty_sets_is_an_empty_set_test_ (intersection of two empty sets is an empty set)...ok
-        custom_set_tests:174: 27_intersection_of_an_empty_set_and_non_empty_set_is_an_empty_set_test_ (intersection of an empty set and non-empty set is an empty set)...ok
-        custom_set_tests:183: 28_intersection_of_a_non_empty_set_and_an_empty_set_is_an_empty_set_test_ (intersection of a non-empty set and an empty set is an empty set)...ok
-        custom_set_tests:193: 29_intersection_of_two_sets_with_no_shared_elements_is_an_empty_set_test_ (intersection of two sets with no shared elements is an empty set)...ok
-        custom_set_tests:204: 30_intersection_of_two_sets_with_shared_elements_is_a_set_of_the_shared_elements_test_ (intersection of two sets with shared elements is a set of the shared elements)...ok
-        custom_set_tests:216: 31_difference_of_two_empty_sets_is_an_empty_set_test_ (difference of two empty sets is an empty set)...ok
-        custom_set_tests:223: 32_difference_of_empty_set_and_non_empty_set_is_an_empty_set_test_ (difference of empty set and non-empty set is an empty set)...ok
-        custom_set_tests:231: 33_difference_of_a_non_empty_set_and_an_empty_set_is_the_non_empty_set_test_ (difference of a non-empty set and an empty set is the non-empty set)...ok
-        custom_set_tests:242: 34_difference_of_two_non_empty_sets_is_a_set_of_elements_that_are_only_in_the_first_set_test_ (difference of two non-empty sets is a set of elements that are only in the first set)...ok
-        custom_set_tests:250: 35_union_of_empty_sets_is_an_empty_set_test_ (union of empty sets is an empty set)...ok
-        custom_set_tests:257: 36_union_of_an_empty_set_and_non_empty_set_is_the_non_empty_set_test_ (union of an empty set and non-empty set is the non-empty set)...ok
-        custom_set_tests:264: 37_union_of_a_non_empty_set_and_empty_set_is_the_non_empty_set_test_ (union of a non-empty set and empty set is the non-empty set)...ok
-        custom_set_tests:271: 38_union_of_non_empty_sets_contains_all_unique_elements_test_ (union of non-empty sets contains all unique elements)...ok
         [done in 0.750 s]
       [done in 0.750 s]
     [done in 0.750 s]
@@ -177,5 +118,65 @@ file "custom_set.app"
       [done in 0.609 s]
     [done in 0.609 s]
   [done in 0.609 s]
+=======================================================
+  All 38 tests passed.
+
+
+
+Fri, Oct 20, 2023 10:47:06 PM
+=============================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling custom_set
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "custom_set.app"
+  application 'custom_set'
+    module 'custom_set'
+      module 'custom_set_tests'
+        custom_set_tests:16: -1_empty_sets_are_equal_test_/0-fun-1- (empty sets are equal)...ok
+        custom_set_tests:22: -2_empty_set_is_not_equal_to_non_empty_set_test_/0-fun-1- (empty set is not equal to non-empty set)...ok
+        custom_set_tests:28: -3_non_empty_set_is_not_equal_to_empty_set_test_/0-fun-1- (non-empty set is not equal to empty set)...ok
+        custom_set_tests:34: -4_sets_with_the_same_elements_are_equal_test_/0-fun-1- (sets with the same elements are equal)...ok
+        custom_set_tests:40: -5_sets_with_different_elements_are_not_equal_test_/0-fun-1- (sets with different elements are not equal)...ok
+        custom_set_tests:47: -6_set_is_not_equal_to_larger_set_with_same_elements_test_/0-fun-1- (set is not equal to larger set with same elements)...ok
+        custom_set_tests:53: -7_sets_with_no_elements_are_empty_test_/0-fun-1- (sets with no elements are empty)...ok
+        custom_set_tests:57: -8_sets_with_elements_are_not_empty_test_/0-fun-1- (sets with elements are not empty)...ok
+        custom_set_tests:61: -9_nothing_is_contained_in_an_empty_set_test_/0-fun-1- (nothing is contained in an empty set)...ok
+        custom_set_tests:66: -10_when_the_element_is_in_the_set_test_/0-fun-1- (when the element is in the set)...ok
+        custom_set_tests:71: -11_when_the_element_is_not_in_the_set_test_/0-fun-1- (when the element is not in the set)...ok
+        custom_set_tests:77: -12_empty_set_is_a_subset_of_another_empty_set_test_/0-fun-1- (empty set is a subset of another empty set)...ok
+        custom_set_tests:82: -13_empty_set_is_a_subset_of_non_empty_set_test_/0-fun-1- (empty set is a subset of non-empty set)...ok
+        custom_set_tests:88: -14_non_empty_set_is_not_a_subset_of_empty_set_test_/0-fun-1- (non-empty set is not a subset of empty set)...ok
+        custom_set_tests:94: -15_set_is_a_subset_of_set_with_exact_same_elements_test_/0-fun-1- (set is a subset of set with exact same elements)...ok
+        custom_set_tests:101: -16_set_is_a_subset_of_larger_set_with_same_elements_test_/0-fun-1- (set is a subset of larger set with same elements)...ok
+        custom_set_tests:108: -17_set_is_not_a_subset_of_set_that_does_not_contain_its_elements_test_/0-fun-1- (set is not a subset of set that does not contain its elements)...ok
+        custom_set_tests:114: -18_the_empty_set_is_disjoint_with_itself_test_/0-fun-1- (the empty set is disjoint with itself)...ok
+        custom_set_tests:120: -19_empty_set_is_disjoint_with_non_empty_set_test_/0-fun-1- (empty set is disjoint with non-empty set)...ok
+        custom_set_tests:126: -20_non_empty_set_is_disjoint_with_empty_set_test_/0-fun-1- (non-empty set is disjoint with empty set)...ok
+        custom_set_tests:132: -21_sets_are_not_disjoint_if_they_share_an_element_test_/0-fun-1- (sets are not disjoint if they share an element)...ok
+        custom_set_tests:138: -22_sets_are_disjoint_if_they_share_no_elements_test_/0-fun-1- (sets are disjoint if they share no elements)...ok
+        custom_set_tests:144: -23_add_to_empty_set_test_/0-fun-1- (add to empty set)...ok
+        custom_set_tests:149: -24_add_to_non_empty_set_test_/0-fun-1- (add to non-empty set)...ok
+        custom_set_tests:158: -25_adding_an_existing_element_does_not_change_the_set_test_/0-fun-1- (adding an existing element does not change the set)...ok
+        custom_set_tests:167: -26_intersection_of_two_empty_sets_is_an_empty_set_test_/0-fun-1- (intersection of two empty sets is an empty set)...ok
+        custom_set_tests:174: -27_intersection_of_an_empty_set_and_non_empty_set_is_an_empty_set_test_/0-fun-1- (intersection of an empty set and non-empty set is an empty set)...ok
+        custom_set_tests:183: -28_intersection_of_a_non_empty_set_and_an_empty_set_is_an_empty_set_test_/0-fun-1- (intersection of a non-empty set and an empty set is an empty set)...ok
+        custom_set_tests:193: -29_intersection_of_two_sets_with_no_shared_elements_is_an_empty_set_test_/0-fun-1- (intersection of two sets with no shared elements is an empty set)...ok
+        custom_set_tests:204: -30_intersection_of_two_sets_with_shared_elements_is_a_set_of_the_shared_elements_test_/0-fun-1- (intersection of two sets with shared elements is a set of the shared elements)...ok
+        custom_set_tests:216: -31_difference_of_two_empty_sets_is_an_empty_set_test_/0-fun-1- (difference of two empty sets is an empty set)...ok
+        custom_set_tests:223: -32_difference_of_empty_set_and_non_empty_set_is_an_empty_set_test_/0-fun-1- (difference of empty set and non-empty set is an empty set)...ok
+        custom_set_tests:231: -33_difference_of_a_non_empty_set_and_an_empty_set_is_the_non_empty_set_test_/0-fun-1- (difference of a non-empty set and an empty set is the non-empty set)...ok
+        custom_set_tests:242: -34_difference_of_two_non_empty_sets_is_a_set_of_elements_that_are_only_in_the_first_set_test_/0-fun-1- (difference of two non-empty sets is a set of elements that are only in the first set)...ok
+        custom_set_tests:250: -35_union_of_empty_sets_is_an_empty_set_test_/0-fun-1- (union of empty sets is an empty set)...[0.009 s] ok
+        custom_set_tests:257: -36_union_of_an_empty_set_and_non_empty_set_is_the_non_empty_set_test_/0-fun-1- (union of an empty set and non-empty set is the non-empty set)...ok
+        custom_set_tests:264: -37_union_of_a_non_empty_set_and_empty_set_is_the_non_empty_set_test_/0-fun-1- (union of a non-empty set and empty set is the non-empty set)...ok
+        custom_set_tests:271: -38_union_of_non_empty_sets_contains_all_unique_elements_test_/0-fun-1- (union of non-empty sets contains all unique elements)...ok
+        [done in 0.582 s]
+      [done in 0.582 s]
+    [done in 0.582 s]
+  [done in 0.583 s]
 =======================================================
   All 38 tests passed.
