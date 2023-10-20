@@ -4,12 +4,10 @@
 
 
 -spec decode(string()) -> string().
-decode(Phrase) -> 
-    lists:filtermap(fun atbash/1, string:lowercase(Phrase)).
+decode(Phrase) -> lists:filtermap(fun atbash/1, string:lowercase(Phrase)).
 
 -spec encode(string()) -> string().
-encode(Phrase) -> 
-    chunks(5, decode(Phrase)).
+encode(Phrase) -> chunks(5, decode(Phrase)).
 
 % Auxiliary
 
