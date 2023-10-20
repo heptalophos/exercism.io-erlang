@@ -3,6 +3,7 @@
 /.ionide/
 
 cleanup.*
+prepareTests.ps1
 
 /**/*.lock
 /**/.rebar3

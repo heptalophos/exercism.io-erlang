@@ -15,9 +15,7 @@
 allergies(Score) -> allergies(Score, ?ALLERGIES).
 
 -spec is_allergic_to(allergen(), score()) -> boolean().
-is_allergic_to(Substance, Score) -> 
-    lists:member(Substance, allergies(Score)).
-
+is_allergic_to(Substance, Score) -> lists:member(Substance, allergies(Score)).
 
 % Auxiliary
 

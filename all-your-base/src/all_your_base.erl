@@ -21,12 +21,10 @@ rebase(Digits, InputBase, OutputBase) ->
 
 -spec value(Digits, Base) -> Representation 
     when Base :: pos_integer(), Digits :: [0..9], Representation :: integer().
-value(Digits, Base) -> 
-    lists:foldl(fun(D, V) -> D + (V * Base) end, 0, Digits).
+value(Digits, Base) -> lists:foldl(fun(D, V) -> D + (V * Base) end, 0, Digits).
 
 -spec digits(integer(), pos_integer()) -> [0..9]. 
-digits(N, B) -> 
-    digits(N, B, []).
+digits(N, B) -> digits(N, B, []).
 
 -spec digits(integer(), pos_integer(), [0..9]) -> [0..9].
 digits(N, B, Acc) ->     
