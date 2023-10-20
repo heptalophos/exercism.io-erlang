@@ -28,8 +28,7 @@ is_alphanumeric(C) ->
 is_empty(Ls) -> lists:all(fun(L) -> L =:= [] end, Ls).
 
 -spec normalized(string()) -> cleanstring().
-normalized(String) ->
-    [C || C <- string:lowercase(String), is_alphanumeric(C)].
+normalized(String) -> [C || C <- string:lowercase(String), is_alphanumeric(C)].
 
 -spec split(string(), pos_integer()) -> [string()].
 split(Text, Lines) ->
