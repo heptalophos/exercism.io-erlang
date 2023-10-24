@@ -4,6 +4,7 @@
 
 cleanup.*
 prepareTests.ps1
+runTests.ps1
 
 /**/*.lock
 /**/.rebar3
@@ -27,4 +28,5 @@ prepareTests.ps1
 /**/*~
 HELP.md
 HINTS.md
+
 .fake
