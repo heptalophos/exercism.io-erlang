@@ -1,5 +1,4 @@
 >rebar3 eunit
-
 ===> Verifying dependencies...
 ===> Analyzing applications...
 ===> Compiling parallel_letter_frequency
@@ -15,5 +14,29 @@ file "parallel_letter_frequency.app"
       [done in 0.030 s]
     [done in 0.030 s]
   [done in 0.030 s]
+=======================================================
+  2 tests passed.
+
+
+
+=======================================================
+Mon Oct 23 20:22:26 GTBDT 2023
+=======================================================
+>rebar3 eunit
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling parallel_letter_frequency
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "parallel_letter_frequency.app"
+  application 'parallel_letter_frequency'
+    module 'parallel_letter_frequency'
+      module 'parallel_letter_frequency_tests'
+        parallel_letter_frequency_tests: single_test...ok
+        parallel_letter_frequency_tests: double_test...ok
+        [done in 0.028 s]
+      [done in 0.028 s]
+    [done in 0.028 s]
+  [done in 0.028 s]
 =======================================================
   2 tests passed.
