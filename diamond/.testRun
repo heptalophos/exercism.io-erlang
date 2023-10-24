@@ -22,30 +22,6 @@ file "diamond.app"
 
 
 
-===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
-===> Compiling diamond
-===> Performing EUnit tests...
-======================== EUnit ========================
-file "diamond.app"
-  application 'diamond'
-    module 'diamond'
-      module 'diamond_tests'
-        diamond_tests: 1_degenerate_case_with_a_single_a_row_test...ok
-        diamond_tests: 2_degenerate_case_with_no_row_containing_3_distinct_groups_of_spaces_test...ok
-        diamond_tests: 3_smallest_non_degenerate_case_with_odd_diamond_side_length_test...ok
-        diamond_tests: 4_smallest_non_degenerate_case_with_even_diamond_side_length_test...ok
-        diamond_tests: 5_largest_possible_diamond_test...ok
-        [done in 0.078 s]
-      [done in 0.078 s]
-    [done in 0.078 s]
-  [done in 0.078 s]
-=======================================================
-  All 5 tests passed.
-
-
-
 >rebar3 eunit
 
 ===> Verifying dependencies...
@@ -67,5 +43,32 @@ file "diamond.app"
       [done in 0.078 s]
     [done in 0.078 s]
   [done in 0.078 s]
+=======================================================
+  All 5 tests passed.
+
+
+
+Fri, Oct 20, 2023 11:32:04 PM
+=============================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling diamond
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "diamond.app"
+  application 'diamond'
+    module 'diamond'
+      module 'diamond_tests'
+        diamond_tests:19: -1_degenerate_case_with_a_single_a_row_test_/0-fun-1- (Degenerate case with a single 'A' row)...ok
+        diamond_tests:29: -2_degenerate_case_with_no_row_containing_3_distinct_groups_of_spaces_test_/0-fun-1- (Degenerate case with no row containing 3 distinct groups of spaces)...ok
+        diamond_tests:41: -3_smallest_non_degenerate_case_with_odd_diamond_side_length_test_/0-fun-1- (Smallest non-degenerate case with odd diamond side length)...ok
+        diamond_tests:55: -4_smallest_non_degenerate_case_with_even_diamond_side_length_test_/0-fun-1- (Smallest non-degenerate case with even diamond side length)...ok
+        diamond_tests:112: -5_largest_possible_diamond_test_/0-fun-1- (Largest possible diamond)...ok
+        [done in 0.074 s]
+      [done in 0.074 s]
+    [done in 0.074 s]
+  [done in 0.074 s]
 =======================================================
   All 5 tests passed.

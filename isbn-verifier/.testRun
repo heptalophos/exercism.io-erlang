@@ -66,20 +66,21 @@ file "isbn_verifier.app"
         isbn_verifier_tests:79: 16_invalid_characters_are_not_ignored_after_checking_length_test_ (invalid characters are not ignored after checking length)...ok
         isbn_verifier_tests:84: 17_invalid_characters_are_not_ignored_before_checking_length_test_ (invalid characters are not ignored before checking length)...ok
         isbn_verifier_tests:89: 18_input_is_too_long_but_contains_a_valid_isbn_test_ (input is too long but contains a valid isbn)...ok
-        [done in 0.282 s]
-      [done in 0.282 s]
-    [done in 0.282 s]
-  [done in 0.297 s]
+        [done in 0.281 s]
+      [done in 0.281 s]
+    [done in 0.281 s]
+  [done in 0.281 s]
 =======================================================
   All 18 tests passed.
 
 
 
+=======================================================
+Mon Oct 23 20:41:44 GTBDT 2023
+=======================================================
 >rebar3 eunit
-
 ===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Analyzing applications...
 ===> Compiling isbn_verifier
 ===> Performing EUnit tests...
 ======================== EUnit ========================
@@ -87,27 +88,27 @@ file "isbn_verifier.app"
   application 'isbn_verifier'
     module 'isbn_verifier'
       module 'isbn_verifier_tests'
-        isbn_verifier_tests:16: 1_valid_isbn_test_ (valid isbn)...ok
-        isbn_verifier_tests:20: 2_invalid_isbn_check_digit_test_ (invalid isbn check digit)...ok
-        isbn_verifier_tests:24: 3_valid_isbn_with_a_check_digit_of_10_test_ (valid isbn with a check digit of 10)...ok
-        isbn_verifier_tests:28: 4_check_digit_is_a_character_other_than_x_test_ (check digit is a character other than X)...ok
-        isbn_verifier_tests:33: 5_invalid_character_in_isbn_is_not_treated_as_zero_test_ (invalid character in isbn is not treated as zero)...ok
-        isbn_verifier_tests:37: 6_x_is_only_valid_as_a_check_digit_test_ (X is only valid as a check digit)...ok
-        isbn_verifier_tests:41: 7_valid_isbn_without_separating_dashes_test_ (valid isbn without separating dashes)...ok
-        isbn_verifier_tests:46: 8_isbn_without_separating_dashes_and_x_as_check_digit_test_ (isbn without separating dashes and X as check digit)...ok
-        isbn_verifier_tests:50: 9_isbn_without_check_digit_and_dashes_test_ (isbn without check digit and dashes)...ok
-        isbn_verifier_tests:54: 10_too_long_isbn_and_no_dashes_test_ (too long isbn and no dashes)...ok
-        isbn_verifier_tests:58: 11_too_short_isbn_test_ (too short isbn)...ok
-        isbn_verifier_tests:62: 12_isbn_without_check_digit_test_ (isbn without check digit)...ok
-        isbn_verifier_tests:67: 13_check_digit_of_x_should_not_be_used_for_0_test_ (check digit of X should not be used for 0)...ok
-        isbn_verifier_tests:70: 14_empty_isbn_test_ (empty isbn)...ok
-        isbn_verifier_tests:74: 15_input_is_9_characters_test_ (input is 9 characters)...ok
-        isbn_verifier_tests:79: 16_invalid_characters_are_not_ignored_after_checking_length_test_ (invalid characters are not ignored after checking length)...ok
-        isbn_verifier_tests:84: 17_invalid_characters_are_not_ignored_before_checking_length_test_ (invalid characters are not ignored before checking length)...ok
-        isbn_verifier_tests:89: 18_input_is_too_long_but_contains_a_valid_isbn_test_ (input is too long but contains a valid isbn)...ok
-        [done in 0.281 s]
-      [done in 0.281 s]
-    [done in 0.281 s]
-  [done in 0.281 s]
+        isbn_verifier_tests:16: -1_valid_isbn_test_/0-fun-1- (valid isbn)...ok
+        isbn_verifier_tests:20: -2_invalid_isbn_check_digit_test_/0-fun-1- (invalid isbn check digit)...ok
+        isbn_verifier_tests:24: -3_valid_isbn_with_a_check_digit_of_10_test_/0-fun-1- (valid isbn with a check digit of 10)...ok
+        isbn_verifier_tests:28: -4_check_digit_is_a_character_other_than_x_test_/0-fun-1- (check digit is a character other than X)...ok
+        isbn_verifier_tests:33: -5_invalid_character_in_isbn_is_not_treated_as_zero_test_/0-fun-1- (invalid character in isbn is not treated as zero)...ok
+        isbn_verifier_tests:37: -6_x_is_only_valid_as_a_check_digit_test_/0-fun-1- (X is only valid as a check digit)...ok
+        isbn_verifier_tests:41: -7_valid_isbn_without_separating_dashes_test_/0-fun-1- (valid isbn without separating dashes)...ok
+        isbn_verifier_tests:46: -8_isbn_without_separating_dashes_and_x_as_check_digit_test_/0-fun-1- (isbn without separating dashes and X as check digit)...ok
+        isbn_verifier_tests:50: -9_isbn_without_check_digit_and_dashes_test_/0-fun-1- (isbn without check digit and dashes)...ok
+        isbn_verifier_tests:54: -10_too_long_isbn_and_no_dashes_test_/0-fun-1- (too long isbn and no dashes)...ok
+        isbn_verifier_tests:58: -11_too_short_isbn_test_/0-fun-1- (too short isbn)...ok
+        isbn_verifier_tests:62: -12_isbn_without_check_digit_test_/0-fun-1- (isbn without check digit)...ok
+        isbn_verifier_tests:67: -13_check_digit_of_x_should_not_be_used_for_0_test_/0-fun-1- (check digit of X should not be used for 0)...ok
+        isbn_verifier_tests:70: -14_empty_isbn_test_/0-fun-1- (empty isbn)...ok
+        isbn_verifier_tests:74: -15_input_is_9_characters_test_/0-fun-1- (input is 9 characters)...ok
+        isbn_verifier_tests:79: -16_invalid_characters_are_not_ignored_after_checking_length_test_/0-fun-1- (invalid characters are not ignored after checking length)...ok
+        isbn_verifier_tests:84: -17_invalid_characters_are_not_ignored_before_checking_length_test_/0-fun-1- (invalid characters are not ignored before checking length)...ok
+        isbn_verifier_tests:89: -18_input_is_too_long_but_contains_a_valid_isbn_test_/0-fun-1- (input is too long but contains a valid isbn)...ok
+        [done in 0.279 s]
+      [done in 0.279 s]
+    [done in 0.279 s]
+  [done in 0.280 s]
 =======================================================
   All 18 tests passed.
