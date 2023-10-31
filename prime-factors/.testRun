@@ -50,3 +50,33 @@ file "prime_factors.app"
   [done in 0.141 s]
 =======================================================
   All 7 tests passed.
+
+
+
+=======================================================
+Fri Oct 27 15:50:00 GTBDT 2023
+=======================================================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling prime_factors
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "prime_factors.app"
+  application 'prime_factors'
+    module 'prime_factors'
+      module 'prime_factors_tests'
+        prime_factors_tests:16: -1_no_factors_test_/0-fun-1- (no factors)...ok
+        prime_factors_tests:21: -2_prime_number_test_/0-fun-1- (prime number)...ok
+        prime_factors_tests:26: -3_square_of_a_prime_test_/0-fun-1- (square of a prime)...ok
+        prime_factors_tests:31: -4_cube_of_a_prime_test_/0-fun-1- (cube of a prime)...ok
+        prime_factors_tests:36: -5_product_of_primes_and_non_primes_test_/0-fun-1- (product of primes and non-primes)...ok
+        prime_factors_tests:41: -6_product_of_primes_test_/0-fun-1- (product of primes)...ok
+        prime_factors_tests:46: -7_factors_include_a_large_prime_test_/0-fun-1- (factors include a large prime)...[0.015 s] ok
+        [done in 0.127 s]
+      [done in 0.127 s]
+    [done in 0.127 s]
+  [done in 0.127 s]
+=======================================================
+  All 7 tests passed.
