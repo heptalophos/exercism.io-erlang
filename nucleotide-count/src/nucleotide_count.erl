@@ -8,8 +8,10 @@
 
 -spec count(strand(), nucleotide()) -> non_neg_integer().
 count(Strand, Nucleotide) -> 
-    string:length(lists:filter(fun(X) -> valid([X]) =:= Nucleotide end, 
-                               Strand)).
+    string:length( lists:filter( fun(X) -> 
+                                    valid([X]) =:= Nucleotide 
+                                 end, 
+                                 Strand) ).
 
 -spec nucleotide_counts(strand()) -> [nuc_count()].
 nucleotide_counts(Strand) -> 
