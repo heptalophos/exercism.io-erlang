@@ -18,10 +18,10 @@ slices(SliceLength, Series) ->
 % Auxiliary
 
 -spec slices(pos_integer(), [any()], [any()]) -> [any()].
-slices(SLength, Series, SubSeries) 
-    when length(Series) < SLength ->
-                lists:reverse(SubSeries);
-slices(SLength, Series = [_|Rest], SubSeries) -> 
-    slices(SLength, 
-           Rest, 
-           [lists:sublist(Series, SLength) | SubSeries]).
+slices(SLength, Series, SubSeries) ->
+    case length(Series) < SLength of
+        true -> lists:reverse(SubSeries);
+        _ -> [_|Rest] = Series,
+             slices(SLength, Rest, 
+                    [lists:sublist(Series, SLength) | SubSeries])
+    end.
