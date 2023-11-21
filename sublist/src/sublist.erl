@@ -10,18 +10,14 @@
          relation/2]).
 
 
--spec is_equal(L1, L2) -> boolean() 
-    when
-    L1 :: [T], L2 :: [T], T :: term().
+-spec is_equal(L1, L2) -> boolean() when L1 :: [T], L2 :: [T], T :: term().
 is_equal(L1, L2) -> 
     case relation(L1, L2) of 
         equal -> true;
         _ -> false
     end.
 
--spec is_sublist(L1, L2) -> boolean() 
-    when
-    L1 :: [T], L2 :: [T], T :: term().
+-spec is_sublist(L1, L2) -> boolean() when L1 :: [T], L2 :: [T], T :: term().
 is_sublist(L1, L2) -> 
     case (relation(L1, L2)) of
         equal -> true;
@@ -29,9 +25,7 @@ is_sublist(L1, L2) ->
         _ -> false 
     end.
 
--spec is_superlist(L1, L2) -> boolean() 
-    when
-    L1 :: [T], L2 :: [T], T :: term().
+-spec is_superlist(L1, L2) -> boolean() when L1 :: [T], L2 :: [T], T :: term().
 is_superlist(L1, L2) ->     
     case (relation(L1, L2)) of
         equal -> true;
@@ -39,9 +33,7 @@ is_superlist(L1, L2) ->
         _ -> false 
     end.
 
--spec is_unequal(L1, L2) -> boolean() 
-  when
-    L1 :: [T], L2 :: [T], T :: term().
+-spec is_unequal(L1, L2) -> boolean() when L1 :: [T], L2 :: [T], T :: term().
 is_unequal(L1, L2) ->
     case (relation(L1, L2)) of
         equal -> false;
@@ -49,9 +41,11 @@ is_unequal(L1, L2) ->
     end.
 
 -spec relation(L1, L2) -> Relation 
-  when
-    L1 :: [T], L2 :: [T], T :: term(), 
-    Relation :: equal | sublist | superlist | unequal.
+    when 
+    L1 :: [T], L2 :: [T], T :: term(), Relation :: equal 
+                                                   | sublist 
+                                                   | superlist 
+                                                   | unequal.
 relation(L1, L2) -> 
     case { infix(L1, L2), infix(L2, L1) } of
         {true, true}   -> equal;
@@ -62,16 +56,13 @@ relation(L1, L2) ->
 
 % Auxiliary
 
--spec infix(L1, L2) -> boolean() 
-  when
-    L1 :: [T], L2 :: [T], T :: term().
+-spec infix(L1, L2) -> boolean() when L1 :: [T], L2 :: [T], T :: term().
 infix(L1, L2) -> 
     case {L1, L2} of
         {L1, []} -> L1 == [];
-        {L1, L2} ->
-            [_ | R] = L2, 
-            case lists:prefix(L1, L2) of
-                false  -> infix(L1, R);
-                _      -> true
-            end
+        {L1, L2} -> [_ | R] = L2, 
+                    case lists:prefix(L1, L2) of
+                        false  -> infix(L1, R);
+                        _ -> true
+                    end
     end.
