@@ -69,47 +69,14 @@ file "sublist.app"
   All 17 tests passed.
 
 
-===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
-===> Compiling sublist
-===> Performing EUnit tests...
-======================== EUnit ========================
-file "sublist.app"
-  application 'sublist'
-    module 'sublist'
-      module 'sublist_tests'
-        sublist_tests: 1_empty_lists_test...ok
-        sublist_tests: 2_empty_list_within_non_empty_list_test...ok
-        sublist_tests: 3_non_empty_list_contains_empty_list_test...ok
-        sublist_tests: 4_list_equals_itself_test...ok
-        sublist_tests: 5_different_lists_test...ok
-        sublist_tests: 6_false_start_test...ok
-        sublist_tests: 7_consecutive_test...ok
-        sublist_tests: 8_sublist_at_start_test...ok
-        sublist_tests: 9_sublist_in_middle_test...ok
-        sublist_tests: 10_sublist_at_end_test...ok
-        sublist_tests: 11_at_start_of_superlist_test...ok
-        sublist_tests: 12_in_middle_of_superlist_test...ok
-        sublist_tests: 13_at_end_of_superlist_test...ok
-        sublist_tests: 14_first_list_missing_element_from_second_list_test...ok
-        sublist_tests: 15_second_list_missing_element_from_first_list_test...ok
-        sublist_tests: 16_order_matters_to_a_list_test...ok
-        sublist_tests: 17_same_digits_but_different_numbers_test...ok
-        [done in 0.265 s]
-      [done in 0.265 s]
-    [done in 0.265 s]
-  [done in 0.265 s]
+
 =======================================================
-  All 17 tests passed.
-
-
-
+Tue Nov 21 17:10:05 GTBST 2023
+=======================================================
 >rebar3 eunit
 
 ===> Verifying dependencies...
-===> Linking _build/default/lib/erl_exercism to _build/test/lib/erl_exercism
-===> Linking _build/default/lib/parse_trans to _build/test/lib/parse_trans
+===> Analyzing applications...
 ===> Compiling sublist
 ===> Performing EUnit tests...
 ======================== EUnit ========================
@@ -117,94 +84,94 @@ file "sublist.app"
   application 'sublist'
     module 'sublist'
       module 'sublist_tests'
-        sublist_tests:16: 1_empty_lists_test_ (empty lists)...ok
-        sublist_tests:18: 1_empty_lists_test_ (empty lists (is_equal))...ok
-        sublist_tests:20: 1_empty_lists_test_ (empty lists (not is_unequal))...ok
-        sublist_tests:22: 1_empty_lists_test_ (empty lists (is_sublist))...ok
-        sublist_tests:24: 1_empty_lists_test_ (empty lists (is_superlist))...ok
-        sublist_tests:28: 2_empty_list_within_non_empty_list_test_ (empty list within non empty list)...ok
-        sublist_tests:32: 2_empty_list_within_non_empty_list_test_ (empty list within non empty list (not is_equal))...ok
-        sublist_tests:34: 2_empty_list_within_non_empty_list_test_ (empty list within non empty list (is_unequal))...ok
-        sublist_tests:36: 2_empty_list_within_non_empty_list_test_ (empty list within non empty list (is_sublist))...ok
-        sublist_tests:39: 2_empty_list_within_non_empty_list_test_ (empty list within non empty list (not is_superlist))...ok
-        sublist_tests:43: 3_non_empty_list_contains_empty_list_test_ (non empty list contains empty list)...ok
-        sublist_tests:47: 3_non_empty_list_contains_empty_list_test_ (non empty list contains empty list (not is_equal))...ok
-        sublist_tests:49: 3_non_empty_list_contains_empty_list_test_ (non empty list contains empty list (is_unequal))...ok
-        sublist_tests:52: 3_non_empty_list_contains_empty_list_test_ (non empty list contains empty list (not is_sublist))...ok
-        sublist_tests:55: 3_non_empty_list_contains_empty_list_test_ (non empty list contains empty list (is_superlist))...ok
-        sublist_tests:59: 4_list_equals_itself_test_ (list equals itself)...ok
-        sublist_tests:62: 4_list_equals_itself_test_ (list equals itself (is_equal))...ok
-        sublist_tests:64: 4_list_equals_itself_test_ (list equals itself (not is_unequal))...ok
-        sublist_tests:66: 4_list_equals_itself_test_ (list equals itself (is_sublist))...ok
-        sublist_tests:68: 4_list_equals_itself_test_ (list equals itself (is_superlist))...ok
-        sublist_tests:72: 5_different_lists_test_ (different lists)...ok
-        sublist_tests:75: 5_different_lists_test_ (different lists (not is_equal))...ok
-        sublist_tests:77: 5_different_lists_test_ (different lists (is_unequal))...ok
-        sublist_tests:79: 5_different_lists_test_ (different lists (not is_sublist))...ok
-        sublist_tests:81: 5_different_lists_test_ (different lists (not is_superlist))...ok
-        sublist_tests:86: 6_false_start_test_ (false start)...ok
-        sublist_tests:89: 6_false_start_test_ (false start (not is_equal))...ok
-        sublist_tests:92: 6_false_start_test_ (false start (is_unequal))...ok
-        sublist_tests:95: 6_false_start_test_ (false start (is_sublist))...ok
-        sublist_tests:98: 6_false_start_test_ (false start (not is_superlist))...ok
-        sublist_tests:103: 7_consecutive_test_ (consecutive)...ok
-        sublist_tests:106: 7_consecutive_test_ (consecutive (not is_equal))...ok
-        sublist_tests:109: 7_consecutive_test_ (consecutive (is_unequal))...ok
-        sublist_tests:112: 7_consecutive_test_ (consecutive (is_sublist))...ok
-        sublist_tests:115: 7_consecutive_test_ (consecutive (not is_superlist))...ok
-        sublist_tests:120: 8_sublist_at_start_test_ (sublist at start)...ok
-        sublist_tests:123: 8_sublist_at_start_test_ (sublist at start (not is_equal))...ok
-        sublist_tests:126: 8_sublist_at_start_test_ (sublist at start (is_unequal))...ok
-        sublist_tests:129: 8_sublist_at_start_test_ (sublist at start (is_sublist))...ok
-        sublist_tests:132: 8_sublist_at_start_test_ (sublist at start (not is_superlist))...ok
-        sublist_tests:137: 9_sublist_in_middle_test_ (sublist in middle)...ok
-        sublist_tests:140: 9_sublist_in_middle_test_ (sublist in middle (not is_equal))...ok
-        sublist_tests:143: 9_sublist_in_middle_test_ (sublist in middle (is_unequal))...ok
-        sublist_tests:146: 9_sublist_in_middle_test_ (sublist in middle (is_sublist))...ok
-        sublist_tests:149: 9_sublist_in_middle_test_ (sublist in middle (not is_superlist))...ok
-        sublist_tests:154: 10_sublist_at_end_test_ (sublist at end)...ok
-        sublist_tests:157: 10_sublist_at_end_test_ (sublist at end (not is_equal))...ok
-        sublist_tests:160: 10_sublist_at_end_test_ (sublist at end (is_unequal))...ok
-        sublist_tests:163: 10_sublist_at_end_test_ (sublist at end (is_sublist))...ok
-        sublist_tests:166: 10_sublist_at_end_test_ (sublist at end (not is_superlist))...ok
-        sublist_tests:171: 11_at_start_of_superlist_test_ (at start of superlist)...ok
-        sublist_tests:174: 11_at_start_of_superlist_test_ (at start of superlist (not is_equal))...ok
-        sublist_tests:177: 11_at_start_of_superlist_test_ (at start of superlist (is_unequal))...ok
-        sublist_tests:180: 11_at_start_of_superlist_test_ (at start of superlist (not is_sublist))...ok
-        sublist_tests:183: 11_at_start_of_superlist_test_ (at start of superlist (is_superlist))...ok
-        sublist_tests:188: 12_in_middle_of_superlist_test_ (in middle of superlist)...ok
-        sublist_tests:191: 12_in_middle_of_superlist_test_ (in middle of superlist (not is_equal))...ok
-        sublist_tests:194: 12_in_middle_of_superlist_test_ (in middle of superlist (is_unequal))...ok
-        sublist_tests:197: 12_in_middle_of_superlist_test_ (in middle of superlist (not is_sublist))...ok
-        sublist_tests:200: 12_in_middle_of_superlist_test_ (in middle of superlist (is_superlist))...ok
-        sublist_tests:205: 13_at_end_of_superlist_test_ (at end of superlist)...ok
-        sublist_tests:208: 13_at_end_of_superlist_test_ (at end of superlist (not is_equal))...ok
-        sublist_tests:211: 13_at_end_of_superlist_test_ (at end of superlist (is_unequal))...ok
-        sublist_tests:214: 13_at_end_of_superlist_test_ (at end of superlist (not is_sublist))...ok
-        sublist_tests:217: 13_at_end_of_superlist_test_ (at end of superlist (is_superlist))...ok
-        sublist_tests:223: 14_first_list_missing_element_from_second_list_test_ (first list missing element from second list)...ok
-        sublist_tests:227: 14_first_list_missing_element_from_second_list_test_ (first list missing element from second list (not is_equal))...ok
-        sublist_tests:230: 14_first_list_missing_element_from_second_list_test_ (first list missing element from second list (is_unequal))...ok
-        sublist_tests:233: 14_first_list_missing_element_from_second_list_test_ (first list missing element from second list (not is_sublist))...ok
-        sublist_tests:236: 14_first_list_missing_element_from_second_list_test_ (first list missing element from second list (not is_superlist))...ok
-        sublist_tests:241: 15_second_list_missing_element_from_first_list_test_ (second list missing element from first list)...ok
-        sublist_tests:245: 15_second_list_missing_element_from_first_list_test_ (second list missing element from first list (not is_equal))...ok
-        sublist_tests:248: 15_second_list_missing_element_from_first_list_test_ (second list missing element from first list (is_unequal))...ok
-        sublist_tests:251: 15_second_list_missing_element_from_first_list_test_ (second list missing element from first list (not is_sublist))...ok
-        sublist_tests:254: 15_second_list_missing_element_from_first_list_test_ (second list missing element from first list (not is_superlist))...ok
-        sublist_tests:258: 16_order_matters_to_a_list_test_ (order matters to a list)...ok
-        sublist_tests:261: 16_order_matters_to_a_list_test_ (order matters to a list (not is_equal))...ok
-        sublist_tests:263: 16_order_matters_to_a_list_test_ (order matters to a list (is_unequal))...ok
-        sublist_tests:265: 16_order_matters_to_a_list_test_ (order matters to a list (not is_sublist))...ok
-        sublist_tests:267: 16_order_matters_to_a_list_test_ (order matters to a list (not is_superlist))...ok
-        sublist_tests:272: 17_same_digits_but_different_numbers_test_ (same digits but different numbers)...ok
-        sublist_tests:276: 17_same_digits_but_different_numbers_test_ (same digits but different numbers (not is_equal))...ok
-        sublist_tests:278: 17_same_digits_but_different_numbers_test_ (same digits but different numbers (is_unequal))...ok
-        sublist_tests:281: 17_same_digits_but_different_numbers_test_ (same digits but different numbers (not is_sublist))...ok
-        sublist_tests:284: 17_same_digits_but_different_numbers_test_ (same digits but different numbers (not is_superlist))...ok
-        [done in 1.375 s]
-      [done in 1.375 s]
-    [done in 1.375 s]
-  [done in 1.375 s]
+        sublist_tests:16: -1_empty_lists_test_/0-fun-9- (empty lists)...ok
+        sublist_tests:18: -1_empty_lists_test_/0-fun-7- (empty lists (is_equal))...[0.001 s] ok
+        sublist_tests:20: -1_empty_lists_test_/0-fun-5- (empty lists (not is_unequal))...ok
+        sublist_tests:22: -1_empty_lists_test_/0-fun-3- (empty lists (is_sublist))...ok
+        sublist_tests:24: -1_empty_lists_test_/0-fun-1- (empty lists (is_superlist))...ok
+        sublist_tests:28: -2_empty_list_within_non_empty_list_test_/0-fun-9- (empty list within non empty list)...ok
+        sublist_tests:32: -2_empty_list_within_non_empty_list_test_/0-fun-7- (empty list within non empty list (not is_equal))...ok
+        sublist_tests:34: -2_empty_list_within_non_empty_list_test_/0-fun-5- (empty list within non empty list (is_unequal))...ok
+        sublist_tests:36: -2_empty_list_within_non_empty_list_test_/0-fun-3- (empty list within non empty list (is_sublist))...ok
+        sublist_tests:39: -2_empty_list_within_non_empty_list_test_/0-fun-1- (empty list within non empty list (not is_superlist))...ok
+        sublist_tests:43: -3_non_empty_list_contains_empty_list_test_/0-fun-9- (non empty list contains empty list)...ok
+        sublist_tests:47: -3_non_empty_list_contains_empty_list_test_/0-fun-7- (non empty list contains empty list (not is_equal))...ok
+        sublist_tests:49: -3_non_empty_list_contains_empty_list_test_/0-fun-5- (non empty list contains empty list (is_unequal))...ok
+        sublist_tests:52: -3_non_empty_list_contains_empty_list_test_/0-fun-3- (non empty list contains empty list (not is_sublist))...ok
+        sublist_tests:55: -3_non_empty_list_contains_empty_list_test_/0-fun-1- (non empty list contains empty list (is_superlist))...ok
+        sublist_tests:59: -4_list_equals_itself_test_/0-fun-9- (list equals itself)...ok
+        sublist_tests:62: -4_list_equals_itself_test_/0-fun-7- (list equals itself (is_equal))...ok
+        sublist_tests:64: -4_list_equals_itself_test_/0-fun-5- (list equals itself (not is_unequal))...ok
+        sublist_tests:66: -4_list_equals_itself_test_/0-fun-3- (list equals itself (is_sublist))...ok
+        sublist_tests:68: -4_list_equals_itself_test_/0-fun-1- (list equals itself (is_superlist))...[0.001 s] ok
+        sublist_tests:72: -5_different_lists_test_/0-fun-9- (different lists)...ok
+        sublist_tests:75: -5_different_lists_test_/0-fun-7- (different lists (not is_equal))...ok
+        sublist_tests:77: -5_different_lists_test_/0-fun-5- (different lists (is_unequal))...ok
+        sublist_tests:79: -5_different_lists_test_/0-fun-3- (different lists (not is_sublist))...ok
+        sublist_tests:81: -5_different_lists_test_/0-fun-1- (different lists (not is_superlist))...ok
+        sublist_tests:86: -6_false_start_test_/0-fun-9- (false start)...ok
+        sublist_tests:89: -6_false_start_test_/0-fun-7- (false start (not is_equal))...ok
+        sublist_tests:92: -6_false_start_test_/0-fun-5- (false start (is_unequal))...ok
+        sublist_tests:95: -6_false_start_test_/0-fun-3- (false start (is_sublist))...ok
+        sublist_tests:98: -6_false_start_test_/0-fun-1- (false start (not is_superlist))...ok
+        sublist_tests:103: -7_consecutive_test_/0-fun-9- (consecutive)...ok
+        sublist_tests:106: -7_consecutive_test_/0-fun-7- (consecutive (not is_equal))...ok
+        sublist_tests:109: -7_consecutive_test_/0-fun-5- (consecutive (is_unequal))...ok
+        sublist_tests:112: -7_consecutive_test_/0-fun-3- (consecutive (is_sublist))...ok
+        sublist_tests:115: -7_consecutive_test_/0-fun-1- (consecutive (not is_superlist))...ok
+        sublist_tests:120: -8_sublist_at_start_test_/0-fun-9- (sublist at start)...ok
+        sublist_tests:123: -8_sublist_at_start_test_/0-fun-7- (sublist at start (not is_equal))...ok
+        sublist_tests:126: -8_sublist_at_start_test_/0-fun-5- (sublist at start (is_unequal))...ok
+        sublist_tests:129: -8_sublist_at_start_test_/0-fun-3- (sublist at start (is_sublist))...ok
+        sublist_tests:132: -8_sublist_at_start_test_/0-fun-1- (sublist at start (not is_superlist))...ok
+        sublist_tests:137: -9_sublist_in_middle_test_/0-fun-9- (sublist in middle)...ok
+        sublist_tests:140: -9_sublist_in_middle_test_/0-fun-7- (sublist in middle (not is_equal))...ok
+        sublist_tests:143: -9_sublist_in_middle_test_/0-fun-5- (sublist in middle (is_unequal))...ok
+        sublist_tests:146: -9_sublist_in_middle_test_/0-fun-3- (sublist in middle (is_sublist))...ok
+        sublist_tests:149: -9_sublist_in_middle_test_/0-fun-1- (sublist in middle (not is_superlist))...ok
+        sublist_tests:154: -10_sublist_at_end_test_/0-fun-9- (sublist at end)...ok
+        sublist_tests:157: -10_sublist_at_end_test_/0-fun-7- (sublist at end (not is_equal))...ok
+        sublist_tests:160: -10_sublist_at_end_test_/0-fun-5- (sublist at end (is_unequal))...ok
+        sublist_tests:163: -10_sublist_at_end_test_/0-fun-3- (sublist at end (is_sublist))...ok
+        sublist_tests:166: -10_sublist_at_end_test_/0-fun-1- (sublist at end (not is_superlist))...ok
+        sublist_tests:171: -11_at_start_of_superlist_test_/0-fun-9- (at start of superlist)...ok
+        sublist_tests:174: -11_at_start_of_superlist_test_/0-fun-7- (at start of superlist (not is_equal))...ok
+        sublist_tests:177: -11_at_start_of_superlist_test_/0-fun-5- (at start of superlist (is_unequal))...ok
+        sublist_tests:180: -11_at_start_of_superlist_test_/0-fun-3- (at start of superlist (not is_sublist))...ok
+        sublist_tests:183: -11_at_start_of_superlist_test_/0-fun-1- (at start of superlist (is_superlist))...ok
+        sublist_tests:188: -12_in_middle_of_superlist_test_/0-fun-9- (in middle of superlist)...ok
+        sublist_tests:191: -12_in_middle_of_superlist_test_/0-fun-7- (in middle of superlist (not is_equal))...ok
+        sublist_tests:194: -12_in_middle_of_superlist_test_/0-fun-5- (in middle of superlist (is_unequal))...ok
+        sublist_tests:197: -12_in_middle_of_superlist_test_/0-fun-3- (in middle of superlist (not is_sublist))...ok
+        sublist_tests:200: -12_in_middle_of_superlist_test_/0-fun-1- (in middle of superlist (is_superlist))...ok
+        sublist_tests:205: -13_at_end_of_superlist_test_/0-fun-9- (at end of superlist)...ok
+        sublist_tests:208: -13_at_end_of_superlist_test_/0-fun-7- (at end of superlist (not is_equal))...ok
+        sublist_tests:211: -13_at_end_of_superlist_test_/0-fun-5- (at end of superlist (is_unequal))...ok
+        sublist_tests:214: -13_at_end_of_superlist_test_/0-fun-3- (at end of superlist (not is_sublist))...ok
+        sublist_tests:217: -13_at_end_of_superlist_test_/0-fun-1- (at end of superlist (is_superlist))...ok
+        sublist_tests:223: -14_first_list_missing_element_from_second_list_test_/0-fun-9- (first list missing element from second list)...ok
+        sublist_tests:227: -14_first_list_missing_element_from_second_list_test_/0-fun-7- (first list missing element from second list (not is_equal))...ok
+        sublist_tests:230: -14_first_list_missing_element_from_second_list_test_/0-fun-5- (first list missing element from second list (is_unequal))...ok
+        sublist_tests:233: -14_first_list_missing_element_from_second_list_test_/0-fun-3- (first list missing element from second list (not is_sublist))...ok
+        sublist_tests:236: -14_first_list_missing_element_from_second_list_test_/0-fun-1- (first list missing element from second list (not is_superlist))...ok
+        sublist_tests:241: -15_second_list_missing_element_from_first_list_test_/0-fun-9- (second list missing element from first list)...ok
+        sublist_tests:245: -15_second_list_missing_element_from_first_list_test_/0-fun-7- (second list missing element from first list (not is_equal))...ok
+        sublist_tests:248: -15_second_list_missing_element_from_first_list_test_/0-fun-5- (second list missing element from first list (is_unequal))...ok
+        sublist_tests:251: -15_second_list_missing_element_from_first_list_test_/0-fun-3- (second list missing element from first list (not is_sublist))...ok
+        sublist_tests:254: -15_second_list_missing_element_from_first_list_test_/0-fun-1- (second list missing element from first list (not is_superlist))...ok
+        sublist_tests:258: -16_order_matters_to_a_list_test_/0-fun-9- (order matters to a list)...ok
+        sublist_tests:261: -16_order_matters_to_a_list_test_/0-fun-7- (order matters to a list (not is_equal))...ok
+        sublist_tests:263: -16_order_matters_to_a_list_test_/0-fun-5- (order matters to a list (is_unequal))...ok
+        sublist_tests:265: -16_order_matters_to_a_list_test_/0-fun-3- (order matters to a list (not is_sublist))...ok
+        sublist_tests:267: -16_order_matters_to_a_list_test_/0-fun-1- (order matters to a list (not is_superlist))...ok
+        sublist_tests:272: -17_same_digits_but_different_numbers_test_/0-fun-9- (same digits but different numbers)...ok
+        sublist_tests:276: -17_same_digits_but_different_numbers_test_/0-fun-7- (same digits but different numbers (not is_equal))...ok
+        sublist_tests:278: -17_same_digits_but_different_numbers_test_/0-fun-5- (same digits but different numbers (is_unequal))...ok
+        sublist_tests:281: -17_same_digits_but_different_numbers_test_/0-fun-3- (same digits but different numbers (not is_sublist))...ok
+        sublist_tests:284: -17_same_digits_but_different_numbers_test_/0-fun-1- (same digits but different numbers (not is_superlist))...ok
+        [done in 1.307 s]
+      [done in 1.307 s]
+    [done in 1.307 s]
+  [done in 1.307 s]
 =======================================================
   All 85 tests passed.
