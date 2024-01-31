@@ -1,10 +1,8 @@
 -module(difference_of_squares).
 
--export([
-         difference_of_squares/1, 
-         square_of_sum/1, 
-         sum_of_squares/1
-       ]).
+-export([ difference_of_squares/1, 
+          square_of_sum/1, 
+          sum_of_squares/1 ]).
 
 -spec square(integer()) -> integer().
 square(X) -> X * X.

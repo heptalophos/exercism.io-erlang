@@ -19,22 +19,18 @@ valid(String, Pos, CSum) ->
         [D|N] ->
             case D of
                 $ -> valid(N, Pos, CSum);
-                X -> 
-                    if  
-                        X >= $0 andalso X =< $9 -> 
-                            valid(N, Pos + 1, CSum + adjust(D - $0, Pos));
-                        true -> false
-                    end
+                X -> if  
+                       X >= $0 andalso X =< $9 -> 
+                          valid(N, Pos + 1, CSum + adjust(D - $0, Pos));
+                       true -> false
+                     end
             end
     end. 
 
 -spec adjust(pos_integer(), pos_integer()) -> pos_integer().
 adjust(Digit, Position) ->
     case { Position rem 2 == 0, Digit > 4 } of
-        {true, true} -> 
-            Digit * 2 - 9;
-        {true, _} -> 
-            Digit * 2;
-        {_, _} ->
-            Digit
+        {true, true} -> Digit * 2 - 9;
+        {true, _}    -> Digit * 2;
+        {_, _}       -> Digit
     end.
