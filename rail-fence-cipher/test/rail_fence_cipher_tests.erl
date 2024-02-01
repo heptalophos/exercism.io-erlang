@@ -9,12 +9,10 @@
 -include_lib("eunit/include/eunit.hrl").
 
 
-
-
 '1_encode_with_two_rails_test_'() ->
-    {"encode with two rails",
-     ?_assertMatch("XXXXXXXXXOOOOOOOOO",
-		   rail_fence_cipher:encode("XOXOXOXOXOXOXOXOXO", 2))}.
+   {"encode with two rails",
+      ?_assertMatch("XXXXXXXXXOOOOOOOOO",
+		   rail_fence_cipher:encode("XOXOXOXOXOXOXOXOXO", 2))}.    
 
 '2_encode_with_three_rails_test_'() ->
     {"encode with three rails",
