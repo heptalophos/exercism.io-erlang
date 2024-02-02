@@ -59,11 +59,13 @@ intersection(Set1, Set2) ->
 	#custom_set {elements = Elements1} = Set1,
 	#custom_set {elements = Elements2} = Set2,
 	#custom_set {
-		elements = lists:filter (
+		elements =  lists:filter (
 						fun (Elem) -> 
-							contains( Elem, 
-					 		 		  #custom_set {elements = Elements2} ) 
-		             	end, Elements1)}.
+							contains( Elem, #custom_set {elements = Elements2}) 
+		             	end, 
+						Elements1
+					)
+	}.
 
 -spec subset(custom_set(), custom_set()) -> boolean().
 subset(Set1, Set2) -> 
@@ -71,14 +73,17 @@ subset(Set1, Set2) ->
 	#custom_set {elements = Elements2} = Set2,
 	lists:all (fun (Elem) -> 
 				 contains(Elem, #custom_set{elements = Elements2}) end, 
-			  Elements1).
+			   Elements1).
 
 -spec union(custom_set(), custom_set()) -> custom_set().
 union(Set1, Set2) -> 
 	#custom_set {elements = Elements1} = Set1,
 	#custom_set {elements = Elements2} = Set2,
-	#custom_set {elements = dedup(lists:foldl (fun (Elem, Acc) -> [Elem] ++ Acc 
-						  					   end, Elements1, Elements2))}.
+	#custom_set {elements = dedup(lists:foldl (fun (Elem, Acc) -> 
+													[Elem] ++ Acc 
+						  					   end, 
+											   Elements1, 
+											   Elements2))}.
 
 %Auxiliary 
 
