@@ -13,11 +13,11 @@ encode(Phrase) -> chunks(5, decode(Phrase)).
 
 -spec atbash(char()) -> {true, char()} | false. 
 atbash(C) -> 
-    case (C >= $a) and ($z >= C) of
+    case (C >= $a) andalso ($z >= C) of
         true  -> {true, ($z - C) + $a};
-        false -> case (C >= $0) and ($9 >= C) of
-                    true  -> {true, C};
-                    _     -> false
+        false -> if 
+                    (C >= $0) andalso ($9 >= C) -> {true, C};
+                    true -> false
                  end
     end.
 

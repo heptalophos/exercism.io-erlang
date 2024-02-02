@@ -1,6 +1,6 @@
 -module(rail_fence_cipher).
 
--export([decode/2, encode/2, transpose/2]).
+-export([decode/2, encode/2]).
 
 
 -spec decode(string(), pos_integer()) -> string().
@@ -23,15 +23,19 @@ encode(Message, Rails) ->
 transpose(Text, Rails) ->
 	transpose(Text, +1, 0, [[] || _ <- lists:seq(1, Rails)], []).
 
--spec transpose(string(), -1|+1, pos_integer(), list(), list()) -> string().
+-spec transpose(Text::string(), 
+				StepToNextRail :: -1|+1,
+				TextIndex :: pos_integer(), 
+				CurrentZigOrZag :: [{pos_integer(), char()}], 
+				Accumulator :: [{pos_integer(), char()}]) -> string().
 transpose([], +1, _, Zig, Acc) ->
 	lists:reverse(lists:flatten(lists:reverse(Zig) ++ Acc));
-transpose([], -1, _, Zig, Acc) ->
-	lists:flatten([lists:reverse(L) || L <- lists:reverse(Zig) ++ Acc]);
-transpose(Text, +1, TIdx, [], Acc) ->
-	[H | Tail] = Acc, transpose(Text, -1, TIdx, Tail, [H]);
-transpose(Text, -1, TIdx, [], Acc) ->
-	[H | Tail] = Acc, transpose(Text, +1, TIdx, Tail, [H]);
-transpose(Text, DirNextRail, TIdx, Zig, Acc) ->
-	[F | Rest] = Text, [H | Tail] = Zig,
-	transpose(Rest, DirNextRail, TIdx + 1, Tail, [[{TIdx, F} | H] | Acc]).
+transpose([], -1, _, Zag, Acc) ->
+	lists:flatten([lists:reverse(L) || L <- lists:reverse(Zag) ++ Acc]);
+transpose(Text, +1, TxtIdx, [], Acc) ->
+	[H | Tail] = Acc, transpose(Text, -1, TxtIdx, Tail, [H]);
+transpose(Text, -1, TxtIdx, [], Acc) ->
+	[H | Tail] = Acc, transpose(Text, +1, TxtIdx, Tail, [H]);
+transpose(Text, DirNextRail, TxtIdx, ZigOrZag, Acc) ->
+	[F | Rest] = Text, [H | Tail] = ZigOrZag,
+	transpose(Rest, DirNextRail, TxtIdx + 1, Tail, [[{TxtIdx, F} | H] | Acc]).

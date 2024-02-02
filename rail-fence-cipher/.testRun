@@ -53,3 +53,32 @@ file "rail_fence_cipher.app"
   [done in 0.083 s]
 =======================================================
   All 6 tests passed.
+
+
+
+=======================================================
+Fri Feb  2 15:14:29 GTBST 2024
+=======================================================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling rail_fence_cipher
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "rail_fence_cipher.app"
+  application 'rail_fence_cipher'
+    module 'rail_fence_cipher'
+      module 'rail_fence_cipher_tests'
+        rail_fence_cipher_tests:14: -1_encode_with_two_rails_test_/0-fun-1- (encode with two rails)...ok
+        rail_fence_cipher_tests:19: -2_encode_with_three_rails_test_/0-fun-1- (encode with three rails)...ok
+        rail_fence_cipher_tests:25: -3_encode_with_ending_in_the_middle_test_/0-fun-1- (encode with ending in the middle)...ok
+        rail_fence_cipher_tests:30: -4_decode_with_three_rails_test_/0-fun-1- (decode with three rails)...ok
+        rail_fence_cipher_tests:35: -5_decode_with_five_rails_test_/0-fun-1- (decode with five rails)...ok
+        rail_fence_cipher_tests:40: -6_decode_with_six_rails_test_/0-fun-1- (decode with six rails)...ok
+        [done in 0.096 s]
+      [done in 0.096 s]
+    [done in 0.096 s]
+  [done in 0.096 s]
+=======================================================
+  All 6 tests passed.
