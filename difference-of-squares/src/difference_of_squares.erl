@@ -11,12 +11,13 @@ square(X) -> X * X.
 square_of_sum(Number) -> 
     square (lists:foldl (fun (X, Sum) -> X + Sum end, 
                          0, 
-                        lists:seq(1, Number))).
+                         lists:seq(1, Number))).
 
 -spec sum_of_squares(integer()) -> integer(). 
 sum_of_squares(Number) -> 
     lists:foldl (fun (X, Sum) -> square(X) + Sum end, 
-                 0, lists:seq(1, Number)).
+                 0, 
+                 lists:seq(1, Number)).
 
 -spec difference_of_squares(integer()) -> integer(). 
 difference_of_squares(Number) -> 
