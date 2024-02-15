@@ -1,1 +1,9 @@
-{"track":"erlang","exercise":"reverse-string","id":"bc1f62568394487d9010b373842afb6e","url":"https://exercism.org/tracks/erlang/exercises/reverse-string","handle":"heptalophos","is_requester":true,"auto_approve":false}
+{
+    "track": "erlang",
+    "exercise": "reverse-string",
+    "id": "bc1f62568394487d9010b373842afb6e",
+    "url": "https://exercism.org/tracks/erlang/exercises/reverse-string/solutions/bc1f62568394487d9010b373842afb6e",
+    "handle": "heptalophos",
+    "is_requester": true,
+    "auto_approve": false
+}
