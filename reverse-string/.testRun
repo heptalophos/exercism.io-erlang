@@ -1,0 +1,27 @@
+=======================================================
+Fri Feb 16 00:59:06 GTBST 2024
+=======================================================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling reverse_string
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "reverse_string.app"
+  application 'reverse_string'
+    module 'reverse_string'
+      module 'reverse_string_tests'
+        reverse_string_tests:13: -1_reverse_an_empty_string_test_/0-fun-1- (reverse an empty string)...ok
+        reverse_string_tests:20: -2_reverse_a_word_test_/0-fun-1- (reverse a word)...ok
+        reverse_string_tests:27: -3_reverse_a_capitalized_word_test_/0-fun-1- (reverse a capitalized word)...ok
+        reverse_string_tests:34: -4_reverse_a_sentence_with_punctuation_test_/0-fun-1- (reverse a sentence with punctuation)...ok
+        reverse_string_tests:41: -5_reverse_a_palindrome_test_/0-fun-1- (reverse a palindrome)...ok
+        reverse_string_tests:48: -6_reverse_an_even_sized_word_test_/0-fun-1- (reverse an even-sized word)...ok
+        reverse_string_tests:55: -7_reverse_wide_characters_test_/0-fun-1- (reverse wide characters)...ok
+        [done in 0.099 s]
+      [done in 0.099 s]
+    [done in 0.099 s]
+  [done in 0.099 s]
+=======================================================
+  All 7 tests passed.
