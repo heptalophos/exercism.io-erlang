@@ -2,5 +2,5 @@
 
 -export([reverse/1]).
 
-reverse(_String) ->
+reverse(String) ->
     undefined.
