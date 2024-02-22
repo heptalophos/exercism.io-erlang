@@ -14,11 +14,10 @@ prime(N) ->
 
 -spec prime(pos_integer(), pos_integer()) -> pos_integer().
 prime(N, C) -> 
-    Truth = fun (X) ->  
-                case X of 
-                    true  -> 1; 
-                    false -> 0
-                end 
+    Truth = fun (X) ->  case X of 
+                            true  -> 1; 
+                            _ -> 0
+                        end 
             end,
     if
         N =:= 1 -> C;
