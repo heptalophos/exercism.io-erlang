@@ -16,14 +16,18 @@ atbash(C) ->
     case (C >= $a) andalso ($z >= C) of
         true  -> {true, ($z - C) + $a};
         false -> if 
-                    (C >= $0) andalso ($9 >= C) -> {true, C};
-                    true -> false
+                    (C >= $0) andalso ($9 >= C) -> 
+                        {true, C};
+                    true -> 
+                        false
                  end
     end.
 
 -spec chunks(pos_integer(), string()) -> string().
 chunks(N, S) ->
     case (N >= length(S)) of 
-        true -> S;
-        _ -> {H, Rest} = lists:split(N, S), H ++ " " ++ chunks(N, Rest)
+        true -> 
+            S;
+        _ -> 
+            {H, Rest} = lists:split(N, S), H ++ " " ++ chunks(N, Rest)
     end.

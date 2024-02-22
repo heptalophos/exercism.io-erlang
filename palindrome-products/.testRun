@@ -1,0 +1,32 @@
+=======================================================
+Thu Feb 22 21:40:01 GTBST 2024
+=======================================================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling palindrome_products
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "palindrome_products.app"
+  application 'palindrome_products'
+    module 'palindrome_products'
+      module 'palindrome_products_tests'
+        palindrome_products_tests:30: -1_finds_the_smallest_palindrome_from_single_digit_factors_test_/0-fun-1- (finds the smallest palindrome from single digit factors)...ok
+        palindrome_products_tests:36: -2_finds_the_largest_palindrome_from_single_digit_factors_test_/0-fun-1- (finds the largest palindrome from single digit factors)...ok
+        palindrome_products_tests:42: -3_find_the_smallest_palindrome_from_double_digit_factors_test_/0-fun-1- (find the smallest palindrome from double digit factors)...[0.001 s] ok
+        palindrome_products_tests:48: -4_find_the_largest_palindrome_from_double_digit_factors_test_/0-fun-1- (find the largest palindrome from double digit factors)...[0.001 s] ok
+        palindrome_products_tests:54: -5_find_smallest_palindrome_from_triple_digit_factors_test_/0-fun-1- (find smallest palindrome from triple digit factors)...[0.001 s] ok
+        palindrome_products_tests:60: -6_find_the_largest_palindrome_from_triple_digit_factors_test_/0-fun-1- (find the largest palindrome from triple digit factors)...[0.001 s] ok
+        palindrome_products_tests:66: -7_find_smallest_palindrome_from_four_digit_factors_test_/0-fun-1- (find smallest palindrome from four digit factors)...[0.001 s] ok
+        palindrome_products_tests:72: -8_find_the_largest_palindrome_from_four_digit_factors_test_/0-fun-1- (find the largest palindrome from four digit factors)...[0.001 s] ok
+        palindrome_products_tests:78: -9_empty_result_for_smallest_if_no_palindrome_in_the_range_test_/0-fun-1- (empty result for smallest if no palindrome in the range)...ok
+        palindrome_products_tests:84: -10_empty_result_for_largest_if_no_palindrome_in_the_range_test_/0-fun-1- (empty result for largest if no palindrome in the range)...ok
+        palindrome_products_tests:90: -11_error_result_for_smallest_if_min_is_more_than_max_test_/0-fun-1- (error result for smallest if min is more than max)...ok
+        palindrome_products_tests:96: -12_error_result_for_largest_if_min_is_more_than_max_test_/0-fun-1- (error result for largest if min is more than max)...ok
+        [done in 0.181 s]
+      [done in 0.181 s]
+    [done in 0.181 s]
+  [done in 0.181 s]
+=======================================================
+  All 12 tests passed.
