@@ -6,17 +6,13 @@
 	{integer(), [{integer(), integer()}]} | error.
 largest(Min, Max) -> 
     case Min > Max of
-        true -> 
-			error(invalid_range);
-        _ -> 
-			PfPs = palindromic_factor_pairs(Min, Max, dn),
-			if
-				PfPs =:= [] -> 
-					undefined;
-				true -> 
-					MaxP = lists:max([(X * Y) || {X, Y} <- PfPs]),
-					{MaxP, [{X, Y} || {X, Y} <- PfPs, (X * Y) =:= MaxP]}
-		    end
+        true -> error(invalid_range);
+        _ -> PfPs = palindromic_factor_pairs(Min, Max, dn),
+			 if
+				PfPs =:= [] -> undefined;
+				true -> MaxP = lists:max([(X * Y) || {X, Y} <- PfPs]),
+						{MaxP, [{X, Y} || {X, Y} <- PfPs, (X * Y) =:= MaxP]}
+		     end
 	end.
 
 -spec smallest(integer(), integer()) -> 
@@ -24,14 +20,12 @@ largest(Min, Max) ->
 smallest(Min, Max) -> 
     case Min > Max of
         true -> error(invalid_range);
-        _ -> 
-			PfPs = palindromic_factor_pairs(Min, Max, up),
-			if
+        _ -> PfPs = palindromic_factor_pairs(Min, Max, up),
+			 if
 				PfPs =:= [] -> undefined;
-				true -> 
-					MinP = lists:min([(X * Y) || {X, Y} <- PfPs]),
-					{MinP, [{X, Y} || {X, Y} <- PfPs, (X * Y) =:= MinP]}
-		    end
+				true -> MinP = lists:min([(X * Y) || {X, Y} <- PfPs]),
+						{MinP, [{X, Y} || {X, Y} <- PfPs, (X * Y) =:= MinP]}
+		     end
     end.
 
 % Auxiliary
@@ -51,15 +45,15 @@ is_palindrome(Product) ->
 palindromic_factor_pairs(Min, Max, Dir) ->
 	case {Dir, Max - Min > 9} of
 		{up, true} -> 
-			NMax = Min + 100,
+			NMax = Min + (Min div 5),
 			[{X, Y} || 	X <- lists:seq(Min, NMax), Y <- lists:seq(X, NMax), 
-						is_palindrome(X * Y)];
+							 is_palindrome(X * Y)];
 		{dn, true} -> 
-			NMin = Max - 100,
+			NMin = Max - (Max div 5),
 			[{X, Y} || 	X <- lists:seq(NMin, Max), Y <- lists:seq(X, Max), 
-						is_palindrome(X * Y)];
+							 is_palindrome(X * Y)];
 		{_, false} -> 
 			[{X, Y} || 	X <- lists:seq(Min, Max), Y <- lists:seq(X, Max), 
-						is_palindrome(X * Y)];
+							 is_palindrome(X * Y)];
 		{_, _} -> {error, invalid_range}
 	end.
