@@ -1,0 +1,26 @@
+=======================================================
+Mon Feb 26 23:01:21 GTBST 2024
+=======================================================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling satellite
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "satellite.app"
+  application 'satellite'
+    module 'satellite'
+      module 'satellite_tests'
+        satellite_tests:16: -1_empty_tree_test_/0-fun-1- (Empty tree)...ok
+        satellite_tests:21: -2_tree_with_one_item_test_/0-fun-1- (Tree with one item)...ok
+        satellite_tests:26: -3_tree_with_many_items_test_/0-fun-1- (Tree with many items)...ok
+        satellite_tests:37: -4_reject_traversals_of_different_length_test_/0-fun-1- (Reject traversals of different length)...ok
+        satellite_tests:44: -5_reject_inconsistent_traversals_of_same_length_test_/0-fun-1- (Reject inconsistent traversals of same length)...ok
+        satellite_tests:50: -6_reject_traversals_with_repeated_items_test_/0-fun-1- (Reject traversals with repeated items)...ok
+        [done in 0.086 s]
+      [done in 0.086 s]
+    [done in 0.086 s]
+  [done in 0.086 s]
+=======================================================
+  All 6 tests passed.
