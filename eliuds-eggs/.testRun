@@ -1,0 +1,24 @@
+=======================================================
+Sat Jun  8 08:30:53 GTBDT 2024
+=======================================================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling eliuds_eggs
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "eliuds_eggs.app"
+  application 'eliuds_eggs'
+    module 'eliuds_eggs'
+      module 'eliuds_eggs_tests'
+        eliuds_eggs_tests:13: -1_zero_eggs_test_/0-fun-1- (0 eggs)...ok
+        eliuds_eggs_tests:20: -2_one_egg_test_/0-fun-1- (1 egg)...ok
+        eliuds_eggs_tests:27: -3_four_eggs_test_/0-fun-1- (4 eggs)...ok
+        eliuds_eggs_tests:34: -4_thirteen_eggs_test_/0-fun-1- (13 eggs)...ok
+        [done in 0.055 s]
+      [done in 0.055 s]
+    [done in 0.055 s]
+  [done in 0.055 s]
+=======================================================
+  All 4 tests passed.
