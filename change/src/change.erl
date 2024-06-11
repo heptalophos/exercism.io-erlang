@@ -13,4 +13,5 @@ find_fewest_coins(Target, Coins) ->
         _ -> find_fewest_coins(Target, SortDenominations, [])
     end.
 
-#
+% Auxiliary
+
