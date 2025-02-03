@@ -1,0 +1,27 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": [],
+  "contributors": [
+    "ErikSchierboom",
+    "iHiD",
+    "JordanAdams",
+    "juhlig",
+    "kytrinyx",
+    "NobbZ",
+    "tmcgilchrist",
+    "xymbol"
+  ],
+  "files": {
+    "solution": [
+      "src/robot_simulator.erl"
+    ],
+    "test": [
+      "test/robot_simulator_tests.erl"
+    ],
+    "example": [
+      ".meta/example.erl"
+    ]
+  },
+  "source": "Inspired by an interview question at a famous company.",
+  "source_url": ""
+}
