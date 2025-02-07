@@ -1,0 +1,14 @@
+
+
+
+=======================================================
+Fri Feb  7 21:26:15 GTBST 2025
+=======================================================
+>rebar3 eunit
+
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling robot_simulator
+===> Compiling src/robot_simulator.erl failed
+src/robot_simulator.erl:2:2: undefined callback function callback_mode/0 (behaviour 'gen_statem')
+
