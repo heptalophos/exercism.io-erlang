@@ -1,87 +1,80 @@
 -module(robot_simulator).
--behaviour(gen_statem).
+-behavior(gen_statem).
 
-% public API
--export([create/0, place/3, direction/1, position/1, left/1, right/1, advance/1]).
+-export([callback_mode/0, init/1, handle_event/4]).
+-export([advance/1, create/0, direction/1, left/1, place/3, position/1, right/1]).
 
-% methods for gen_fsm
--export([init/1, handle_event/3, handle_sync_event/4, terminate/3]).
+-record(state, {xcoord, ycoord}).
 
-% FSM - though there's only one state currently : ()
--export([idle/3, idle/2]).
+-spec create() -> pid().
+create() -> {ok, Pid} = start_link(), Pid.
 
-% (L)eft, (R)ight, (A)dvance
--define(VALID_COMMANDS, "LRA").
+-spec place(pid(), atom(), atom()) -> pid().
+place(Pid, Direction, Position) ->
+	gen_statem:cast(Pid, {place, Direction, Position}).
 
--record(robot,
-        {direction=undefined,
-        position={undefined, undefined}
-        }).
+-spec left(pid()) -> gen_statem:event_handler_result().
+left(Pid) -> turn(Pid, left).
 
-init(_Args) ->
-  State = #robot{},
-  {ok, idle, State}.
+-spec right(pid()) -> gen_statem:event_handler_result().
+right(Pid) -> turn(Pid, right).
 
-handle_event(_Event, StateName, StateData) ->
-  {next_state, StateName, StateData}.
-handle_sync_event(_Event, _From, StateName, StateData) ->
-  {reply, ok, StateName, StateData}.
-terminate(_Reason, _StateName, _StateData) ->
-    ok.
+-spec advance(pid()) -> gen_statem:event_handler_result().
+advance(Pid) -> gen_statem:cast(Pid, advance).
 
-% 'getters'
-idle({get_direction}, _From, State) ->
-  {reply, State#robot.direction, idle, State};
-idle({get_position}, _From, State) ->
-  {reply, State#robot.position, idle, State}.
+-spec direction(pid()) -> gen_statem:event_handler_result().
+direction(Pid) -> direction(Pid, 5000).
 
-% the set/action methods don't expect a reply
-idle({set_position, Position}, State) ->
-  {next_state, idle, State#robot{position=Position}};
-idle({set_direction, Direction}, State) ->
-  {next_state, idle, State#robot{direction=Direction}};
-idle({turn, WhichWay}, State) ->
-  NewDirection = change_direction(State#robot.direction, WhichWay),
-  {next_state, idle, State#robot{direction=NewDirection}};
-idle({advance}, State) ->
-  NewPosition = move(State#robot.direction, State#robot.position),
-  {next_state, idle, State#robot{position=NewPosition}}.
+-spec position(pid()) -> gen_statem:event_handler_result().
+position(Pid) -> position(Pid, 5000).
 
-create() ->
-  % we could use this to pass arguments to our init function
-  Args = [], Options = [],
-  {ok, Pid} = gen_statem:start_link(?MODULE, Args, Options),
-  Pid.
+-spec callback_mode() -> gen_statem:callback_mode_result().
+callback_mode() -> handle_event_function.
 
-place(Robot, Direction, Position) ->
-  gen_statem:cast(Robot, {set_direction, Direction}),
-  gen_statem:cast(Robot, {set_position, Position}).
+-spec init([]) -> gen_statem:init_result([]).
+init([]) -> {ok, not_placed, #state{}}.
 
-direction(Robot) ->
-  gen_statem:call(Robot, {get_direction}).
+-spec handle_event(gen_statem:event_type(), atom(), atom(), #state{}) -> 
+                                gen_statem:event_handler_result([]).
+handle_event(cast, {place, Direction, {X, Y}}, not_placed, State) when 	(
+										Direction =:= north orelse	
+                                        Direction =:= east orelse
+                                        Direction =:= south orelse	
+                                        Direction =:= west
+									    ) andalso	is_integer(X) 
+                                          andalso is_integer(Y) ->
+            {next_state, Direction, State#state{xcoord = X, ycoord = Y}};
+handle_event(cast, {turn, left}, north, State) -> {next_state, west, State};
+handle_event(cast, {turn, left}, east, State) -> {next_state, north, State};
+handle_event(cast, {turn, left}, south, State) -> {next_state, east, State};
+handle_event(cast, {turn, left}, west, State) -> {next_state, south, State};
+handle_event(cast, {turn, right}, north, State) -> {next_state, east, State};
+handle_event(cast, {turn, right}, east, State) -> {next_state, south, State};
+handle_event(cast, {turn, right}, south, State) -> {next_state, west, State};
+handle_event(cast, {turn, right}, west, State) -> {next_state, north, State};
+handle_event(cast, advance, north, State = #state{ ycoord = Y }) ->
+	{next_state, north, State#state{ycoord = Y + 1}};
+handle_event(cast, advance, east, State=#state{ xcoord = X}) ->
+	{next_state, east, State#state{xcoord = X + 1}};
+handle_event(cast, advance, south, State=#state{ ycoord = Y}) ->
+	{next_state, south, State#state{ycoord = Y - 1}};
+handle_event(cast, advance, west, State=#state{ xcoord = X}) ->
+	{next_state, west, State#state{xcoord = X - 1}};
+handle_event({call, From}, position, Direction, 
+             State=#state{xcoord = X, ycoord = Y}) ->
+	{next_state, Direction, State, [{reply, From, {X, Y}}]};
+handle_event({call, From}, direction, not_placed, State) ->
+	{next_state, not_placed, State, [{reply, From, undefined}]};
+handle_event({call, From}, direction, Direction, State) ->
+	{next_state, Direction, State, [{reply, From, Direction}]};
+handle_event(_, _, StateName, State) -> { next_state, StateName, State }.
 
-position(Robot) ->
-  gen_statem:call(Robot, {get_position}).
+% Auxiliary
 
-left(Robot) ->
-  gen_statem:cast(Robot, {turn, left}).
+start_link() -> gen_statem:start_link(?MODULE, [], []).
 
-right(Robot) ->
-  gen_statem:cast(Robot, {turn, right}).
+position(Pid, Timeout) -> gen_statem:call(Pid, position, Timeout).
 
-advance(Robot) ->
-  gen_statem:cast(Robot, {advance}).
+direction(Pid, Timeout) -> gen_statem:call(Pid, direction, Timeout).
 
-change_direction(north, left)   -> west;
-change_direction(north, right)  -> east;
-change_direction(west, left)    -> south;
-change_direction(west, right)   -> north;
-change_direction(south, left)   -> east;
-change_direction(south, right)  -> west;
-change_direction(east, left)    -> north;
-change_direction(east, right)   -> south.
-
-move(north, {X, Y}) -> {X, Y+1};
-move(west, {X, Y})  -> {X-1, Y};
-move(south, {X, Y}) -> {X, Y-1};
-move(east, {X, Y})  -> {X+1, Y}.
+turn(Pid, Direction) -> gen_statem:cast(Pid, {turn, Direction}).
