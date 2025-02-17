@@ -1,120 +1,80 @@
 -module(robot_simulator).
+-behavior(gen_statem).
 
--behaviour(gen_server).
+-export([callback_mode/0, init/1, handle_event/4]).
+-export([advance/1, create/0, direction/1, left/1, place/3, position/1, right/1]).
 
--export([advance/1, create/0, 
-         direction/1, left/1, 
-         place/3, position/1, 
-         right/1]).
+-record(state, {xcoord, ycoord}).
 
--export([init/1, handle_call/3, handle_cast/2]).
+-spec create() -> pid().
+create() -> {ok, Pid} = start_link(), Pid.
 
--type direction() :: north | east | south | west.
--type position() :: { X :: integer(), 
-                      Y :: integer() }.
+-spec place(pid(), atom(), atom()) -> pid().
+place(Pid, Direction, Position) ->
+	gen_statem:cast(Pid, {place, Direction, Position}).
 
--record(robot, { pid = undefined :: pid() | undefined }).
+-spec left(pid()) -> gen_statem:event_handler_result().
+left(Pid) -> turn(Pid, left).
 
--record(state, {position = {undefined, undefined} :: position(), 
-                direction = undefined :: direction()}).
+-spec right(pid()) -> gen_statem:event_handler_result().
+right(Pid) -> turn(Pid, right).
 
--type(robot() :: #robot{}).
+-spec advance(pid()) -> gen_statem:event_handler_result().
+advance(Pid) -> gen_statem:cast(Pid, advance).
 
--spec advance(robot()) -> none().
-advance(Robot) -> 
-   #robot{pid = Pid} = Robot,
-   gen_server:cast(Pid, advance).
+-spec direction(pid()) -> gen_statem:event_handler_result().
+direction(Pid) -> direction(Pid, 5000).
 
--spec create() -> robot(). 
-create() -> 
-   % {ok, Pid} = start_link(#robot{}),
-   {ok, PID} = gen_server:start_link(?MODULE, [], []),
-   #robot{pid = PID}.
+-spec position(pid()) -> gen_statem:event_handler_result().
+position(Pid) -> position(Pid, 5000).
 
--spec direction(robot()) -> none().
-direction(Robot) -> 
-   #robot{pid = Pid} = Robot,
-   gen_server:call(Pid, direction).
+-spec callback_mode() -> gen_statem:callback_mode_result().
+callback_mode() -> handle_event_function.
 
--spec left(robot()) -> none().
-left(Robot) -> 
-   #robot{pid = Pid} = Robot,
-   gen_server:cast(Pid, {clockwise}).
+-spec init([]) -> gen_statem:init_result([]).
+init([]) -> {ok, not_placed, #state{}}.
 
--spec place(robot(), direction(), position()) -> none().
-place(Robot, Direction, Position) -> 
-   #robot{pid = Pid} = Robot,
-   gen_server:cast(Pid, {position, Position}),
-   gen_server:cast(Pid, {direction, Direction}).
-
--spec position(robot()) -> position().
-position(Robot) -> 
-   #robot{pid = Pid} = Robot,
-   gen_server:call(Pid, position).
-
--spec right(robot()) -> none().
-right(Robot) -> 
-   #robot{pid = Pid} = Robot,
-   gen_server:cast(Pid, {counter_clockwise}).
+-spec handle_event(gen_statem:event_type(), atom(), atom(), #state{}) -> 
+                                gen_statem:event_handler_result([]).
+handle_event(cast, {place, Direction, {X, Y}}, not_placed, State) when 	(
+										Direction =:= north orelse	
+                                        Direction =:= east orelse
+                                        Direction =:= south orelse	
+                                        Direction =:= west
+									    ) andalso	is_integer(X) 
+                                          andalso is_integer(Y) ->
+            {next_state, Direction, State#state{xcoord = X, ycoord = Y}};
+handle_event(cast, {turn, left}, north, State) -> {next_state, west, State};
+handle_event(cast, {turn, left}, east, State) -> {next_state, north, State};
+handle_event(cast, {turn, left}, south, State) -> {next_state, east, State};
+handle_event(cast, {turn, left}, west, State) -> {next_state, south, State};
+handle_event(cast, {turn, right}, north, State) -> {next_state, east, State};
+handle_event(cast, {turn, right}, east, State) -> {next_state, south, State};
+handle_event(cast, {turn, right}, south, State) -> {next_state, west, State};
+handle_event(cast, {turn, right}, west, State) -> {next_state, north, State};
+handle_event(cast, advance, north, State = #state{ ycoord = Y }) ->
+	{next_state, north, State#state{ycoord = Y + 1}};
+handle_event(cast, advance, east, State=#state{ xcoord = X}) ->
+	{next_state, east, State#state{xcoord = X + 1}};
+handle_event(cast, advance, south, State=#state{ ycoord = Y}) ->
+	{next_state, south, State#state{ycoord = Y - 1}};
+handle_event(cast, advance, west, State=#state{ xcoord = X}) ->
+	{next_state, west, State#state{xcoord = X - 1}};
+handle_event({call, From}, position, Direction, 
+             State=#state{xcoord = X, ycoord = Y}) ->
+	{next_state, Direction, State, [{reply, From, {X, Y}}]};
+handle_event({call, From}, direction, not_placed, State) ->
+	{next_state, not_placed, State, [{reply, From, undefined}]};
+handle_event({call, From}, direction, Direction, State) ->
+	{next_state, Direction, State, [{reply, From, Direction}]};
+handle_event(_, _, StateName, State) -> { next_state, StateName, State }.
 
 % Auxiliary
 
--spec(advance(position(), direction()) -> position()).
-advance(P, D)  ->
-   {X, Y} = P,
-   case D of 
-      east  -> {X + 1, Y};
-      west  -> {X - 1, Y};
-      north -> {X, Y + 1}; 
-      south -> {X, Y - 1}
-   end.
+start_link() -> gen_statem:start_link(?MODULE, [], []).
 
-turn_left(D) ->
-   case D of
-      north -> west;
-      west  -> south;
-      south -> east;
-      east  -> north 
-   end.
+position(Pid, Timeout) -> gen_statem:call(Pid, position, Timeout).
 
-turn_right(D) ->
-   case D of
-      north -> east;
-      west  -> north;
-      south -> west;
-      east  -> south 
-   end.
+direction(Pid, Timeout) -> gen_statem:call(Pid, direction, Timeout).
 
-%% gen_server callbacks
-
-% start_link(Name) ->
-%    gen_server:start_link({local, Name}, ?MODULE, [], []).
-
-init(_) ->
-   {ok, #state{}}.
-
-handle_call(Request, _, _) ->
-   case Request of 
-      position -> 
-         {reply, Request, #state{position = Request}};
-      direction -> 
-         {reply, Request, #state{direction = Request}}
-      end.
-
-handle_cast(Msg, State) ->
-   case Msg of
-      {direction, Direction} ->
-         {noreply, #state{direction = Direction}};
-      {position, Position} ->
-         {noreply, #state{position = Position}};
-      {counter_clockwise} ->
-         D = turn_left(State#state.direction),
-         handle_cast({direction, D}, State);
-      {clockwise} ->
-         D = turn_right(State#state.direction),
-         handle_cast({direction, D}, State);
-      {advance} ->
-         D = advance(State#state.position, State#state.direction),
-         handle_cast({position, D}, State)
-      end.
-%% clockwise_plus, clockwise_minus
+turn(Pid, Direction) -> gen_statem:cast(Pid, {turn, Direction}).
