@@ -1,14 +1,56 @@
-
-
-
 =======================================================
-Fri Feb  7 21:26:15 GTBST 2025
+Mon Feb 17 18:00:05 GTBST 2025
 =======================================================
 >rebar3 eunit
 
 ===> Verifying dependencies...
 ===> Analyzing applications...
 ===> Compiling robot_simulator
-===> Compiling src/robot_simulator.erl failed
-src/robot_simulator.erl:2:2: undefined callback function callback_mode/0 (behaviour 'gen_statem')
-
+===> Performing EUnit tests...
+======================== EUnit ========================
+file "robot_simulator.app"
+  application 'robot_simulator'
+    module 'robot_simulator'
+      module 'robot_simulator_tests'
+        robot_simulator_tests:18: -1_at_origin_facing_north_test_/0-fun-3- (at origin facing north (direction))...ok
+        robot_simulator_tests:20: -1_at_origin_facing_north_test_/0-fun-1- (at origin facing north (position))...ok
+        robot_simulator_tests:27: -2_at_negative_position_facing_south_test_/0-fun-3- (at negative position facing south (direction))...ok
+        robot_simulator_tests:29: -2_at_negative_position_facing_south_test_/0-fun-1- (at negative position facing south (position))...ok
+        robot_simulator_tests:37: -3_changes_north_to_east_test_/0-fun-3- (changes north to east (direction))...ok
+        robot_simulator_tests:39: -3_changes_north_to_east_test_/0-fun-1- (changes north to east (position))...ok
+        robot_simulator_tests:47: -4_changes_east_to_south_test_/0-fun-3- (changes east to south (direction))...ok
+        robot_simulator_tests:49: -4_changes_east_to_south_test_/0-fun-1- (changes east to south (position))...ok
+        robot_simulator_tests:57: -5_changes_south_to_west_test_/0-fun-3- (changes south to west (direction))...ok
+        robot_simulator_tests:59: -5_changes_south_to_west_test_/0-fun-1- (changes south to west (position))...ok
+        robot_simulator_tests:67: -6_changes_west_to_north_test_/0-fun-3- (changes west to north (direction))...ok
+        robot_simulator_tests:69: -6_changes_west_to_north_test_/0-fun-1- (changes west to north (position))...ok
+        robot_simulator_tests:77: -7_changes_north_to_west_test_/0-fun-3- (changes north to west (direction))...ok
+        robot_simulator_tests:79: -7_changes_north_to_west_test_/0-fun-1- (changes north to west (position))...ok
+        robot_simulator_tests:87: -8_changes_west_to_south_test_/0-fun-3- (changes west to south (direction))...ok
+        robot_simulator_tests:89: -8_changes_west_to_south_test_/0-fun-1- (changes west to south (position))...ok
+        robot_simulator_tests:97: -9_changes_south_to_east_test_/0-fun-3- (changes south to east (direction))...ok
+        robot_simulator_tests:99: -9_changes_south_to_east_test_/0-fun-1- (changes south to east (position))...ok
+        robot_simulator_tests:107: -10_changes_east_to_north_test_/0-fun-3- (changes east to north (direction))...ok
+        robot_simulator_tests:109: -10_changes_east_to_north_test_/0-fun-1- (changes east to north (position))...ok
+        robot_simulator_tests:117: -11_facing_north_increments_y_test_/0-fun-3- (facing north increments Y (direction))...ok
+        robot_simulator_tests:119: -11_facing_north_increments_y_test_/0-fun-1- (facing north increments Y (position))...ok
+        robot_simulator_tests:127: -12_facing_south_decrements_y_test_/0-fun-3- (facing south decrements Y (direction))...ok
+        robot_simulator_tests:129: -12_facing_south_decrements_y_test_/0-fun-1- (facing south decrements Y (position))...ok
+        robot_simulator_tests:137: -13_facing_east_increments_x_test_/0-fun-3- (facing east increments X (direction))...ok
+        robot_simulator_tests:139: -13_facing_east_increments_x_test_/0-fun-1- (facing east increments X (position))...[0.001 s] ok
+        robot_simulator_tests:147: -14_facing_west_decrements_x_test_/0-fun-3- (facing west decrements X (direction))...[0.001 s] ok
+        robot_simulator_tests:149: -14_facing_west_decrements_x_test_/0-fun-1- (facing west decrements X (position))...ok
+        robot_simulator_tests:162: -15_moving_east_and_north_from_readme_test_/0-fun-3- (moving east and north from README (direction))...ok
+        robot_simulator_tests:164: -15_moving_east_and_north_from_readme_test_/0-fun-1- (moving east and north from README (position))...ok
+        robot_simulator_tests:179: -16_moving_west_and_north_test_/0-fun-3- (moving west and north (direction))...ok
+        robot_simulator_tests:181: -16_moving_west_and_north_test_/0-fun-1- (moving west and north (position))...ok
+        robot_simulator_tests:197: -17_moving_west_and_south_test_/0-fun-3- (moving west and south (direction))...ok
+        robot_simulator_tests:199: -17_moving_west_and_south_test_/0-fun-1- (moving west and south (position))...ok
+        robot_simulator_tests:218: -18_moving_east_and_north_test_/0-fun-3- (moving east and north (direction))...ok
+        robot_simulator_tests:220: -18_moving_east_and_north_test_/0-fun-1- (moving east and north (position))...ok
+        [done in 0.556 s]
+      [done in 0.556 s]
+    [done in 0.556 s]
+  [done in 0.556 s]
+=======================================================
+  All 36 tests passed.
