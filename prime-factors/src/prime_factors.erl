@@ -7,7 +7,7 @@
 factors(Value) ->
     case Value > 0 of
         true -> factors(Value, 2);
-        _ -> {error, invalid_argument} 
+        _    -> {error, invalid_argument} 
     end.
 
 % Auxiliary
@@ -16,8 +16,8 @@ factors(Value) ->
 factors(V, F) ->
     case V =:= 1 of
         true -> [];
-        _ -> if 
-                V rem F =:= 0 -> [F] ++ factors(V div F, F);
-                true -> factors(V, F + 1)
-            end
+        _    -> if 
+                    V rem F =:= 0 -> [F] ++ factors(V div F, F);
+                    true -> factors(V, F + 1)
+                end
     end.

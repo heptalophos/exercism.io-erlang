@@ -45,3 +45,8 @@
     {"factors include a large prime",
      ?_assertEqual(lists:sort([11, 9539, 894119]),
 		   lists:sort(prime_factors:factors(93819012551)))}.
+
+% '8_factors_include_another_large_prime_test_'() ->
+%     {"factors include a large prime",
+%      ?_assertEqual(lists:sort([5, 2000000011]),
+% 		   lists:sort(prime_factors:factors(10000000055)))}.
